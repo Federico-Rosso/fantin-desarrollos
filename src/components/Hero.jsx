@@ -33,14 +33,19 @@ export default function Hero() {
 
       {/* Header */}
       <header className="relative z-10 mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-6 sm:px-10">
-        <motion.span
+        <motion.a
+          href="#inicio"
           initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="cursor-pointer font-heading text-lg font-extrabold uppercase tracking-[0.2em] text-sage transition-all duration-300 ease-in-out hover:scale-105 hover:text-primary-green"
+          className="cursor-pointer transition-all duration-300 ease-in-out hover:scale-105"
         >
-          Fantín Desarrollos
-        </motion.span>
+          <img
+            src="/images/logo-header.png"
+            alt="Fantín Desarrollos"
+            className="h-12 w-auto object-contain"
+          />
+        </motion.a>
         <motion.nav
           initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
