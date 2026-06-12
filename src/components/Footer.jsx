@@ -41,9 +41,9 @@ export default function Footer() {
         {/* Left: logo */}
         <div className="flex items-center">
           <img
-            src="/placeholder-logo.png"
+            src="/images/logo-footer.png"
             alt="Fantín Desarrollos"
-            className="h-12 w-auto object-contain"
+            className="h-20 w-auto object-contain"
           />
         </div>
 
