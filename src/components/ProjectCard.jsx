@@ -1,29 +1,45 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+
+const item = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+};
 
 export default function ProjectCard({ proyecto }) {
   if (!proyecto) return null;
+
   return (
-    <div className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full">
-      <div className="relative h-56 w-full bg-slate-200 overflow-hidden">
-        <img src={proyecto.imagen} alt={proyecto.titulo} className="w-full h-full object-cover" />
-        <span className="absolute top-4 left-4 bg-emerald-600 text-white text-xs font-semibold px-3 py-1 rounded-full uppercase">
-          📍 {proyecto.ubicacion}
+    <motion.article
+      variants={item}
+      className="group flex h-full flex-col overflow-hidden rounded-3xl border border-dark-green/10 bg-tech-white shadow-md transition-all duration-300 ease-in-out hover:-translate-y-4 hover:shadow-2xl hover:shadow-dark-green/30"
+    >
+      <div className="relative h-56 w-full overflow-hidden">
+        <img
+          src={proyecto.imagen}
+          alt={`Desarrollo ${proyecto.titulo}`}
+          className="h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-dark-green/60 via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-80" />
+        <span className="absolute left-4 top-4 rounded-full bg-primary-green px-3 py-1 font-sans text-xs font-semibold uppercase tracking-wide text-dark-green shadow-md">
+          {proyecto.ubicacion}
         </span>
       </div>
-      <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-2xl font-bold text-slate-800">{proyecto.titulo}</h3>
-        <p className="text-slate-600 text-sm mt-2 flex-grow">{proyecto.description}</p>
-        <div className="flex flex-wrap gap-1.5 mt-4">
-          {proyecto.tags && proyecto.tags.map((tag, index) => (
-            <span key={index} className="bg-slate-100 text-slate-600 text-xs px-2.5 py-1 rounded-md font-medium">
-              {tag}
-            </span>
-          ))}
-        </div>
-        <button className="mt-6 block w-full text-center bg-slate-900 text-white py-3 rounded-xl font-semibold hover:bg-emerald-600 transition-colors">
-          Ver Masterplan y Lotes
+
+      <div className="flex flex-grow flex-col p-6">
+        <h3 className="font-heading text-2xl font-bold text-dark-green transition-colors duration-300 group-hover:text-transition-green">
+          {proyecto.titulo}
+        </h3>
+        <p className="mt-3 flex-grow font-sans text-sm leading-relaxed text-charcoal/70">
+          {proyecto.description}
+        </p>
+        <button className="mt-6 inline-flex items-center justify-center gap-2 self-start rounded-full bg-dark-green px-6 py-3 font-sans text-sm font-semibold uppercase tracking-wide text-sage transition-all duration-300 ease-in-out hover:scale-105 hover:bg-primary-green hover:text-dark-green">
+          Ver más
+          <span className="transition-transform duration-300 ease-in-out group-hover:translate-x-1">
+            &rarr;
+          </span>
         </button>
       </div>
-    </div>
+    </motion.article>
   );
 }
