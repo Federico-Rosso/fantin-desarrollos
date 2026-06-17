@@ -1,45 +1,54 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ArrowUpRight } from 'lucide-react';
 
 const item = {
   hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } },
 };
 
-export default function ProjectCard({ proyecto }) {
+export default function ProjectCard({ proyecto, className = '' }) {
   if (!proyecto) return null;
 
   return (
-    <motion.article
+    <motion.a
+      href="#contacto"
       variants={item}
-      className="group flex h-full flex-col overflow-hidden rounded-3xl border border-dark-green/10 bg-tech-white shadow-md transition-all duration-300 ease-in-out hover:-translate-y-4 hover:shadow-2xl hover:shadow-dark-green/30"
+      className={`group relative block overflow-hidden rounded-2xl border border-premium-line bg-premium-gray ${className}`}
     >
-      <div className="relative h-56 w-full overflow-hidden">
+      <div className="absolute inset-0">
         <img
           src={proyecto.imagen}
           alt={`Desarrollo ${proyecto.titulo}`}
-          className="h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
+          className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-dark-green/60 via-transparent to-transparent opacity-60 transition-opacity duration-300 group-hover:opacity-80" />
-        <span className="absolute left-4 top-4 rounded-full bg-primary-green px-3 py-1 font-sans text-xs font-semibold uppercase tracking-wide text-dark-green shadow-md">
-          {proyecto.ubicacion}
-        </span>
+        <div className="absolute inset-0 bg-gradient-to-t from-premium-black via-premium-black/30 to-transparent transition-opacity duration-500 group-hover:from-premium-black/95" />
       </div>
 
-      <div className="flex flex-grow flex-col p-6">
-        <h3 className="font-heading text-2xl font-bold text-dark-green transition-colors duration-300 group-hover:text-transition-green">
+      {/* Category badge */}
+      <span className="absolute left-5 top-5 z-10 rounded-full border border-primary-green/40 bg-premium-black/50 px-3 py-1.5 font-sans text-[0.7rem] font-semibold uppercase tracking-widest text-primary-green backdrop-blur-sm">
+        {proyecto.categoria}
+      </span>
+
+      {/* Content */}
+      <div className="relative z-10 flex h-full min-h-[22rem] flex-col justify-end p-6 sm:min-h-[26rem]">
+        <p className="font-sans text-xs uppercase tracking-widest text-premium-muted">
+          {proyecto.ubicacion}
+        </p>
+        <h3 className="mt-2 font-heading text-2xl font-bold text-tech-white sm:text-3xl">
           {proyecto.titulo}
         </h3>
-        <p className="mt-3 flex-grow font-sans text-sm leading-relaxed text-charcoal/70">
-          {proyecto.description}
+        <p className="mt-2 max-w-md font-sans text-sm leading-relaxed text-premium-muted opacity-0 transition-all duration-500 ease-out group-hover:opacity-100">
+          {proyecto.descripcion}
         </p>
-        <button className="mt-6 inline-flex items-center justify-center gap-2 self-start rounded-full bg-dark-green px-6 py-3 font-sans text-sm font-semibold uppercase tracking-wide text-sage transition-all duration-300 ease-in-out hover:scale-105 hover:bg-primary-green hover:text-dark-green">
-          Ver más
-          <span className="transition-transform duration-300 ease-in-out group-hover:translate-x-1">
-            &rarr;
-          </span>
-        </button>
+        <span className="mt-5 inline-flex items-center gap-2 font-sans text-sm font-semibold text-primary-green">
+          Conocer más
+          <ArrowUpRight
+            size={16}
+            className="transition-transform duration-300 ease-in-out group-hover:translate-x-1 group-hover:-translate-y-1"
+          />
+        </span>
       </div>
-    </motion.article>
+    </motion.a>
   );
 }
