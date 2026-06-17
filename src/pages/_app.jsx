@@ -2,6 +2,7 @@ import React from 'react';
 import { Inter, Montserrat } from 'next/font/google';
 import '../styles/globals.css';
 
+
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
