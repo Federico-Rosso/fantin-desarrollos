@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { Globe, Mail, Phone } from 'lucide-react';
 
 const socials = [
@@ -8,9 +9,9 @@ const socials = [
 ];
 
 const navLinks = [
-  { label: 'Proyectos', href: '#proyectos' },
-  { label: 'Nosotros', href: '#nosotros' },
-  { label: 'Contacto', href: '#contacto' },
+  { label: 'Proyectos', href: '/' },
+  { label: 'Nosotros', href: '/nosotros' },
+  { label: 'Contacto', href: '/#contacto' },
 ];
 
 export default function Footer() {
@@ -40,13 +41,13 @@ export default function Footer() {
               Navegación
             </span>
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
                 href={link.href}
                 className="font-sans text-sm text-tech-white/90 transition-colors duration-300 hover:text-primary-green"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
 
