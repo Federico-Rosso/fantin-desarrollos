@@ -3,18 +3,27 @@
 @tailwind utilities;
 
 html {
-  background-color: #1E3310;
+  background-color: #0E0E0E;
   scroll-behavior: smooth;
 }
 
+body {
+  background-color: #0E0E0E;
+}
+
 @layer utilities {
-  .text-gradient {
-    background-image: linear-gradient(120deg, #EBF3E6, #69B42E, #4A8222, #EBF3E6);
-    background-size: 300% 300%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-    animation: gradientShift 8s ease infinite;
+  .text-balance {
+    text-wrap: balance;
   }
+}
+
+::selection {
+  background-color: #5BB336;
+  color: #0E0E0E;
+}
+
+/* Subtle grain / vignette helpers used across sections */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #2A2A2A, transparent);
 }
