@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
+import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
 import ProjectCard from './ProjectCard';
-import DetailPanel from './DetailPanel';
 import { desarrollos, filtros } from '../data/desarrollos';
 
 const grid = {
@@ -10,8 +10,8 @@ const grid = {
 };
 
 export default function Portfolio() {
+  const router = useRouter();
   const [filtro, setFiltro] = useState('todos');
-  const [seleccionado, setSeleccionado] = useState(null);
 
   const visibles = useMemo(() => {
     if (filtro === 'todos') return desarrollos;
@@ -82,14 +82,15 @@ export default function Portfolio() {
                 layout
                 exit={{ opacity: 0, scale: 0.95, transition: { duration: 0.25 } }}
               >
-                <ProjectCard proyecto={proyecto} onSelect={setSeleccionado} />
+                <ProjectCard
+                  proyecto={proyecto}
+                  onSelect={(p) => router.push(`/proyectos/${p.id}`)}
+                />
               </motion.div>
             ))}
           </AnimatePresence>
         </motion.div>
       </div>
-
-      <DetailPanel proyecto={seleccionado} onClose={() => setSeleccionado(null)} />
     </section>
   );
 }
