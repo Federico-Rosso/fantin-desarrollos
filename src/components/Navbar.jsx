@@ -44,13 +44,10 @@ export default function Navbar() {
           className="flex items-center gap-3 transition-all duration-300 ease-in-out hover:opacity-80"
         >
           <img
-            src="/images/logo.png"
+            src="/images/isologotipo.png"
             alt="Fantín Desarrollos"
-            className="h-9 w-9 object-contain"
+            className="h-9 w-auto object-contain sm:h-10"
           />
-          <span className="font-heading text-sm font-extrabold uppercase tracking-[0.25em] text-tech-white">
-            Fantín <span className="text-primary-green">Desarrollos</span>
-          </span>
         </Link>
 
         <div className="hidden items-center gap-10 md:flex">

@@ -22,13 +22,10 @@ export default function Footer() {
           <div className="max-w-sm">
             <div className="flex items-center gap-3">
               <img
-                src="/images/logo.png"
+                src="/images/isologotipo.png"
                 alt="Fantín Desarrollos"
-                className="h-10 w-10 object-contain"
+                className="h-11 w-auto object-contain"
               />
-              <span className="font-heading text-sm font-extrabold uppercase tracking-[0.25em] text-tech-white">
-                Fantín <span className="text-primary-green">Desarrollos</span>
-              </span>
             </div>
             <p className="mt-5 font-sans text-sm leading-relaxed text-premium-muted">
               Naturaleza y arquitectura en equilibrio. 27 años entregando lo que
