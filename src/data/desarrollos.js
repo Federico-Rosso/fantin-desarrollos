@@ -66,14 +66,66 @@ export const desarrollos = [
   {
     id: 'fincas-rosedal',
     nombre: 'Las Fincas del Rosedal',
-    ubicacion: 'Roldán',
+    ubicacion: 'Ibarlucea, Santa Fe',
     lifecycle: 'activo',
-    badge: 'Preventa Exclusiva',
-    imagen: '/images/dev-6.png',
+    badge: 'Lanzamiento Segunda Etapa',
+    imagen: '/F4.webp',
+    tagline: 'Vida de pueblo, a 5 minutos de la gran ciudad.',
     descripcion:
-      'Barrio abierto en preventa exclusiva, con diseño paisajístico de jardines y rosedales centrales.',
-    avance: 15,
-    servicios: ['Luz', 'Agua', 'Calles', 'Paisajismo', 'Club house'],
+      'A solo 5 minutos de Rosario, y cerca de Funes también. Las Fincas del Rosedal combina la tranquilidad absoluta del entorno natural con la comodidad urbana de primer nivel.',
+    precio: 'Precios promocionales de lanzamiento segunda etapa.',
+    avance: 50,
+    lotes: {
+      total: 250,
+      disponibles: 'Segunda Etapa',
+    },
+    servicios: [
+      'Calles pavimentadas',
+      'Cordón cuneta',
+      'Alumbrado público',
+      'Electricidad',
+      'Agua potable',
+      'Espacios verdes intervenidos',
+      'Juegos infantiles',
+      'Red Wifi',
+    ],
+    beneficioClub: {
+      titulo: 'Club Bancario Rosario Bonificado',
+      descripcion:
+        'Con la compra del lote tenés bonificada la cuota de ingreso al Club Bancario Rosario, sede a 5 minutos (en Cinco Lagos, Ybarlucea) y sede zona norte.',
+    },
+    hitosEtapas: [
+      {
+        titulo: 'Etapa 1',
+        estado: '100% vendida y escriturada',
+        detalle: 'Más de 100 vecinos con casa construida.',
+        fotoEtapa: '/Etapa1d.webp',
+      },
+      {
+        titulo: 'Etapa 2',
+        estado: 'A la venta',
+        detalle:
+          'Incluye la estación de servicio (única en Ibarlucea) y un centro comercial exclusivo con oficinas, locales y gastronomía.',
+        fotoEtapa: '/centro3_rosedal.webp',
+      },
+      {
+        titulo: 'Proyectado a futuro',
+        estado: 'Planificación avanzada',
+        detalle: 'Parque recreativo con dos lagos, sendero aeróbico, plazas y juegos.',
+        fotoEtapa: '/parque_recreativo.webp',
+      },
+    ],
+    coords: { lat: -32.8507468, lng: -60.7643169 },
+    fotos: [
+      '/F4.webp',
+      '/estacion3_rosedal.webp',
+      '/D4.webp',
+      '/E9.webp',
+      '/A3.webp',
+      '/C1.webp',
+      '/B1.webp',
+    ],
+    masterplan: '/F4.webp',
   },
   {
     id: 'carcaraes',

@@ -11,6 +11,10 @@ import {
   Hammer,
   ShieldCheck,
   MessageCircle,
+  Images,
+  Milestone,
+  Gift,
+  Tag,
 } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
@@ -125,6 +129,12 @@ export default function ProyectoPage({ proyecto }) {
               {proyecto.nombre}
             </motion.h1>
 
+            {proyecto.tagline && (
+              <p className="mt-3 font-heading text-lg font-semibold text-primary-green sm:text-xl">
+                {proyecto.tagline}
+              </p>
+            )}
+
             <p className="mt-5 max-w-2xl font-sans text-base leading-relaxed text-premium-muted sm:text-lg">
               {proyecto.descripcion}
             </p>
@@ -209,6 +219,89 @@ export default function ProyectoPage({ proyecto }) {
               </section>
             )}
 
+            {/* Hitos por etapas */}
+            {proyecto.hitosEtapas?.length > 0 && (
+              <section>
+                <h2 className="flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-widest text-primary-green">
+                  <Milestone size={14} />
+                  Etapas del desarrollo
+                </h2>
+                <div className="mt-6 space-y-6">
+                  {proyecto.hitosEtapas.map((hito) => (
+                    <article
+                      key={hito.titulo}
+                      className="overflow-hidden rounded-2xl border border-premium-line bg-premium-gray"
+                    >
+                      {hito.fotoEtapa && (
+                        <div className="relative h-48 w-full overflow-hidden sm:h-56">
+                          <img
+                            src={hito.fotoEtapa || '/placeholder.svg'}
+                            alt={`${hito.titulo} — ${proyecto.nombre}`}
+                            className="h-full w-full object-cover"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-premium-gray/90 to-transparent" />
+                        </div>
+                      )}
+                      <div className="p-6">
+                        <div className="flex flex-wrap items-center gap-3">
+                          <h3 className="font-heading text-lg font-bold text-tech-white">
+                            {hito.titulo}
+                          </h3>
+                          <span className="rounded-full bg-primary-green/15 px-3 py-1 font-sans text-[0.68rem] font-semibold uppercase tracking-wider text-primary-green">
+                            {hito.estado}
+                          </span>
+                        </div>
+                        <p className="mt-3 font-sans text-sm leading-relaxed text-premium-muted">
+                          {hito.detalle}
+                        </p>
+                      </div>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* Beneficio Club */}
+            {proyecto.beneficioClub && (
+              <section className="rounded-2xl border border-primary-green/30 bg-primary-green/5 p-8">
+                <h2 className="flex items-center gap-2 font-heading text-lg font-bold text-tech-white">
+                  <Gift size={20} className="text-primary-green" />
+                  {proyecto.beneficioClub.titulo}
+                </h2>
+                <p className="mt-4 font-sans text-sm leading-relaxed text-premium-muted">
+                  {proyecto.beneficioClub.descripcion}
+                </p>
+              </section>
+            )}
+
+            {/* Galería */}
+            {proyecto.fotos?.length > 0 && (
+              <section>
+                <h2 className="flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-widest text-primary-green">
+                  <Images size={14} />
+                  Galería del proyecto
+                </h2>
+                <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
+                  {proyecto.fotos.map((foto, i) => (
+                    <div
+                      key={foto}
+                      className={`relative overflow-hidden rounded-xl border border-premium-line ${
+                        i === 0 ? 'col-span-2 row-span-2 sm:col-span-2' : ''
+                      }`}
+                    >
+                      <img
+                        src={foto || '/placeholder.svg'}
+                        alt={`${proyecto.nombre} — render ${i + 1}`}
+                        className={`w-full object-cover transition-transform duration-700 ease-out hover:scale-105 ${
+                          i === 0 ? 'h-full min-h-[16rem]' : 'h-36 sm:h-40'
+                        }`}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+
             {/* Mensaje para barrios consolidados */}
             {!isActivo && (
               <section className="rounded-2xl border border-premium-line bg-premium-gray p-8">
@@ -236,6 +329,37 @@ export default function ProyectoPage({ proyecto }) {
                   ? 'Coordiná una visita o pedí la ficha completa de lotes y precios actualizados.'
                   : 'Descubrí los barrios abiertos que tenemos en comercialización.'}
               </p>
+
+              {(proyecto.precio || proyecto.lotes) && (
+                <div className="mt-6 space-y-4 rounded-xl border border-premium-line bg-premium-dark p-5">
+                  {proyecto.precio && (
+                    <div className="flex items-start gap-3">
+                      <Tag size={18} className="mt-0.5 shrink-0 text-primary-green" />
+                      <div>
+                        <p className="font-sans text-[0.68rem] uppercase tracking-wider text-premium-muted">
+                          Precio
+                        </p>
+                        <p className="mt-0.5 font-sans text-sm font-medium text-tech-white">
+                          {proyecto.precio}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                  {proyecto.lotes && (
+                    <div className="flex items-start gap-3">
+                      <Layers size={18} className="mt-0.5 shrink-0 text-primary-green" />
+                      <div>
+                        <p className="font-sans text-[0.68rem] uppercase tracking-wider text-premium-muted">
+                          Lotes
+                        </p>
+                        <p className="mt-0.5 font-sans text-sm font-medium text-tech-white">
+                          {proyecto.lotes.total} en total · {proyecto.lotes.disponibles}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )}
 
               <a
                 href={`https://wa.me/${WHATSAPP}?text=${waText}`}
