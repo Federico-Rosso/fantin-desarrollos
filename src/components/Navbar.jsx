@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 const links = [
-  { label: 'Proyectos', href: '/' },
+  { label: 'Inicio', href: '/#inicio' },
+  { label: 'Proyectos', href: '/#proyectos' },
   { label: 'Nosotros', href: '/nosotros' },
   { label: 'Contacto', href: '/#contacto' },
 ];
@@ -23,7 +24,7 @@ export default function Navbar() {
 
   const isActive = (href) => {
     if (href === '/nosotros') return router.pathname === '/nosotros';
-    if (href === '/') return router.pathname === '/';
+    if (href === '/#inicio') return router.pathname === '/';
     return false;
   };
 
@@ -40,13 +41,13 @@ export default function Navbar() {
     >
       <nav className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-4 sm:px-10">
         <Link
-          href="/"
+          href="/#inicio"
           className="flex items-center gap-3 transition-all duration-300 ease-in-out hover:opacity-80"
         >
           <img
             src="/images/isologotipo.png"
             alt="Fantín Desarrollos"
-            className="h-9 w-auto object-contain sm:h-10"
+            className="h-12 w-auto object-contain sm:h-14"
           />
         </Link>
 
