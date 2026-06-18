@@ -20,13 +20,16 @@ export default function Footer() {
       <div className="mx-auto w-full max-w-7xl px-6 py-14 sm:px-10">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
-            <div className="flex items-center gap-3">
+            <Link
+              href="/#inicio"
+              className="inline-flex items-center transition-opacity duration-300 hover:opacity-80"
+            >
               <img
                 src="/images/isologotipo.png"
                 alt="Fantín Desarrollos"
-                className="h-11 w-auto object-contain"
+                className="h-16 w-auto object-contain sm:h-20"
               />
-            </div>
+            </Link>
             <p className="mt-5 font-sans text-sm leading-relaxed text-premium-muted">
               Naturaleza y arquitectura en equilibrio. 27 años entregando lo que
               prometemos.

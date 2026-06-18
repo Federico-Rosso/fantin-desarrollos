@@ -42,17 +42,9 @@ export default function Hero() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-28 sm:px-10"
+        className="relative z-10 mx-auto w-full max-w-7xl px-6 pt-16 sm:px-10"
       >
         <div className="max-w-3xl">
-          <motion.span
-            variants={item}
-            className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary-green/40 bg-primary-green/10 px-5 py-2 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-primary-green backdrop-blur-sm"
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-primary-green" />
-            27 años de trayectoria
-          </motion.span>
-
           <motion.h1
             variants={item}
             className="font-heading text-5xl font-black leading-[1.05] tracking-tight text-balance text-tech-white sm:text-6xl md:text-7xl lg:text-[5.25rem]"
