@@ -230,6 +230,40 @@ export default function ProyectoPage({ proyecto }) {
               </section>
             )}
 
+            {/* Sectores / Barrios */}
+            {proyecto.sectores?.length > 0 && (
+              <section>
+                <h2 className="flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-widest text-primary-green">
+                  <Layers size={14} />
+                  Barrios dentro de {proyecto.nombre}
+                </h2>
+                <div className="mt-6 space-y-4">
+                  {proyecto.sectores.map((sector) => (
+                    <article
+                      key={sector.nombre}
+                      className="rounded-2xl border border-premium-line bg-premium-gray p-6"
+                    >
+                      <div className="flex flex-wrap items-center gap-3">
+                        <h3 className="font-heading text-lg font-bold text-tech-white">
+                          {sector.nombre}
+                        </h3>
+                        {sector.estado && (
+                          <span className="rounded-full bg-primary-green/15 px-3 py-1 font-sans text-[0.68rem] font-semibold uppercase tracking-wider text-primary-green">
+                            {sector.estado}
+                          </span>
+                        )}
+                      </div>
+                      {sector.descripcion && (
+                        <p className="mt-3 font-sans text-sm leading-relaxed text-premium-muted">
+                          {sector.descripcion}
+                        </p>
+                      )}
+                    </article>
+                  ))}
+                </div>
+              </section>
+            )}
+
             {/* Hitos por etapas */}
             {proyecto.hitosEtapas?.length > 0 && (
               <section>
