@@ -39,22 +39,13 @@ export default function ProjectCard({ proyecto, onSelect }) {
         />
       </div>
 
-      {/* Status badge */}
-      <span
-        className={`absolute left-5 top-5 z-10 rounded-full px-3 py-1.5 font-sans text-[0.68rem] font-semibold uppercase tracking-wider ${
-          isActivo
-            ? 'bg-primary-green text-tech-white shadow-lg shadow-deep-green/30'
-            : 'border border-tech-white/40 bg-transparent text-tech-white/85 backdrop-blur-sm'
-        }`}
-      >
-        {proyecto.badge}
-      </span>
+      {/* Location (top-left, where the badge used to be) */}
+      <p className="absolute left-6 top-6 z-10 font-sans text-xs uppercase tracking-widest text-sage/90 drop-shadow-[0_1px_4px_rgba(0,0,0,0.6)]">
+        {proyecto.ubicacion}
+      </p>
 
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col justify-end p-6">
-        <p className="font-sans text-xs uppercase tracking-widest text-sage/80">
-          {proyecto.ubicacion}
-        </p>
         {proyecto.logo ? (
           <h3 className="mt-2">
             <span className="sr-only">{proyecto.nombre}</span>
