@@ -55,9 +55,20 @@ export default function ProjectCard({ proyecto, onSelect }) {
         <p className="font-sans text-xs uppercase tracking-widest text-sage/80">
           {proyecto.ubicacion}
         </p>
-        <h3 className="mt-2 font-heading text-2xl font-bold text-tech-white sm:text-3xl">
-          {proyecto.nombre}
-        </h3>
+        {proyecto.logo ? (
+          <h3 className="mt-2">
+            <span className="sr-only">{proyecto.nombre}</span>
+            <img
+              src={proyecto.logo || '/placeholder.svg'}
+              alt={`Logo de ${proyecto.nombre}`}
+              className="h-16 w-auto max-w-[80%] object-contain object-left drop-shadow-[0_2px_10px_rgba(255,255,255,0.18)] sm:h-20"
+            />
+          </h3>
+        ) : (
+          <h3 className="mt-2 font-heading text-2xl font-bold text-tech-white sm:text-3xl">
+            {proyecto.nombre}
+          </h3>
+        )}
 
         {/* Reveal on hover */}
         <div className="grid grid-rows-[0fr] transition-all duration-500 ease-out group-hover:grid-rows-[1fr]">

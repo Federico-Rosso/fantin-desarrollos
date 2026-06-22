@@ -126,7 +126,18 @@ export default function ProyectoPage({ proyecto }) {
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               className="mt-5 font-heading text-4xl font-black tracking-tight text-balance text-tech-white sm:text-6xl"
             >
-              {proyecto.nombre}
+              {proyecto.logo ? (
+                <>
+                  <span className="sr-only">{proyecto.nombre}</span>
+                  <img
+                    src={proyecto.logo || '/placeholder.svg'}
+                    alt={`Logo de ${proyecto.nombre}`}
+                    className="h-24 w-auto max-w-full object-contain object-left drop-shadow-[0_2px_14px_rgba(255,255,255,0.2)] sm:h-32"
+                  />
+                </>
+              ) : (
+                proyecto.nombre
+              )}
             </motion.h1>
 
             {proyecto.tagline && (

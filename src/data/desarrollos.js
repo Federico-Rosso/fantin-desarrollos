@@ -10,6 +10,7 @@ export const desarrollos = [
     lifecycle: 'activo',
     badge: 'En Obra / Últimos Lotes',
     imagen: '/images/dev-1.png',
+    logo: '/logos/terranova.png',
     descripcion:
       'Barrio abierto con infraestructura completa y los últimos lotes disponibles en plena ejecución de obra.',
     avance: 85,
@@ -22,6 +23,7 @@ export const desarrollos = [
     lifecycle: 'activo',
     badge: 'Desarrollo Premium / Lanzamiento',
     imagen: '/images/dev-3.png',
+    logo: '/logos/cinco-lagos.png',
     descripcion:
       'Desarrollo premium organizado en torno a cinco lagunas, con lotes amplios y paisajismo integral.',
     avance: 30,
@@ -134,6 +136,7 @@ export const desarrollos = [
     lifecycle: 'activo',
     badge: 'Turismo Rural / En Comercialización',
     imagen: '/images/dev-1.png',
+    logo: '/logos/carcaraes.png',
     descripcion:
       'Propuesta de turismo rural con lotes residenciales en comercialización, rodeada de paisaje productivo.',
     avance: 50,
