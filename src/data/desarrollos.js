@@ -6,7 +6,7 @@ export const desarrollos = [
   {
     id: 'fincas-rosedal',
     nombre: 'Las Fincas del Rosedal',
-    ubicacion: 'Ibarlucea, Santa Fe',
+    ubicacion: 'Ibarlucea',
     lifecycle: 'activo',
     badge: 'Lanzamiento Segunda Etapa',
     imagen: '/F4.webp',
@@ -69,6 +69,18 @@ export const desarrollos = [
     masterplan: '/F4.webp',
   },
   {
+    id: 'fincas-ros',
+    nombre: 'Fincas Ros',
+    ubicacion: 'Ibarlucea',
+    lifecycle: 'activo',
+    badge: 'En Comercialización',
+    imagen: '/images/dev-6.png',
+    descripcion:
+      'Nuevo loteo residencial en Ibarlucea, pensado para una vida tranquila y conectada, con infraestructura completa y entorno natural cuidado.',
+    avance: 35,
+    servicios: ['Luz', 'Agua', 'Calles', 'Alumbrado público', 'Espacios verdes'],
+  },
+  {
     id: 'terranova',
     nombre: 'Terranova',
     ubicacion: 'Oliveros',
@@ -108,56 +120,50 @@ export const desarrollos = [
     servicios: ['Luz', 'Agua', 'Calles', 'Gas', 'Áreas recreativas'],
   },
   {
-    id: 'solares-norte',
-    nombre: 'Solares Norte',
-    ubicacion: 'Timbúes',
-    lifecycle: 'activo',
-    badge: 'Oportunidad de Inversión',
-    imagen: '/images/dev-4.png',
-    descripcion:
-      'Loteo estratégico en el corredor norte, pensado como oportunidad de inversión con alta revalorización.',
-    avance: 45,
-    servicios: ['Luz', 'Agua', 'Calles', 'Espacios verdes'],
-  },
-  {
-    id: 'solares-sur',
-    nombre: 'Solares Sur',
-    ubicacion: 'Timbúes',
-    lifecycle: 'activo',
-    badge: 'Corredor Biodiversidad / En Venta',
-    imagen: '/images/dev-5.png',
-    descripcion:
-      'Desarrollo integrado a un corredor de biodiversidad, con lotes en venta y fuerte impronta ambiental.',
-    avance: 40,
-    servicios: ['Luz', 'Agua', 'Calles', 'Reserva natural', 'Senderos'],
-  },
-  {
     id: 'carcaraes',
-    nombre: 'Carcaraes',
-    ubicacion: 'Arroyo Seco',
+    nombre: 'Pueblo Carcaraes',
+    ubicacion: 'Oliveros',
     lifecycle: 'activo',
     badge: 'Turismo Rural / En Comercialización',
     imagen: '/images/dev-1.png',
     logo: '/logos/carcaraes.png',
     descripcion:
-      'Propuesta de turismo rural con lotes residenciales en comercialización, rodeada de paisaje productivo.',
+      'Pueblo Carcaraes es una propuesta de naturaleza y aventura en Oliveros, que integra distintos barrios y sectores dentro de un mismo entorno productivo y paisajístico.',
     avance: 50,
     servicios: ['Luz', 'Agua', 'Calles', 'Áreas comunes', 'Forestación'],
-  },
-  {
-    id: 'altos-orono',
-    nombre: 'Altos de Oroño',
-    ubicacion: 'Funes',
-    lifecycle: 'activo',
-    badge: 'Lanzamiento / Próximamente',
-    imagen: '/images/dev-3.png',
-    descripcion:
-      'Nuevo desarrollo en etapa de lanzamiento, con lotes en altura y vistas privilegiadas del entorno.',
-    avance: 10,
-    servicios: ['Luz', 'Agua', 'Calles', 'Espacios verdes'],
+    sectores: [
+      {
+        nombre: 'Chacras del Rincón',
+        estado: 'Legado',
+        descripcion:
+          'Sector fundacional con monte nativo protegido, donde la vida residencial convive con la preservación ambiental.',
+      },
+      {
+        nombre: 'Solares Norte',
+        estado: 'En comercialización',
+        descripcion:
+          'Loteo estratégico en el corredor norte del pueblo, con alta proyección de revalorización.',
+      },
+      {
+        nombre: 'Solares Sur',
+        estado: 'En comercialización',
+        descripcion:
+          'Sector integrado a un corredor de biodiversidad, con lotes en venta y fuerte impronta ambiental.',
+      },
+    ],
   },
 
   // ── BARRIOS CONSOLIDADOS ─────────────────────────────────────────────
+  {
+    id: 'altos-orono',
+    nombre: 'Altos de Oroño',
+    ubicacion: 'San Lorenzo',
+    lifecycle: 'consolidado',
+    badge: '100% Vendido / Consolidado',
+    imagen: '/images/dev-3.png',
+    descripcion:
+      'Barrio consolidado en San Lorenzo, con lotes en altura y vistas privilegiadas del entorno, hoy plenamente habitado.',
+  },
   {
     id: 'solares-carcarana',
     nombre: 'Solares del Carcarañá',
@@ -171,7 +177,7 @@ export const desarrollos = [
   {
     id: 'quinta-cairo',
     nombre: 'Quinta Cairo',
-    ubicacion: 'Pueblo Esther',
+    ubicacion: 'Capitán Bermúdez',
     lifecycle: 'consolidado',
     badge: '100% Vendido / Consolidado',
     imagen: '/images/dev-5.png',
@@ -180,19 +186,9 @@ export const desarrollos = [
       'Comunidad consolidada y completamente vendida, hoy un barrio maduro de referencia en la zona.',
   },
   {
-    id: 'chacras-rincon',
-    nombre: 'Chacras del Rincón',
-    ubicacion: 'Pérez',
-    lifecycle: 'consolidado',
-    badge: '100% Vendido / Monte Nativo Protegido',
-    imagen: '/images/dev-2.png',
-    descripcion:
-      'Loteo consolidado con monte nativo protegido, integrando vida residencial y preservación ambiental.',
-  },
-  {
     id: 'delta-bucare',
     nombre: 'Delta del Bucaré',
-    ubicacion: 'Granadero Baigorria',
+    ubicacion: 'Monje',
     lifecycle: 'consolidado',
     badge: 'Reserva Natural / Consolidado',
     imagen: '/images/dev-6.png',
