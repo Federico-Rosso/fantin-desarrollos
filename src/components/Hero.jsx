@@ -26,11 +26,13 @@ export default function Hero() {
         <img
           src="/images/hero-loteo.jpg"
           alt="Vista aérea de un loteo residencial al atardecer, rodeado de naturaleza"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover object-[center_65%]"
         />
         {/* Dark overlays for premium contrast */}
         <div className="absolute inset-0 bg-premium-black/60" />
         <div className="absolute inset-0 bg-gradient-to-r from-premium-black/90 via-transparent to-transparent" />
+        {/* Green accent gradient on the left */}
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-green/30 via-transparent to-transparent" />
         {/* Bottom fade to #0E0E0E so the next section blends seamlessly */}
         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-b from-transparent to-[#0E0E0E]" />
       </div>
