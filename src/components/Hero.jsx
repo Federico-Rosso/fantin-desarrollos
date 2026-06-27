@@ -24,14 +24,15 @@ export default function Hero() {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src="/images/hero-bg.png"
-          alt="Desarrollo inmobiliario premium rodeado de naturaleza"
+          src="/images/hero-loteo.jpg"
+          alt="Vista aérea de un loteo residencial al atardecer, rodeado de naturaleza"
           className="h-full w-full object-cover"
         />
         {/* Dark overlays for premium contrast */}
-        <div className="absolute inset-0 bg-premium-black/70" />
-        <div className="absolute inset-0 bg-gradient-to-t from-premium-black via-premium-black/40 to-premium-black/70" />
+        <div className="absolute inset-0 bg-premium-black/60" />
         <div className="absolute inset-0 bg-gradient-to-r from-premium-black/90 via-transparent to-transparent" />
+        {/* Bottom fade to #0E0E0E so the next section blends seamlessly */}
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-b from-transparent to-[#0E0E0E]" />
       </div>
 
       {/* Soft accent glow */}
@@ -49,18 +50,16 @@ export default function Hero() {
             variants={item}
             className="font-heading text-5xl font-black leading-[1.05] tracking-tight text-balance text-tech-white sm:text-6xl md:text-7xl lg:text-[5.25rem]"
           >
-            27 años entregando lo que{' '}
-            <span className="text-primary-green">prometemos</span>
+            Tu próximo hogar empieza en el{' '}
+            <span className="text-primary-green">entorno ideal</span>
           </motion.h1>
 
           <motion.p
             variants={item}
             className="mt-8 max-w-2xl font-sans text-base leading-relaxed text-premium-muted sm:text-lg"
           >
-            Diseñamos espacios donde la naturaleza y la arquitectura moderna se
-            encuentran en perfecto equilibrio. Loteos, barrios y desarrollos
-            urbanos pensados para vivir mejor, sin renunciar al entorno verde
-            que nos define.
+            Desarrollamos loteos y barrios que integran arquitectura moderna y
+            naturaleza para elevar tu calidad de vida.
           </motion.p>
 
           <motion.div
@@ -88,7 +87,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Bottom fade into next section */}
-      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-premium-black to-transparent" />
+      <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0E0E0E] to-transparent" />
     </section>
   );
 }
