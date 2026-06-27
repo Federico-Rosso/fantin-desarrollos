@@ -50,10 +50,6 @@ export default function Portfolio() {
           <h2 className="mt-4 font-heading text-4xl font-black leading-tight tracking-tight text-balance text-tech-white sm:text-5xl">
             Mirá nuestros desarrollos
           </h2>
-          <p className="mt-4 font-sans text-base leading-relaxed text-premium-muted">
-            Loteos residenciales integrados al paisaje, con lanzamientos y oportunidades de
-            inversión disponibles hoy.
-          </p>
         </div>
         {renderGrupo(enComercializacion)}
 
@@ -65,9 +61,6 @@ export default function Portfolio() {
           <h2 className="mt-4 font-heading text-4xl font-black leading-tight tracking-tight text-balance text-tech-white sm:text-5xl">
             Entregamos +2500 lotes
           </h2>
-          <p className="mt-4 font-sans text-base leading-relaxed text-premium-muted">
-            Barrios 100% vendidos y plenamente habitados que respaldan nuestra trayectoria.
-          </p>
         </div>
         {renderGrupo(consolidados)}
       </div>
