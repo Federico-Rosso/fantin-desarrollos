@@ -75,6 +75,7 @@ export const desarrollos = [
     lifecycle: 'activo',
     badge: 'En Comercialización',
     imagen: '/images/dev-6.png',
+    logo: '/logos/fincas-ros.webp',
     descripcion:
       'Nuevo loteo residencial en Ibarlucea, pensado para una vida tranquila y conectada, con infraestructura completa y entorno natural cuidado.',
     avance: 35,
@@ -161,6 +162,7 @@ export const desarrollos = [
     lifecycle: 'consolidado',
     badge: '100% Vendido / Consolidado',
     imagen: '/images/dev-3.png',
+    logo: '/logos/altos-orono.webp',
     descripcion:
       'Barrio consolidado en San Lorenzo, con lotes en altura y vistas privilegiadas del entorno, hoy plenamente habitado.',
   },
@@ -171,6 +173,7 @@ export const desarrollos = [
     lifecycle: 'consolidado',
     badge: '100% Vendido / Hito Fundacional',
     imagen: '/images/dev-4.png',
+    logo: '/logos/solares-carcarana.webp',
     descripcion:
       'Hito fundacional de Fantín Desarrollos: un barrio abierto íntegramente vendido y plenamente habitado.',
   },
@@ -192,6 +195,7 @@ export const desarrollos = [
     lifecycle: 'consolidado',
     badge: 'Reserva Natural / Consolidado',
     imagen: '/images/dev-6.png',
+    logo: '/logos/delta-bucare.webp',
     descripcion:
       'Barrio consolidado en torno a una reserva natural, con humedales y biodiversidad protegida.',
   },
