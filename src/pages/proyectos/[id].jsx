@@ -6,7 +6,6 @@ import { motion } from 'framer-motion';
 import {
   MapPin,
   ArrowLeft,
-  CheckCircle2,
   Layers,
   Hammer,
   ShieldCheck,
@@ -15,6 +14,7 @@ import {
   Milestone,
   Gift,
   Tag,
+  Map as MapIcon,
 } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
@@ -22,6 +22,28 @@ import { desarrollos } from '../../data/desarrollos';
 
 // Número de WhatsApp comercial (reemplazar por el real)
 const WHATSAPP = '5490000000000';
+
+// Mapea cada servicio a un emoji específico según palabras clave,
+// adaptándose dinámicamente a los servicios de cada desarrollo.
+function getServicioEmoji(servicio = '') {
+  const s = servicio.toLowerCase();
+  if (s.includes('agua')) return '💧';
+  if (s.includes('cloaca')) return '🚰';
+  if (s.includes('gas')) return '🔥';
+  if (s.includes('wifi') || s.includes('red') || s.includes('fibra')) return '📶';
+  if (s.includes('alumbrado') || s.includes('luz') || s.includes('electric')) return '💡';
+  if (s.includes('cordón') || s.includes('cordon') || s.includes('cuneta')) return '🧱';
+  if (s.includes('calle') || s.includes('paviment') || s.includes('asfalt')) return '🛣️';
+  if (s.includes('juego')) return '🛝';
+  if (s.includes('laguna') || s.includes('lago')) return '🏞️';
+  if (s.includes('forest') || s.includes('verde') || s.includes('arbol') || s.includes('árbol'))
+    return '🌳';
+  if (s.includes('segur') || s.includes('perimetr')) return '🛡️';
+  if (s.includes('recreat') || s.includes('común') || s.includes('comun') || s.includes('club'))
+    return '🎾';
+  if (s.includes('comercial') || s.includes('local') || s.includes('gastro')) return '🛍️';
+  return '✅';
+}
 
 export default function ProyectoPage({ proyecto }) {
   const router = useRouter();
@@ -82,74 +104,55 @@ export default function ProyectoPage({ proyecto }) {
       <Navbar />
 
       <main className="bg-premium-black pb-28 font-sans text-tech-white">
-        {/* HERO */}
-        <section className="relative flex h-[80vh] min-h-[520px] w-full items-end overflow-hidden">
+        {/* HERO — minimalista: solo el logo dinámico centrado sobre la imagen */}
+        <section className="relative flex h-[80vh] min-h-[520px] w-full items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <img
               src={proyecto.imagen || '/placeholder.svg'}
               alt={`Desarrollo ${proyecto.nombre} en ${proyecto.ubicacion}`}
               className={`h-full w-full object-cover ${
-                isActivo ? 'brightness-[0.45]' : 'brightness-[0.4] grayscale-[0.4]'
+                isActivo ? 'brightness-[0.5]' : 'brightness-[0.45] grayscale-[0.4]'
               }`}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-premium-black via-premium-black/40 to-premium-black/20" />
+            <div className="absolute inset-0 bg-gradient-to-t from-premium-black via-premium-black/30 to-premium-black/30" />
           </div>
 
-          <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-16 sm:px-10">
-            <Link
-              href="/#proyectos"
-              className="mb-6 inline-flex items-center gap-2 font-sans text-sm font-medium text-premium-muted transition-colors hover:text-tech-white"
-            >
-              <ArrowLeft size={16} />
-              Volver a desarrollos
-            </Link>
-
-            <div className="flex flex-wrap gap-3">
-              <span
-                className={`rounded-full px-3 py-1.5 font-sans text-[0.68rem] font-semibold uppercase tracking-widest ${
-                  isActivo
-                    ? 'bg-primary-green text-tech-white'
-                    : 'border border-tech-white/40 text-tech-white/90 backdrop-blur-sm'
-                }`}
+          {/* Volver — esquina superior izquierda */}
+          <div className="absolute inset-x-0 top-0 z-20">
+            <div className="mx-auto w-full max-w-7xl px-6 pt-8 sm:px-10">
+              <Link
+                href="/#proyectos"
+                className="inline-flex items-center gap-2 font-sans text-sm font-medium text-tech-white/80 transition-colors hover:text-tech-white"
               >
-                {proyecto.badge}
-              </span>
-              <span className="flex items-center gap-1.5 rounded-full border border-tech-white/15 bg-tech-white/10 px-3 py-1.5 font-sans text-[0.68rem] font-semibold uppercase tracking-widest backdrop-blur-md">
-                <MapPin size={12} />
-                {proyecto.ubicacion}
-              </span>
+                <ArrowLeft size={16} />
+                Volver a desarrollos
+              </Link>
             </div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-5 font-heading text-4xl font-black tracking-tight text-balance text-tech-white sm:text-6xl"
-            >
-              {proyecto.logo ? (
-                <>
-                  <span className="sr-only">{proyecto.nombre}</span>
-                  <img
-                    src={proyecto.logo || '/placeholder.svg'}
-                    alt={`Logo de ${proyecto.nombre}`}
-                    className="h-24 w-auto max-w-full object-contain object-left drop-shadow-[0_2px_14px_rgba(255,255,255,0.2)] sm:h-32"
-                  />
-                </>
-              ) : (
-                proyecto.nombre
-              )}
-            </motion.h1>
-
-            {proyecto.tagline && (
-              <p className="mt-3 font-heading text-lg font-semibold text-primary-green sm:text-xl">
-                {proyecto.tagline}
-              </p>
-            )}
-
-            <p className="mt-5 max-w-2xl font-sans text-base leading-relaxed text-premium-muted sm:text-lg">
-              {proyecto.descripcion}
-            </p>
           </div>
+
+          {/* Logo dinámico centrado */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="relative z-10 flex items-center justify-center px-6"
+          >
+            <span className="sr-only">{proyecto.nombre}</span>
+            {proyecto.logo ? (
+              <img
+                src={proyecto.logo || '/placeholder.svg'}
+                alt={`Logo de ${proyecto.nombre}`}
+                className="w-56 max-w-[80vw] object-contain drop-shadow-[0_4px_24px_rgba(0,0,0,0.45)]"
+              />
+            ) : (
+              <h1
+                aria-hidden="true"
+                className="font-heading text-4xl font-black tracking-tight text-tech-white sm:text-6xl"
+              >
+                {proyecto.nombre}
+              </h1>
+            )}
+          </motion.div>
         </section>
 
         {/* STATS */}
@@ -172,6 +175,53 @@ export default function ProyectoPage({ proyecto }) {
                 </p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* ENCABEZADO + DESCRIPCIÓN */}
+        <section className="mx-auto w-full max-w-7xl px-6 pt-20 sm:px-10">
+          <h1 className="font-heading text-3xl font-black tracking-tight text-balance text-tech-white sm:text-4xl">
+            {proyecto.nombre}
+          </h1>
+          {proyecto.tagline && (
+            <p className="mt-3 font-heading text-lg font-semibold text-primary-green sm:text-xl">
+              {proyecto.tagline}
+            </p>
+          )}
+          <p className="mt-5 max-w-3xl font-sans text-base leading-relaxed text-premium-muted sm:text-lg">
+            {proyecto.descripcion}
+          </p>
+        </section>
+
+        {/* PLANO DEL DESARROLLO — placeholder universal */}
+        <section className="mx-auto w-full max-w-7xl px-6 pt-16 sm:px-10">
+          <h2 className="flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-widest text-primary-green">
+            <MapIcon size={14} />
+            Plano del desarrollo
+          </h2>
+          <div className="group relative mt-6 flex min-h-[18rem] w-full items-center justify-center overflow-hidden rounded-2xl border border-premium-line bg-premium-gray shadow-lg sm:min-h-[22rem]">
+            {/* Patrón sutil tipo grilla / mapa */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 opacity-[0.35]"
+              style={{
+                backgroundImage:
+                  'linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px)',
+                backgroundSize: '48px 48px',
+              }}
+            />
+            <div className="relative z-10 flex flex-col items-center px-6 text-center">
+              <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-premium-line bg-premium-dark text-primary-green">
+                <MapIcon size={28} strokeWidth={1.5} />
+              </div>
+              <p className="mt-5 font-heading text-lg font-bold text-tech-white">
+                Masterplan en preparación
+              </p>
+              <p className="mt-2 max-w-md font-sans text-sm leading-relaxed text-premium-muted">
+                Estamos integrando el plano interactivo de {proyecto.nombre}. Solicitá la
+                planimetría completa con disponibilidad y dimensiones de lotes.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -216,10 +266,12 @@ export default function ProyectoPage({ proyecto }) {
                   {proyecto.servicios.map((servicio) => (
                     <div
                       key={servicio}
-                      className="flex items-center gap-4 rounded-xl border border-premium-line bg-premium-gray p-5"
+                      className="flex items-center gap-4 rounded-xl border border-premium-line bg-premium-gray p-5 transition-colors hover:border-primary-green/40"
                     >
-                      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-premium-dark text-primary-green">
-                        <CheckCircle2 size={18} />
+                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-premium-dark text-xl leading-none">
+                        <span role="img" aria-hidden="true">
+                          {getServicioEmoji(servicio)}
+                        </span>
                       </div>
                       <span className="font-sans text-sm font-light text-tech-white">
                         {servicio}
@@ -425,6 +477,74 @@ export default function ProyectoPage({ proyecto }) {
             </div>
           </aside>
         </div>
+
+        {/* UBICACIÓN — layout integrado a 2 columnas */}
+        <section className="mx-auto mt-24 w-full max-w-7xl px-6 sm:px-10">
+          <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            {/* Columna izquierda: título + entorno */}
+            <div>
+              <h2 className="font-heading text-3xl font-black tracking-tight text-balance text-tech-white sm:text-4xl">
+                Ubicación privilegiada
+              </h2>
+              <p className="mt-5 max-w-xl font-sans text-base leading-relaxed text-premium-muted">
+                {proyecto.ubicacionDescripcion ||
+                  `${proyecto.nombre} se emplaza en ${proyecto.ubicacion}, combinando la tranquilidad del entorno natural con un acceso ágil a los principales corredores de la región.`}
+              </p>
+
+              {proyecto.distancias?.length > 0 && (
+                <ul className="mt-8 space-y-4">
+                  {proyecto.distancias.map((d) => (
+                    <li key={d.lugar} className="flex items-center justify-between gap-6 border-b border-premium-line pb-4">
+                      <span className="font-sans text-sm text-tech-white">{d.lugar}</span>
+                      <span className="font-heading text-sm font-bold text-primary-green">
+                        {d.valor}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-premium-line bg-premium-gray px-4 py-2 font-sans text-sm font-medium text-tech-white">
+                <MapPin size={15} className="text-primary-green" />
+                {proyecto.ubicacion}
+              </div>
+            </div>
+
+            {/* Columna derecha: mapa fusionado */}
+            <div className="overflow-hidden rounded-2xl border border-premium-line shadow-lg">
+              {proyecto.coords ? (
+                <iframe
+                  title={`Mapa de ${proyecto.nombre}`}
+                  src={`https://maps.google.com/maps?q=${proyecto.coords.lat},${proyecto.coords.lng}&z=14&output=embed`}
+                  className="h-[20rem] w-full border-0 grayscale-[0.2] sm:h-[24rem]"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
+              ) : (
+                <div className="relative flex h-[20rem] w-full items-center justify-center bg-premium-gray sm:h-[24rem]">
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-0 opacity-[0.35]"
+                    style={{
+                      backgroundImage:
+                        'linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px)',
+                      backgroundSize: '40px 40px',
+                    }}
+                  />
+                  <div className="relative z-10 flex flex-col items-center text-center">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-premium-line bg-premium-dark text-primary-green">
+                      <MapPin size={24} strokeWidth={1.5} />
+                    </div>
+                    <p className="mt-4 font-sans text-sm text-premium-muted">
+                      Mapa de {proyecto.ubicacion}
+                    </p>
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
       </main>
 
       {/* FLOATING WHATSAPP CTA (mobile) */}
