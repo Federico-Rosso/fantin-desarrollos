@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 
 const stats = [
   { value: '27', suffix: 'Años', label: 'de trayectoria ininterrumpida' },
-  { value: '+500', suffix: 'Lotes', label: 'entregados a sus dueños' },
-  { value: '+30', suffix: 'Desarrollos', label: 'urbanos finalizados' },
-  { value: '100%', suffix: 'Compromiso', label: 'con cada promesa cumplida' },
+  { value: '+2500', suffix: 'Clientes', label: 'contentos' },
+  { value: '+12', suffix: 'Desarrollos', label: 'terminados' },
+  { value: '+3200', suffix: 'Lotes', label: 'en desarrollo' },
 ];
 
 const item = {
@@ -20,9 +20,9 @@ const wrap = {
 
 export default function Stats() {
   return (
-    <section id="nosotros" className="relative bg-premium-dark py-24 sm:py-28">
+    <section id="nosotros" className="relative bg-premium-dark py-14 sm:py-16">
       <div className="mx-auto w-full max-w-7xl px-6 sm:px-10">
-        <div className="mb-16 max-w-2xl">
+        <div className="mb-10 max-w-2xl">
           <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-primary-green">
             Nosotros
           </span>
