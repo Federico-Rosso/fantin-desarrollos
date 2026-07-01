@@ -12,6 +12,8 @@ export const desarrollos = [
     imagen: '/F4.webp',
     logo: '/logos/fincas-rosedal.png',
     tagline: 'Vida de pueblo, a 5 minutos de la gran ciudad.',
+    subtituloHero:
+      'A solo 5 minutos de Rosario, y cerca de Funes también. Las Fincas del Rosedal combina la tranquilidad absoluta del entorno natural con la comodidad urbana de primer nivel',
     descripcion:
       'A solo 5 minutos de Rosario, y cerca de Funes también. Las Fincas del Rosedal combina la tranquilidad absoluta del entorno natural con la comodidad urbana de primer nivel.',
     precio: 'Precios promocionales de lanzamiento segunda etapa.',
@@ -23,7 +25,7 @@ export const desarrollos = [
     servicios: [
       'Calles pavimentadas',
       'Cordón cuneta',
-      'Alumbrado público',
+      'Alambrado público',
       'Electricidad',
       'Agua potable',
       'Espacios verdes intervenidos',
@@ -76,6 +78,8 @@ export const desarrollos = [
     badge: 'En Comercialización',
     imagen: '/images/dev-6.png',
     logo: '/logos/fincas-ros.webp',
+    subtituloHero:
+      'Un nuevo loteo residencial en Ibarlucea, pensado para una vida tranquila y conectada, con infraestructura completa y un entorno natural cuidado',
     descripcion:
       'Nuevo loteo residencial en Ibarlucea, pensado para una vida tranquila y conectada, con infraestructura completa y entorno natural cuidado.',
     avance: 35,
@@ -89,6 +93,8 @@ export const desarrollos = [
     badge: 'En Obra / Últimos Lotes',
     imagen: '/images/dev-1.png',
     logo: '/logos/terranova.png',
+    subtituloHero:
+      'En Oliveros, un barrio abierto con infraestructura completa y los últimos lotes disponibles, en plena ejecución de obra',
     descripcion:
       'Barrio abierto con infraestructura completa y los últimos lotes disponibles en plena ejecución de obra.',
     avance: 85,
@@ -102,6 +108,8 @@ export const desarrollos = [
     badge: 'Desarrollo Premium / Lanzamiento',
     imagen: '/images/dev-3.png',
     logo: '/logos/cinco-lagos.png',
+    subtituloHero:
+      'Un desarrollo premium organizado en torno a cinco lagunas, con lotes amplios y paisajismo integral en Ibarlucea',
     descripcion:
       'Desarrollo premium organizado en torno a cinco lagunas, con lotes amplios y paisajismo integral.',
     avance: 30,
@@ -115,6 +123,8 @@ export const desarrollos = [
     badge: 'Comercialización Avanzada',
     imagen: '/images/dev-2.png',
     logo: '/logos/fincas-ybarlucea.png',
+    subtituloHero:
+      'Lotes residenciales de gran superficie en un entorno consolidado de Ibarlucea, con comercialización en etapa avanzada',
     descripcion:
       'Lotes residenciales de gran superficie en un entorno consolidado, con comercialización en etapa avanzada.',
     avance: 65,
@@ -128,6 +138,8 @@ export const desarrollos = [
     badge: 'Turismo Rural / En Comercialización',
     imagen: '/images/dev-1.png',
     logo: '/logos/carcaraes.png',
+    subtituloHero:
+      'Una propuesta de naturaleza y aventura en Oliveros, que integra distintos barrios y sectores dentro de un mismo entorno productivo y paisajístico',
     descripcion:
       'Pueblo Carcaraes es una propuesta de naturaleza y aventura en Oliveros, que integra distintos barrios y sectores dentro de un mismo entorno productivo y paisajístico.',
     avance: 50,
@@ -163,6 +175,8 @@ export const desarrollos = [
     badge: '100% Vendido / Consolidado',
     imagen: '/images/dev-3.png',
     logo: '/logos/altos-orono.webp',
+    subtituloHero:
+      'Un barrio consolidado en San Lorenzo, con lotes en altura y vistas privilegiadas del entorno, hoy plenamente habitado',
     descripcion:
       'Barrio consolidado en San Lorenzo, con lotes en altura y vistas privilegiadas del entorno, hoy plenamente habitado.',
   },
@@ -174,6 +188,8 @@ export const desarrollos = [
     badge: '100% Vendido / Hito Fundacional',
     imagen: '/images/dev-4.png',
     logo: '/logos/solares-carcarana.webp',
+    subtituloHero:
+      'El hito fundacional de Fantín Desarrollos en Carcarañá: un barrio abierto íntegramente vendido y plenamente habitado',
     descripcion:
       'Hito fundacional de Fantín Desarrollos: un barrio abierto íntegramente vendido y plenamente habitado.',
   },
@@ -185,6 +201,8 @@ export const desarrollos = [
     badge: '100% Vendido / Consolidado',
     imagen: '/images/dev-5.png',
     logo: '/logos/quinta-cairo.png',
+    subtituloHero:
+      'Una comunidad consolidada y completamente vendida en Capitán Bermúdez, hoy un barrio maduro de referencia en la zona',
     descripcion:
       'Comunidad consolidada y completamente vendida, hoy un barrio maduro de referencia en la zona.',
   },
@@ -196,6 +214,8 @@ export const desarrollos = [
     badge: 'Reserva Natural / Consolidado',
     imagen: '/images/dev-6.png',
     logo: '/logos/delta-bucare.webp',
+    subtituloHero:
+      'Un barrio consolidado en Monje, en torno a una reserva natural, con humedales y biodiversidad protegida',
     descripcion:
       'Barrio consolidado en torno a una reserva natural, con humedales y biodiversidad protegida.',
   },
