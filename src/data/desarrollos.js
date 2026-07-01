@@ -36,6 +36,8 @@ export const desarrollos = [
       titulo: 'Club Bancario Rosario Bonificado',
       descripcion:
         'Con la compra del lote tenés bonificada la cuota de ingreso al Club Bancario Rosario, sede a 5 minutos (en Cinco Lagos, Ybarlucea) y sede zona norte.',
+      logo: '/logos/club-bancario.webp',
+      aliado: true,
     },
     hitosEtapas: [
       {

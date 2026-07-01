@@ -423,13 +423,31 @@ export default function ProyectoPage({ proyecto }) {
             {/* Beneficio Club */}
             {proyecto.beneficioClub && (
               <section className="rounded-2xl border border-primary-green/30 bg-primary-green/5 p-8">
-                <h2 className="flex items-center gap-2 font-heading text-lg font-bold text-tech-white">
-                  <Gift size={20} className="text-primary-green" />
-                  {proyecto.beneficioClub.titulo}
-                </h2>
-                <p className="mt-4 font-sans text-sm leading-relaxed text-premium-muted">
-                  {proyecto.beneficioClub.descripcion}
-                </p>
+                <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
+                  {proyecto.beneficioClub.logo && (
+                    <div className="flex shrink-0 items-center justify-center rounded-2xl border border-premium-line bg-tech-white p-4 sm:p-5">
+                      <img
+                        src={proyecto.beneficioClub.logo || '/placeholder.svg'}
+                        alt={`Logo de ${proyecto.beneficioClub.titulo}`}
+                        className="h-24 w-auto object-contain sm:h-28"
+                      />
+                    </div>
+                  )}
+                  <div>
+                    {proyecto.beneficioClub.aliado && (
+                      <span className="inline-block rounded-full border border-primary-green/40 bg-primary-green/10 px-3 py-1 font-sans text-[0.68rem] font-semibold uppercase tracking-wider text-primary-green">
+                        Aliado institucional
+                      </span>
+                    )}
+                    <h2 className="mt-3 flex items-center gap-2 font-heading text-lg font-bold text-tech-white">
+                      <Gift size={20} className="text-primary-green" />
+                      {proyecto.beneficioClub.titulo}
+                    </h2>
+                    <p className="mt-4 font-sans text-sm leading-relaxed text-premium-muted">
+                      {proyecto.beneficioClub.descripcion}
+                    </p>
+                  </div>
+                </div>
               </section>
             )}
 
