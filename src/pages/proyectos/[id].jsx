@@ -66,19 +66,20 @@ function getServicioIcon(servicio = '') {
 export default function ProyectoPage({ proyecto }) {
   const router = useRouter();
 
-  // Galería / lightbox
+  // Galería / lightbox — las fotos más el plano (si existe) como última imagen
   const fotos = proyecto?.fotos ?? [];
+  const galeria = proyecto?.masterplan ? [...fotos, proyecto.masterplan] : fotos;
   const [lightboxIndex, setLightboxIndex] = useState(null);
   const isLightboxOpen = lightboxIndex !== null;
 
   const closeLightbox = useCallback(() => setLightboxIndex(null), []);
   const showPrev = useCallback(
-    () => setLightboxIndex((i) => (i === null ? i : (i - 1 + fotos.length) % fotos.length)),
-    [fotos.length],
+    () => setLightboxIndex((i) => (i === null ? i : (i - 1 + galeria.length) % galeria.length)),
+    [galeria.length],
   );
   const showNext = useCallback(
-    () => setLightboxIndex((i) => (i === null ? i : (i + 1) % fotos.length)),
-    [fotos.length],
+    () => setLightboxIndex((i) => (i === null ? i : (i + 1) % galeria.length)),
+    [galeria.length],
   );
 
   useEffect(() => {
@@ -238,30 +239,51 @@ export default function ProyectoPage({ proyecto }) {
             <MapIcon size={14} />
             Plano del desarrollo
           </h2>
-          <div className="group relative mt-6 flex min-h-[18rem] w-full items-center justify-center overflow-hidden rounded-2xl border border-premium-line bg-premium-gray shadow-lg sm:min-h-[22rem]">
-            {/* Patrón sutil tipo grilla / mapa */}
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 opacity-[0.35]"
-              style={{
-                backgroundImage:
-                  'linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px)',
-                backgroundSize: '48px 48px',
-              }}
-            />
-            <div className="relative z-10 flex flex-col items-center px-6 text-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-premium-line bg-premium-dark text-primary-green">
-                <MapIcon size={28} strokeWidth={1.5} />
+          {proyecto.masterplan ? (
+            <button
+              type="button"
+              onClick={() => setLightboxIndex(fotos.length)}
+              aria-label={`Ampliar plano de ${proyecto.nombre}`}
+              className="group relative mt-6 block w-full cursor-pointer overflow-hidden rounded-2xl border border-premium-line bg-premium-gray shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-green"
+            >
+              <img
+                src={proyecto.masterplan || '/placeholder.svg'}
+                alt={`Plano del desarrollo ${proyecto.nombre}`}
+                className="w-full object-contain"
+              />
+              <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-premium-black/0 opacity-0 transition-all duration-300 group-hover:bg-premium-black/20 group-hover:opacity-100">
+                <span className="flex items-center gap-2 rounded-full bg-premium-black/70 px-4 py-2 font-sans text-sm font-medium text-tech-white">
+                  <Images size={16} />
+                  Ver plano en grande
+                </span>
+              </span>
+            </button>
+          ) : (
+            <div className="group relative mt-6 flex min-h-[18rem] w-full items-center justify-center overflow-hidden rounded-2xl border border-premium-line bg-premium-gray shadow-lg sm:min-h-[22rem]">
+              {/* Patrón sutil tipo grilla / mapa */}
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 opacity-[0.35]"
+                style={{
+                  backgroundImage:
+                    'linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px)',
+                  backgroundSize: '48px 48px',
+                }}
+              />
+              <div className="relative z-10 flex flex-col items-center px-6 text-center">
+                <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-premium-line bg-premium-dark text-primary-green">
+                  <MapIcon size={28} strokeWidth={1.5} />
+                </div>
+                <p className="mt-5 font-heading text-lg font-bold text-tech-white">
+                  Masterplan en preparación
+                </p>
+                <p className="mt-2 max-w-md font-sans text-sm leading-relaxed text-premium-muted">
+                  Estamos integrando el plano interactivo de {proyecto.nombre}. Solicitá la
+                  planimetría completa con disponibilidad y dimensiones de lotes.
+                </p>
               </div>
-              <p className="mt-5 font-heading text-lg font-bold text-tech-white">
-                Masterplan en preparación
-              </p>
-              <p className="mt-2 max-w-md font-sans text-sm leading-relaxed text-premium-muted">
-                Estamos integrando el plano interactivo de {proyecto.nombre}. Solicitá la
-                planimetría completa con disponibilidad y dimensiones de lotes.
-              </p>
             </div>
-          </div>
+          )}
         </section>
 
         {/* BODY */}
@@ -611,8 +633,8 @@ export default function ProyectoPage({ proyecto }) {
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.25 }}
-              src={fotos[lightboxIndex] || '/placeholder.svg'}
-              alt={`${proyecto.nombre} — foto ${lightboxIndex + 1} de ${fotos.length}`}
+              src={galeria[lightboxIndex] || '/placeholder.svg'}
+              alt={`${proyecto.nombre} — imagen ${lightboxIndex + 1} de ${galeria.length}`}
               className="max-h-[82vh] max-w-[88vw] rounded-lg object-contain shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             />
@@ -632,7 +654,7 @@ export default function ProyectoPage({ proyecto }) {
 
             {/* Contador */}
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 rounded-full bg-premium-gray/70 px-4 py-1.5 font-sans text-sm text-tech-white">
-              {lightboxIndex + 1} / {fotos.length}
+              {lightboxIndex + 1} / {galeria.length}
             </div>
           </motion.div>
         )}

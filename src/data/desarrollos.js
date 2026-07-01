@@ -68,7 +68,7 @@ export const desarrollos = [
       '/C1.webp',
       '/B1.webp',
     ],
-    masterplan: '/F4.webp',
+    masterplan: '/planos/fincas-rosedal.png',
   },
   {
     id: 'fincas-ros',
