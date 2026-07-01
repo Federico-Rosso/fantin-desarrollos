@@ -43,7 +43,7 @@ export default function Contact() {
   const isSubmitting = status === 'submitting';
 
   return (
-    <section id="contacto" className="relative bg-premium-black py-24 sm:py-32">
+    <section id="contacto" className="relative bg-premium-black py-14 sm:py-16">
       <div className="mx-auto w-full max-w-5xl px-6 sm:px-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

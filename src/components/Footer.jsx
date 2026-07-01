@@ -1,11 +1,23 @@
 import React from 'react';
 import Link from 'next/link';
-import { Globe, Mail, Phone } from 'lucide-react';
+import { FaInstagram, FaFacebookF, FaYoutube } from 'react-icons/fa';
 
 const socials = [
-  { label: 'Sitio web', href: '#', Icon: Globe },
-  { label: 'Email', href: 'mailto:contacto@fantindesarrollos.com', Icon: Mail },
-  { label: 'Teléfono', href: 'tel:+540000000000', Icon: Phone },
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/fantindesarrollos/',
+    Icon: FaInstagram,
+  },
+  {
+    label: 'Facebook',
+    href: 'https://www.facebook.com/FantinDesarrollos',
+    Icon: FaFacebookF,
+  },
+  {
+    label: 'YouTube',
+    href: 'https://www.youtube.com/@fantindesarrollos',
+    Icon: FaYoutube,
+  },
 ];
 
 const navLinks = [
@@ -17,7 +29,7 @@ const navLinks = [
 export default function Footer() {
   return (
     <footer className="border-t border-premium-line bg-premium-dark">
-      <div className="mx-auto w-full max-w-7xl px-6 py-14 sm:px-10">
+      <div className="mx-auto w-full max-w-7xl px-6 py-10 sm:px-10">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
             <Link
@@ -27,13 +39,9 @@ export default function Footer() {
               <img
                 src="/images/isologotipo.png"
                 alt="Fantín Desarrollos"
-                className="h-16 w-auto object-contain sm:h-20"
+                className="h-28 w-auto object-contain sm:h-32"
               />
             </Link>
-            <p className="mt-5 font-sans text-sm leading-relaxed text-premium-muted">
-              Naturaleza y arquitectura en equilibrio. 27 años entregando lo que
-              prometemos.
-            </p>
           </div>
 
           <div className="flex flex-col gap-4">
@@ -60,6 +68,8 @@ export default function Footer() {
                 <a
                   key={label}
                   href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={label}
                   className="flex h-10 w-10 items-center justify-center rounded-full border border-premium-line text-premium-muted transition-all duration-300 ease-in-out hover:-translate-y-1 hover:border-primary-green hover:text-primary-green"
                 >
@@ -73,8 +83,7 @@ export default function Footer() {
         <div className="section-divider my-10" />
 
         <p className="text-center font-sans text-xs tracking-wide text-premium-muted">
-          &copy; 2026 Fantín Desarrollos. Naturaleza y arquitectura en
-          equilibrio.
+          &copy; 2026 Fantín Desarrollos.
         </p>
       </div>
     </footer>

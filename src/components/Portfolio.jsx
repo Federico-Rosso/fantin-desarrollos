@@ -40,7 +40,7 @@ export default function Portfolio() {
   );
 
   return (
-    <section id="proyectos" className="relative bg-premium-black pt-12 pb-24 sm:pt-16 sm:pb-32">
+    <section id="proyectos" className="relative bg-premium-black pt-10 pb-14 sm:pt-12 sm:pb-16">
       <div className="mx-auto w-full max-w-7xl px-6 sm:px-10">
         {/* En comercialización */}
         <div className="mb-10 max-w-2xl">
@@ -54,7 +54,7 @@ export default function Portfolio() {
         {renderGrupo(enComercializacion)}
 
         {/* Consolidados */}
-        <div className="mb-10 mt-24 max-w-2xl">
+        <div className="mb-10 mt-16 max-w-2xl">
           <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-primary-green">
             Barrios consolidados
           </span>
