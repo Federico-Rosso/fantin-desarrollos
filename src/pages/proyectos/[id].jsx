@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import {
   MapPin,
   ArrowLeft,
@@ -13,8 +13,24 @@ import {
   Images,
   Milestone,
   Gift,
-  Tag,
   Map as MapIcon,
+  Route,
+  Construction,
+  Fence,
+  Zap,
+  Droplets,
+  Trees,
+  Baby,
+  Wifi,
+  Waves,
+  Flame,
+  Lightbulb,
+  Trophy,
+  ShoppingBag,
+  CheckCircle2,
+  X,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
@@ -23,30 +39,62 @@ import { desarrollos } from '../../data/desarrollos';
 // Número de WhatsApp comercial (reemplazar por el real)
 const WHATSAPP = '5490000000000';
 
-// Mapea cada servicio a un emoji específico según palabras clave,
-// adaptándose dinámicamente a los servicios de cada desarrollo.
-function getServicioEmoji(servicio = '') {
+// Mapea cada servicio a un ícono outline (estética Fantín, verde) según
+// palabras clave, adaptándose dinámicamente a los servicios de cada desarrollo.
+function getServicioIcon(servicio = '') {
   const s = servicio.toLowerCase();
-  if (s.includes('agua')) return '💧';
-  if (s.includes('cloaca')) return '🚰';
-  if (s.includes('gas')) return '🔥';
-  if (s.includes('wifi') || s.includes('red') || s.includes('fibra')) return '📶';
-  if (s.includes('alumbrado') || s.includes('luz') || s.includes('electric')) return '💡';
-  if (s.includes('cordón') || s.includes('cordon') || s.includes('cuneta')) return '🧱';
-  if (s.includes('calle') || s.includes('paviment') || s.includes('asfalt')) return '🛣️';
-  if (s.includes('juego')) return '🛝';
-  if (s.includes('laguna') || s.includes('lago')) return '🏞️';
+  if (s.includes('agua')) return Droplets;
+  if (s.includes('cloaca')) return Droplets;
+  if (s.includes('gas')) return Flame;
+  if (s.includes('wifi') || s.includes('red') || s.includes('fibra')) return Wifi;
+  if (s.includes('electric')) return Zap;
+  if (s.includes('alumbrado') || s.includes('luz')) return Lightbulb;
+  if (s.includes('alambr') || s.includes('cerc') || s.includes('perimetr')) return Fence;
+  if (s.includes('cordón') || s.includes('cordon') || s.includes('cuneta')) return Construction;
+  if (s.includes('calle') || s.includes('paviment') || s.includes('asfalt')) return Route;
+  if (s.includes('juego')) return Baby;
+  if (s.includes('laguna') || s.includes('lago')) return Waves;
   if (s.includes('forest') || s.includes('verde') || s.includes('arbol') || s.includes('árbol'))
-    return '🌳';
-  if (s.includes('segur') || s.includes('perimetr')) return '🛡️';
+    return Trees;
+  if (s.includes('segur')) return ShieldCheck;
   if (s.includes('recreat') || s.includes('común') || s.includes('comun') || s.includes('club'))
-    return '🎾';
-  if (s.includes('comercial') || s.includes('local') || s.includes('gastro')) return '🛍️';
-  return '✅';
+    return Trophy;
+  if (s.includes('comercial') || s.includes('local') || s.includes('gastro')) return ShoppingBag;
+  return CheckCircle2;
 }
 
 export default function ProyectoPage({ proyecto }) {
   const router = useRouter();
+
+  // Galería / lightbox
+  const fotos = proyecto?.fotos ?? [];
+  const [lightboxIndex, setLightboxIndex] = useState(null);
+  const isLightboxOpen = lightboxIndex !== null;
+
+  const closeLightbox = useCallback(() => setLightboxIndex(null), []);
+  const showPrev = useCallback(
+    () => setLightboxIndex((i) => (i === null ? i : (i - 1 + fotos.length) % fotos.length)),
+    [fotos.length],
+  );
+  const showNext = useCallback(
+    () => setLightboxIndex((i) => (i === null ? i : (i + 1) % fotos.length)),
+    [fotos.length],
+  );
+
+  useEffect(() => {
+    if (!isLightboxOpen) return undefined;
+    const onKey = (e) => {
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showPrev();
+      if (e.key === 'ArrowRight') showNext();
+    };
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [isLightboxOpen, closeLightbox, showPrev, showNext]);
 
   // Fallback mientras se genera la página o si no existe
   if (router.isFallback || !proyecto) {
@@ -117,12 +165,12 @@ export default function ProyectoPage({ proyecto }) {
             <div className="absolute inset-0 bg-gradient-to-t from-premium-black via-premium-black/30 to-premium-black/30" />
           </div>
 
-          {/* Volver — esquina superior izquierda */}
+          {/* Volver — debajo del navbar fijo */}
           <div className="absolute inset-x-0 top-0 z-20">
-            <div className="mx-auto w-full max-w-7xl px-6 pt-8 sm:px-10">
+            <div className="mx-auto w-full max-w-7xl px-6 pt-24 sm:px-10 sm:pt-28">
               <Link
                 href="/#proyectos"
-                className="inline-flex items-center gap-2 font-sans text-sm font-medium text-tech-white/80 transition-colors hover:text-tech-white"
+                className="inline-flex items-center gap-2 rounded-full bg-premium-black/40 px-4 py-2 font-sans text-sm font-medium text-tech-white/80 backdrop-blur-sm transition-colors hover:text-tech-white"
               >
                 <ArrowLeft size={16} />
                 Volver a desarrollos
@@ -130,19 +178,19 @@ export default function ProyectoPage({ proyecto }) {
             </div>
           </div>
 
-          {/* Logo dinámico centrado */}
+          {/* Logo dinámico centrado + subtítulo */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="relative z-10 flex items-center justify-center px-6"
+            className="relative z-10 mt-16 flex flex-col items-center px-6 text-center"
           >
             <span className="sr-only">{proyecto.nombre}</span>
             {proyecto.logo ? (
               <img
                 src={proyecto.logo || '/placeholder.svg'}
                 alt={`Logo de ${proyecto.nombre}`}
-                className="w-56 max-w-[80vw] object-contain drop-shadow-[0_4px_24px_rgba(0,0,0,0.45)]"
+                className="w-72 max-w-[85vw] object-contain drop-shadow-[0_4px_24px_rgba(0,0,0,0.45)] sm:w-96"
               />
             ) : (
               <h1
@@ -151,6 +199,12 @@ export default function ProyectoPage({ proyecto }) {
               >
                 {proyecto.nombre}
               </h1>
+            )}
+
+            {proyecto.subtituloHero && (
+              <h2 className="mt-6 max-w-2xl font-sans text-base font-light leading-relaxed text-gray-300 text-pretty sm:text-lg">
+                {proyecto.subtituloHero}
+              </h2>
             )}
           </motion.div>
         </section>
@@ -226,7 +280,7 @@ export default function ProyectoPage({ proyecto }) {
         </section>
 
         {/* BODY */}
-        <div className="mx-auto mt-20 grid w-full max-w-7xl grid-cols-1 gap-16 px-6 sm:px-10 lg:grid-cols-[1.6fr_1fr]">
+        <div className="mx-auto mt-20 w-full max-w-7xl px-6 sm:px-10">
           <div className="space-y-16">
             {/* Avance de obra */}
             {isActivo && typeof proyecto.avance === 'number' && (
@@ -262,22 +316,23 @@ export default function ProyectoPage({ proyecto }) {
                   <Layers size={14} />
                   Servicios e infraestructura
                 </h2>
-                <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                  {proyecto.servicios.map((servicio) => (
-                    <div
-                      key={servicio}
-                      className="flex items-center gap-4 rounded-xl border border-premium-line bg-premium-gray p-5 transition-colors hover:border-primary-green/40"
-                    >
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-premium-dark text-xl leading-none">
-                        <span role="img" aria-hidden="true">
-                          {getServicioEmoji(servicio)}
+                <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {proyecto.servicios.map((servicio) => {
+                    const Icon = getServicioIcon(servicio);
+                    return (
+                      <div
+                        key={servicio}
+                        className="flex items-center gap-4 rounded-xl border border-premium-line bg-premium-gray p-5 transition-colors hover:border-primary-green/40"
+                      >
+                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-primary-green/40 bg-premium-dark text-primary-green">
+                          <Icon size={22} strokeWidth={1.5} aria-hidden="true" />
+                        </div>
+                        <span className="font-sans text-sm font-light text-tech-white">
+                          {servicio}
                         </span>
                       </div>
-                      <span className="font-sans text-sm font-light text-tech-white">
-                        {servicio}
-                      </span>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </section>
             )}
@@ -380,20 +435,26 @@ export default function ProyectoPage({ proyecto }) {
                 </h2>
                 <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
                   {proyecto.fotos.map((foto, i) => (
-                    <div
+                    <button
                       key={foto}
-                      className={`relative overflow-hidden rounded-xl border border-premium-line ${
+                      type="button"
+                      onClick={() => setLightboxIndex(i)}
+                      aria-label={`Ampliar foto ${i + 1} de ${proyecto.nombre}`}
+                      className={`group relative cursor-pointer overflow-hidden rounded-xl border border-premium-line focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-green ${
                         i === 0 ? 'col-span-2 row-span-2 sm:col-span-2' : ''
                       }`}
                     >
                       <img
                         src={foto || '/placeholder.svg'}
                         alt={`${proyecto.nombre} — render ${i + 1}`}
-                        className={`w-full object-cover transition-transform duration-700 ease-out hover:scale-105 ${
+                        className={`w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${
                           i === 0 ? 'h-full min-h-[16rem]' : 'h-36 sm:h-40'
                         }`}
                       />
-                    </div>
+                      <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-premium-black/0 opacity-0 transition-all duration-300 group-hover:bg-premium-black/30 group-hover:opacity-100">
+                        <Images size={22} className="text-tech-white" />
+                      </span>
+                    </button>
                   ))}
                 </div>
               </section>
@@ -415,67 +476,38 @@ export default function ProyectoPage({ proyecto }) {
             )}
           </div>
 
-          {/* Aside CTA */}
-          <aside className="lg:sticky lg:top-28 lg:self-start">
-            <div className="rounded-2xl border border-premium-line bg-premium-gray p-7">
-              <h2 className="font-heading text-xl font-bold text-tech-white">
-                {isActivo ? 'Consultá disponibilidad' : 'Conocé nuestros desarrollos activos'}
-              </h2>
-              <p className="mt-3 font-sans text-sm leading-relaxed text-premium-muted">
-                {isActivo
-                  ? 'Coordiná una visita o pedí la ficha completa de lotes y precios actualizados.'
-                  : 'Descubrí los barrios abiertos que tenemos en comercialización.'}
-              </p>
-
-              {(proyecto.precio || proyecto.lotes) && (
-                <div className="mt-6 space-y-4 rounded-xl border border-premium-line bg-premium-dark p-5">
-                  {proyecto.precio && (
-                    <div className="flex items-start gap-3">
-                      <Tag size={18} className="mt-0.5 shrink-0 text-primary-green" />
-                      <div>
-                        <p className="font-sans text-[0.68rem] uppercase tracking-wider text-premium-muted">
-                          Precio
-                        </p>
-                        <p className="mt-0.5 font-sans text-sm font-medium text-tech-white">
-                          {proyecto.precio}
-                        </p>
-                      </div>
-                    </div>
-                  )}
-                  {proyecto.lotes && (
-                    <div className="flex items-start gap-3">
-                      <Layers size={18} className="mt-0.5 shrink-0 text-primary-green" />
-                      <div>
-                        <p className="font-sans text-[0.68rem] uppercase tracking-wider text-premium-muted">
-                          Lotes
-                        </p>
-                        <p className="mt-0.5 font-sans text-sm font-medium text-tech-white">
-                          {proyecto.lotes.total} en total · {proyecto.lotes.disponibles}
-                        </p>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              )}
-
-              <a
-                href={`https://wa.me/${WHATSAPP}?text=${waText}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 flex w-full items-center justify-center gap-3 rounded-full bg-primary-green px-6 py-3.5 font-sans text-sm font-semibold text-premium-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-sage"
-              >
-                <MessageCircle size={18} />
-                Quiero información
-              </a>
-
-              <Link
-                href="/#contacto"
-                className="mt-3 flex w-full items-center justify-center rounded-full border border-premium-line px-6 py-3.5 font-sans text-sm font-semibold text-tech-white transition-colors hover:border-primary-green hover:text-primary-green"
-              >
-                Enviar consulta por formulario
-              </Link>
+          {/* CTA — franja full-width bajo el contenido */}
+          <div className="mt-16 rounded-2xl border border-premium-line bg-premium-gray p-8 sm:p-10">
+            <div className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
+              <div>
+                <h2 className="font-heading text-xl font-bold text-tech-white sm:text-2xl">
+                  {isActivo ? 'Consultá disponibilidad' : 'Conocé nuestros desarrollos activos'}
+                </h2>
+                <p className="mt-3 max-w-2xl font-sans text-sm leading-relaxed text-premium-muted">
+                  {isActivo
+                    ? 'Coordiná una visita o pedí la ficha completa de lotes y precios actualizados.'
+                    : 'Descubrí los barrios abiertos que tenemos en comercialización.'}
+                </p>
+              </div>
+              <div className="flex w-full flex-col gap-3 sm:flex-row lg:w-auto">
+                <a
+                  href={`https://wa.me/${WHATSAPP}?text=${waText}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-3 rounded-full bg-primary-green px-6 py-3.5 font-sans text-sm font-semibold text-premium-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-sage"
+                >
+                  <MessageCircle size={18} />
+                  Quiero información
+                </a>
+                <Link
+                  href="/#contacto"
+                  className="flex items-center justify-center rounded-full border border-premium-line px-6 py-3.5 font-sans text-sm font-semibold text-tech-white transition-colors hover:border-primary-green hover:text-primary-green"
+                >
+                  Enviar consulta por formulario
+                </Link>
+              </div>
             </div>
-          </aside>
+          </div>
         </div>
 
         {/* UBICACIÓN — layout integrado a 2 columnas */}
@@ -564,6 +596,76 @@ export default function ProyectoPage({ proyecto }) {
           </a>
         </div>
       </div>
+
+      {/* LIGHTBOX / GALERÍA */}
+      <AnimatePresence>
+        {isLightboxOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-premium-black/95 backdrop-blur-sm"
+            role="dialog"
+            aria-modal="true"
+            aria-label={`Galería de ${proyecto.nombre}`}
+            onClick={closeLightbox}
+          >
+            {/* Cerrar */}
+            <button
+              type="button"
+              onClick={closeLightbox}
+              aria-label="Cerrar galería"
+              className="absolute right-5 top-5 z-10 flex h-11 w-11 items-center justify-center rounded-full border border-premium-line bg-premium-gray/60 text-tech-white transition-colors hover:border-primary-green hover:text-primary-green"
+            >
+              <X size={22} />
+            </button>
+
+            {/* Anterior */}
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                showPrev();
+              }}
+              aria-label="Foto anterior"
+              className="absolute left-4 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-premium-line bg-premium-gray/60 text-tech-white transition-colors hover:border-primary-green hover:text-primary-green sm:left-8"
+            >
+              <ChevronLeft size={26} />
+            </button>
+
+            {/* Imagen */}
+            <motion.img
+              key={lightboxIndex}
+              initial={{ opacity: 0, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.25 }}
+              src={fotos[lightboxIndex] || '/placeholder.svg'}
+              alt={`${proyecto.nombre} — foto ${lightboxIndex + 1} de ${fotos.length}`}
+              className="max-h-[82vh] max-w-[88vw] rounded-lg object-contain shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+
+            {/* Siguiente */}
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                showNext();
+              }}
+              aria-label="Foto siguiente"
+              className="absolute right-4 z-10 flex h-12 w-12 items-center justify-center rounded-full border border-premium-line bg-premium-gray/60 text-tech-white transition-colors hover:border-primary-green hover:text-primary-green sm:right-8"
+            >
+              <ChevronRight size={26} />
+            </button>
+
+            {/* Contador */}
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 rounded-full bg-premium-gray/70 px-4 py-1.5 font-sans text-sm text-tech-white">
+              {lightboxIndex + 1} / {fotos.length}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <Footer />
     </>
