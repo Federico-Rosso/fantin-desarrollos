@@ -232,23 +232,8 @@ export default function ProyectoPage({ proyecto }) {
           </div>
         </section>
 
-        {/* ENCABEZADO + DESCRIPCIÓN */}
-        <section className="mx-auto w-full max-w-7xl px-6 pt-20 sm:px-10">
-          <h1 className="font-heading text-3xl font-black tracking-tight text-balance text-tech-white sm:text-4xl">
-            {proyecto.nombre}
-          </h1>
-          {proyecto.tagline && (
-            <p className="mt-3 font-heading text-lg font-semibold text-primary-green sm:text-xl">
-              {proyecto.tagline}
-            </p>
-          )}
-          <p className="mt-5 max-w-3xl font-sans text-base leading-relaxed text-premium-muted sm:text-lg">
-            {proyecto.descripcion}
-          </p>
-        </section>
-
         {/* PLANO DEL DESARROLLO — placeholder universal */}
-        <section className="mx-auto w-full max-w-7xl px-6 pt-16 sm:px-10">
+        <section className="mx-auto w-full max-w-7xl px-6 pt-20 sm:px-10">
           <h2 className="flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-widest text-primary-green">
             <MapIcon size={14} />
             Plano del desarrollo
@@ -475,40 +460,26 @@ export default function ProyectoPage({ proyecto }) {
               </section>
             )}
           </div>
-
-          {/* CTA — franja full-width bajo el contenido */}
-          <div className="mt-16 rounded-2xl border border-premium-line bg-premium-gray p-8 sm:p-10">
-            <div className="flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
-              <div>
-                <h2 className="font-heading text-xl font-bold text-tech-white sm:text-2xl">
-                  {isActivo ? 'Consultá disponibilidad' : 'Conocé nuestros desarrollos activos'}
-                </h2>
-                <p className="mt-3 max-w-2xl font-sans text-sm leading-relaxed text-premium-muted">
-                  {isActivo
-                    ? 'Coordiná una visita o pedí la ficha completa de lotes y precios actualizados.'
-                    : 'Descubrí los barrios abiertos que tenemos en comercialización.'}
-                </p>
-              </div>
-              <div className="flex w-full flex-col gap-3 sm:flex-row lg:w-auto">
-                <a
-                  href={`https://wa.me/${WHATSAPP}?text=${waText}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-3 rounded-full bg-primary-green px-6 py-3.5 font-sans text-sm font-semibold text-premium-black transition-all duration-300 hover:-translate-y-0.5 hover:bg-sage"
-                >
-                  <MessageCircle size={18} />
-                  Quiero información
-                </a>
-                <Link
-                  href="/#contacto"
-                  className="flex items-center justify-center rounded-full border border-premium-line px-6 py-3.5 font-sans text-sm font-semibold text-tech-white transition-colors hover:border-primary-green hover:text-primary-green"
-                >
-                  Enviar consulta por formulario
-                </Link>
-              </div>
-            </div>
-          </div>
         </div>
+
+        {/* VIDEO — recorrido del desarrollo */}
+        <section className="mx-auto mt-24 w-full max-w-7xl px-6 sm:px-10">
+          <h2 className="flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-widest text-primary-green">
+            <Images size={14} />
+            Video del desarrollo
+          </h2>
+          <div className="mt-6 aspect-video w-full overflow-hidden rounded-2xl border border-premium-line shadow-lg">
+            <iframe
+              className="h-full w-full"
+              src="https://www.youtube-nocookie.com/embed/M7qkA5KcsYI?start=23"
+              title={`Video de ${proyecto.nombre}`}
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+            />
+          </div>
+        </section>
 
         {/* UBICACIÓN — layout integrado a 2 columnas */}
         <section className="mx-auto mt-24 w-full max-w-7xl px-6 sm:px-10">
