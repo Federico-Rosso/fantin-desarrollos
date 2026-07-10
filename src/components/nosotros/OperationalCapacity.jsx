@@ -21,7 +21,7 @@ const metrics = [
 
 export default function OperationalCapacity() {
   return (
-    <section className="relative overflow-hidden py-20 sm:py-28">
+    <section className="relative overflow-hidden pt-12 pb-20 sm:pt-16 sm:pb-28">
       {/* Background image */}
       <div className="pointer-events-none absolute inset-0">
         <img
@@ -33,6 +33,8 @@ export default function OperationalCapacity() {
         <div className="absolute inset-0 bg-premium-black/70" />
         {/* Top gradient merging with the previous section (#0E0E0E) */}
         <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-premium-black via-premium-black/70 to-transparent" />
+        {/* Bottom gradient merging with the footer (#151515) */}
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-premium-dark via-premium-dark/70 to-transparent" />
       </div>
 
       <div className="relative mx-auto w-full max-w-6xl px-6 sm:px-10">
@@ -71,7 +73,7 @@ export default function OperationalCapacity() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-16 rounded-3xl border border-deep-green/20 bg-dark-green p-8 sm:p-12"
+          className="mt-16 rounded-3xl border border-primary-green/20 bg-dark-green/30 p-8 shadow-lg backdrop-blur-md sm:p-12"
         >
           <Quote className="text-primary-green" size={36} />
           <blockquote className="mt-6 font-heading text-xl font-semibold leading-relaxed text-tech-white sm:text-2xl">
