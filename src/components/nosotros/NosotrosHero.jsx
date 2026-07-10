@@ -3,16 +3,26 @@ import { motion } from 'framer-motion';
 
 export default function NosotrosHero() {
   return (
-    <section className="relative overflow-hidden bg-dark-green pt-32 pb-20 sm:pt-40 sm:pb-28">
-      <div className="pointer-events-none absolute inset-0 opacity-[0.06]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,#69B42E_0%,transparent_55%)]" />
+    <section className="relative overflow-hidden bg-dark-green pt-32 pb-20 sm:pt-40 sm:pb-32">
+      {/* Background image */}
+      <div className="pointer-events-none absolute inset-0">
+        <img
+          src="/images/hero_nosotros.jpg"
+          alt="Vista aérea de una urbanización de Fantín Desarrollos con calle central y lotes arbolados"
+          className="h-full w-full object-cover"
+        />
+        {/* Darkening overlay for text legibility */}
+        <div className="absolute inset-0 bg-premium-black/55" />
+        {/* Bottom gradient merging into the next section (#0E0E0E) */}
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-b from-transparent via-premium-black/70 to-premium-black" />
       </div>
+
       <div className="relative mx-auto w-full max-w-5xl px-6 sm:px-10">
         <motion.span
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="inline-flex items-center gap-2 rounded-full border border-primary-green/40 bg-primary-green/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-primary-green"
+          className="inline-flex items-center gap-2 rounded-full border border-primary-green/40 bg-primary-green/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-primary-green backdrop-blur-sm"
         >
           Quiénes somos
         </motion.span>
@@ -30,7 +40,7 @@ export default function NosotrosHero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-6 max-w-2xl font-sans text-lg leading-relaxed text-sage sm:text-xl"
+          className="mt-6 max-w-2xl font-sans text-lg leading-relaxed text-tech-white/90 sm:text-xl"
         >
           27 años de trayectoria, preservando el entorno natural y construyendo
           con solidez corporativa.
