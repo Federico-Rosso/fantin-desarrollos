@@ -21,13 +21,23 @@ const metrics = [
 
 export default function OperationalCapacity() {
   return (
-    <section className="bg-tech-white py-20 sm:py-28">
-      <div className="mx-auto w-full max-w-6xl px-6 sm:px-10">
+    <section className="relative overflow-hidden py-20 sm:py-28">
+      {/* Background image */}
+      <div className="pointer-events-none absolute inset-0">
+        <img
+          src="/images/capacidad_operativa.jpg"
+          alt="Vista aérea de una nueva urbanización de Fantín Desarrollos con avenida central en desarrollo"
+          className="h-full w-full object-cover"
+        />
+        {/* Darkening overlay for legibility */}
+        <div className="absolute inset-0 bg-premium-black/70" />
+        {/* Top gradient merging with the previous section (#0E0E0E) */}
+        <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-premium-black via-premium-black/70 to-transparent" />
+      </div>
+
+      <div className="relative mx-auto w-full max-w-6xl px-6 sm:px-10">
         <div className="max-w-2xl">
-          <span className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-deep-green">
-            Métricas de Solidez
-          </span>
-          <h2 className="mt-4 font-heading text-3xl font-extrabold tracking-tight text-charcoal sm:text-4xl">
+          <h2 className="font-heading text-3xl font-extrabold tracking-tight text-tech-white sm:text-4xl">
             Capacidad operativa y banco de tierras
           </h2>
         </div>

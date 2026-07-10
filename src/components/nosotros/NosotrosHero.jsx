@@ -18,20 +18,11 @@ export default function NosotrosHero() {
       </div>
 
       <div className="relative mx-auto w-full max-w-5xl px-6 sm:px-10">
-        <motion.span
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="inline-flex items-center gap-2 rounded-full border border-primary-green/40 bg-primary-green/10 px-4 py-1.5 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-primary-green backdrop-blur-sm"
-        >
-          Quiénes somos
-        </motion.span>
-
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-6 font-heading text-5xl font-extrabold tracking-tight text-tech-white sm:text-6xl lg:text-7xl"
+          className="font-heading text-5xl font-extrabold tracking-tight text-tech-white sm:text-6xl lg:text-7xl"
         >
           Nosotros
         </motion.h1>

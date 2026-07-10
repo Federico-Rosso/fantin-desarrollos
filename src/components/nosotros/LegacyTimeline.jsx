@@ -59,13 +59,13 @@ export default function LegacyTimeline() {
           <span className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-primary-green">
             Nuestra Historia
           </span>
-          <h2 className="mt-4 font-heading text-3xl font-extrabold tracking-tight text-tech-white sm:text-4xl">
+          <h2 className="mt-1 font-heading text-3xl font-extrabold tracking-tight text-tech-white sm:text-4xl">
             El legado que nos construye
           </h2>
         </div>
 
         <div className="relative">
-          <div className="absolute left-[19px] top-2 bottom-2 w-px bg-premium-line sm:left-[27px]" />
+          <div className="absolute left-[19px] top-2 bottom-2 w-px bg-gradient-to-b from-premium-line via-premium-line to-transparent sm:left-[27px]" />
 
           <div className="flex flex-col gap-12">
             {milestones.map(({ period, title, text, Icon, images }, i) => (
