@@ -34,6 +34,7 @@ import {
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import EtapasDesarrollo from '../../components/EtapasDesarrollo';
+
 import { desarrollos } from '../../data/desarrollos';
 
 // Número de WhatsApp comercial (reemplazar por el real)
