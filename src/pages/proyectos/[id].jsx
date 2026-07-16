@@ -11,7 +11,6 @@ import {
   ShieldCheck,
   MessageCircle,
   Images,
-  Milestone,
   Gift,
   Map as MapIcon,
   Route,
@@ -34,6 +33,7 @@ import {
 } from 'lucide-react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
+import EtapasDesarrollo from '../../components/EtapasDesarrollo';
 import { desarrollos } from '../../data/desarrollos';
 
 // Número de WhatsApp comercial (reemplazar por el real)
@@ -379,46 +379,7 @@ export default function ProyectoPage({ proyecto }) {
             )}
 
             {/* Hitos por etapas */}
-            {proyecto.hitosEtapas?.length > 0 && (
-              <section>
-                <h2 className="flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-widest text-primary-green">
-                  <Milestone size={14} />
-                  Etapas del desarrollo
-                </h2>
-                <div className="mt-6 space-y-6">
-                  {proyecto.hitosEtapas.map((hito) => (
-                    <article
-                      key={hito.titulo}
-                      className="overflow-hidden rounded-2xl border border-premium-line bg-premium-gray"
-                    >
-                      {hito.fotoEtapa && (
-                        <div className="relative h-48 w-full overflow-hidden sm:h-56">
-                          <img
-                            src={hito.fotoEtapa || '/placeholder.svg'}
-                            alt={`${hito.titulo} — ${proyecto.nombre}`}
-                            className="h-full w-full object-cover"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-premium-gray/90 to-transparent" />
-                        </div>
-                      )}
-                      <div className="p-6">
-                        <div className="flex flex-wrap items-center gap-3">
-                          <h3 className="font-heading text-lg font-bold text-tech-white">
-                            {hito.titulo}
-                          </h3>
-                          <span className="rounded-full bg-primary-green/15 px-3 py-1 font-sans text-[0.68rem] font-semibold uppercase tracking-wider text-primary-green">
-                            {hito.estado}
-                          </span>
-                        </div>
-                        <p className="mt-3 font-sans text-sm leading-relaxed text-premium-muted">
-                          {hito.detalle}
-                        </p>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              </section>
-            )}
+            <EtapasDesarrollo etapas={proyecto.hitosEtapas} nombre={proyecto.nombre} />
 
             {/* Beneficio Club */}
             {proyecto.beneficioClub && (
