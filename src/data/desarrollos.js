@@ -70,7 +70,7 @@ export const desarrollos = [
       '/C1.webp',
       '/B1.webp',
     ],
-    masterplan: '/planos/fincas-rosedal.png',
+    masterplan: '/planos/fincas-rosedal.svg',
   },
   {
     id: 'fincas-ros',
@@ -86,6 +86,7 @@ export const desarrollos = [
       'Nuevo loteo residencial en Ibarlucea, pensado para una vida tranquila y conectada, con infraestructura completa y entorno natural cuidado.',
     avance: 35,
     servicios: ['Luz', 'Agua', 'Calles', 'Alumbrado público', 'Espacios verdes'],
+    masterplan: '/planos/fincas-ros.webp',
   },
   {
     id: 'terranova',
@@ -168,6 +169,7 @@ export const desarrollos = [
           'Sector integrado a un corredor de biodiversidad, con lotes en venta y fuerte impronta ambiental.',
       },
     ],
+    masterplan: '/planos/carcaraes.svg',
   },
 
   // ── BARRIOS CONSOLIDADOS ─────────────────────────────────────────────
