@@ -503,23 +503,25 @@ export default function ProyectoPage({ proyecto }) {
         </div>
 
         {/* VIDEO — recorrido del desarrollo */}
-        <section className="mx-auto mt-24 w-full max-w-7xl px-6 sm:px-10">
-          <h2 className="flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-widest text-primary-green">
-            <Images size={14} />
-            Video del desarrollo
-          </h2>
-          <div className="mt-6 aspect-video w-full overflow-hidden rounded-2xl border border-premium-line shadow-lg">
-            <iframe
-              className="h-full w-full"
-              src="https://www.youtube-nocookie.com/embed/M7qkA5KcsYI?start=23"
-              title={`Video de ${proyecto.nombre}`}
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-            />
-          </div>
-        </section>
+        {proyecto.videoId && (
+          <section className="mx-auto mt-24 w-full max-w-7xl px-6 sm:px-10">
+            <h2 className="flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-widest text-primary-green">
+              <Images size={14} />
+              Video del desarrollo
+            </h2>
+            <div className="mt-6 aspect-video w-full overflow-hidden rounded-2xl border border-premium-line shadow-lg">
+              <iframe
+                className="h-full w-full"
+                src={`https://www.youtube-nocookie.com/embed/${proyecto.videoId}`}
+                title={`Video de ${proyecto.nombre}`}
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
+          </section>
+        )}
 
         {/* UBICACIÓN — layout integrado a 2 columnas */}
         <section className="mx-auto mt-24 w-full max-w-7xl px-6 sm:px-10">

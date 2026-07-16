@@ -93,6 +93,7 @@ export const desarrollos = [
     ubicacion: 'Oliveros',
     lifecycle: 'activo',
     badge: 'En Obra / Últimos Lotes',
+    videoId: 'VKQ3uVNEg-E',
     imagen: '/images/dev-1.png',
     logo: '/logos/terranova.png',
     subtituloHero:
@@ -138,6 +139,7 @@ export const desarrollos = [
     ubicacion: 'Oliveros',
     lifecycle: 'activo',
     badge: 'Turismo Rural / En Comercialización',
+    videoId: 'GDCYXIKXxZs',
     imagen: '/images/dev-1.png',
     logo: '/logos/carcaraes.png',
     subtituloHero:
@@ -175,6 +177,7 @@ export const desarrollos = [
     ubicacion: 'San Lorenzo',
     lifecycle: 'consolidado',
     badge: '100% Vendido / Consolidado',
+    videoId: '685tsMY-P_w',
     imagen: '/images/dev-3.png',
     logo: '/logos/altos-orono.webp',
     subtituloHero:
@@ -214,6 +217,7 @@ export const desarrollos = [
     ubicacion: 'Monje',
     lifecycle: 'consolidado',
     badge: 'Reserva Natural / Consolidado',
+    videoId: 'Y49fZBjHMl0',
     imagen: '/images/dev-6.png',
     logo: '/logos/delta-bucare.webp',
     subtituloHero:
