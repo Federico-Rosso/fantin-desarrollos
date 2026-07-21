@@ -25,7 +25,7 @@ export default function Hero() {
       {/* Background image */}
       <div className="absolute inset-0">
         <Image
-          src="/images/hero-loteo.jpg"
+          src="/images/hero-fondo-fantin.png"
           alt="Vista aérea de un loteo residencial al atardecer, rodeado de naturaleza"
           fill
           priority
