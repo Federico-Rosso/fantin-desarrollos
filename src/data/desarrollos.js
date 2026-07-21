@@ -86,6 +86,7 @@ export const desarrollos = [
       'Nuevo loteo residencial en Ibarlucea, pensado para una vida tranquila y conectada, con infraestructura completa y entorno natural cuidado.',
     avance: 35,
     servicios: ['Luz', 'Agua', 'Calles', 'Alumbrado público', 'Espacios verdes'],
+    coords: { lat: -32.8654662, lng: -60.7954954 },
     masterplan: '/planos/fincas-ros.webp',
   },
   {
@@ -118,6 +119,7 @@ export const desarrollos = [
       'Desarrollo premium organizado en torno a cinco lagunas, con lotes amplios y paisajismo integral.',
     avance: 30,
     servicios: ['Luz', 'Agua', 'Lagunas', 'Calles', 'Seguridad perimetral'],
+    mapQuery: 'Cinco Lagos, Ibarlucea, Santa Fe',
   },
   {
     id: 'fincas-ybarlucea',
@@ -133,6 +135,7 @@ export const desarrollos = [
       'Lotes residenciales de gran superficie en un entorno consolidado, con comercialización en etapa avanzada.',
     avance: 65,
     servicios: ['Luz', 'Agua', 'Calles', 'Gas', 'Áreas recreativas'],
+    coords: { lat: -32.8610788, lng: -60.7861378 },
   },
   {
     id: 'carcaraes',
@@ -169,6 +172,7 @@ export const desarrollos = [
           'Sector integrado a un corredor de biodiversidad, con lotes en venta y fuerte impronta ambiental.',
       },
     ],
+    coords: { lat: -32.4785731, lng: -60.8557778 },
     masterplan: '/planos/carcaraes.svg',
   },
 
@@ -226,6 +230,7 @@ export const desarrollos = [
       'Un barrio consolidado en Monje, en torno a una reserva natural, con humedales y biodiversidad protegida',
     descripcion:
       'Barrio consolidado en torno a una reserva natural, con humedales y biodiversidad protegida.',
+    coords: { lat: -32.3239121, lng: -60.8845568 },
   },
 ];
 

@@ -519,10 +519,14 @@ export default function ProyectoPage({ proyecto }) {
 
             {/* Columna derecha: mapa fusionado */}
             <div className="overflow-hidden rounded-2xl border border-premium-line shadow-lg">
-              {proyecto.coords ? (
+              {proyecto.coords || proyecto.mapQuery ? (
                 <iframe
                   title={`Mapa de ${proyecto.nombre}`}
-                  src={`https://maps.google.com/maps?q=${proyecto.coords.lat},${proyecto.coords.lng}&z=14&output=embed`}
+                  src={
+                    proyecto.coords
+                      ? `https://maps.google.com/maps?q=${proyecto.coords.lat},${proyecto.coords.lng}&z=14&output=embed`
+                      : `https://maps.google.com/maps?q=${encodeURIComponent(proyecto.mapQuery)}&z=14&output=embed`
+                  }
                   className="h-[20rem] w-full border-0 grayscale-[0.2] sm:h-[24rem]"
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
