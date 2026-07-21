@@ -39,6 +39,8 @@ export default function Footer() {
               <img
                 src="/images/isologotipo.png"
                 alt="Fantín Desarrollos"
+                loading="lazy"
+                decoding="async"
                 className="h-28 w-auto object-contain sm:h-32"
               />
             </Link>

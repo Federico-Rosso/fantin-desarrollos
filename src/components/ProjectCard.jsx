@@ -25,6 +25,8 @@ export default function ProjectCard({ proyecto, onSelect }) {
         <img
           src={proyecto.imagen || '/placeholder.svg'}
           alt={`Desarrollo ${proyecto.nombre} en ${proyecto.ubicacion}`}
+          loading="lazy"
+          decoding="async"
           className={`h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${
             isActivo ? '' : 'grayscale-[0.65] contrast-[0.9] brightness-90'
           }`}
@@ -52,6 +54,8 @@ export default function ProjectCard({ proyecto, onSelect }) {
             <img
               src={proyecto.logo || '/placeholder.svg'}
               alt={`Logo de ${proyecto.nombre}`}
+              loading="lazy"
+              decoding="async"
               className="max-h-20 w-auto max-w-[15rem] object-contain object-left drop-shadow-[0_2px_10px_rgba(255,255,255,0.18)]"
             />
           </h3>

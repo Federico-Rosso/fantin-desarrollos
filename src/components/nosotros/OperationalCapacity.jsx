@@ -27,6 +27,8 @@ export default function OperationalCapacity() {
         <img
           src="/images/capacidad_operativa.jpg"
           alt="Vista aérea de una nueva urbanización de Fantín Desarrollos con avenida central en desarrollo"
+          loading="lazy"
+          decoding="async"
           className="h-full w-full object-cover"
         />
         {/* Darkening overlay for legibility */}

@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 export default function NosotrosHero() {
@@ -6,10 +7,13 @@ export default function NosotrosHero() {
     <section className="relative overflow-hidden bg-dark-green pt-32 pb-20 sm:pt-40 sm:pb-32">
       {/* Background image */}
       <div className="pointer-events-none absolute inset-0">
-        <img
+        <Image
           src="/images/hero_nosotros.jpg"
           alt="Vista aérea de una urbanización de Fantín Desarrollos con calle central y lotes arbolados"
-          className="h-full w-full object-cover"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
         />
         {/* Darkening overlay for text legibility */}
         <div className="absolute inset-0 bg-premium-black/55" />

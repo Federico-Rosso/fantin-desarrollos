@@ -160,6 +160,9 @@ export default function ProyectoPage({ proyecto }) {
             <img
               src={proyecto.imagen || '/placeholder.svg'}
               alt={`Desarrollo ${proyecto.nombre} en ${proyecto.ubicacion}`}
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
               className={`h-full w-full object-cover ${
                 isActivo ? 'brightness-[0.5]' : 'brightness-[0.45] grayscale-[0.4]'
               }`}
@@ -250,6 +253,8 @@ export default function ProyectoPage({ proyecto }) {
               <img
                 src={proyecto.masterplan || '/placeholder.svg'}
                 alt={`Plano del desarrollo ${proyecto.nombre}`}
+                loading="lazy"
+                decoding="async"
                 className="w-full object-contain"
               />
               <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-premium-black/0 opacity-0 transition-all duration-300 group-hover:bg-premium-black/20 group-hover:opacity-100">
@@ -391,6 +396,8 @@ export default function ProyectoPage({ proyecto }) {
                       <img
                         src={proyecto.beneficioClub.logo || '/placeholder.svg'}
                         alt={`Logo de ${proyecto.beneficioClub.titulo}`}
+                        loading="lazy"
+                        decoding="async"
                         className="h-24 w-auto object-contain sm:h-28"
                       />
                     </div>
@@ -434,6 +441,8 @@ export default function ProyectoPage({ proyecto }) {
                       <img
                         src={foto || '/placeholder.svg'}
                         alt={`${proyecto.nombre} — render ${i + 1}`}
+                        loading="lazy"
+                        decoding="async"
                         className={`w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${
                           i === 0 ? 'h-full min-h-[16rem]' : 'h-36 sm:h-40'
                         }`}

@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
@@ -23,10 +24,13 @@ export default function Hero() {
     >
       {/* Background image */}
       <div className="absolute inset-0">
-        <img
+        <Image
           src="/images/hero-loteo.jpg"
           alt="Vista aérea de un loteo residencial al atardecer, rodeado de naturaleza"
-          className="h-full w-full object-cover object-[center_65%]"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[center_65%]"
         />
         {/* Dark overlays for premium contrast */}
         <div className="absolute inset-0 bg-premium-black/60" />
