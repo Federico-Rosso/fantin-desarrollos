@@ -27,6 +27,8 @@ export default function EtapasDesarrollo({ etapas = [], nombre = '' }) {
                 <img
                   src={etapa.fotoEtapa || '/placeholder.svg'}
                   alt={`${etapa.titulo} — ${nombre}`}
+                  loading="lazy"
+                  decoding="async"
                   className="h-full w-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-premium-gray/90 to-transparent" />
