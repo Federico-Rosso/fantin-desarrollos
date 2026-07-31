@@ -443,32 +443,67 @@ export default function ProyectoPage({ proyecto }) {
                   <Images size={14} />
                   Galería del proyecto
                 </h2>
-                <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
-                  {proyecto.fotos.map((foto, i) => (
+                {(() => {
+                  const previewCount = Math.min(proyecto.fotos.length, 9);
+                  const restantes = proyecto.fotos.length - previewCount;
+                  const renderFoto = (i, extraClass, imgHeightClass, showRestantes) => (
                     <button
-                      key={foto}
+                      key={proyecto.fotos[i]}
                       type="button"
-                      onClick={() => setLightboxIndex(i)}
-                      aria-label={`Ampliar foto ${i + 1} de ${proyecto.nombre}`}
-                      className={`group relative cursor-pointer overflow-hidden rounded-xl border border-premium-line focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-green ${
-                        i === 0 ? 'col-span-2 row-span-2 sm:col-span-2' : ''
-                      }`}
+                      onClick={() =>
+                        setLightboxIndex(showRestantes && restantes > 0 ? previewCount - 1 : i)
+                      }
+                      aria-label={
+                        showRestantes && restantes > 0
+                          ? `Ver las ${proyecto.fotos.length} fotos de ${proyecto.nombre}`
+                          : `Ampliar foto ${i + 1} de ${proyecto.nombre}`
+                      }
+                      className={`group relative cursor-pointer overflow-hidden rounded-xl border border-premium-line focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-green ${extraClass}`}
                     >
                       <img
-                        src={foto || '/placeholder.svg'}
-                        alt={`${proyecto.nombre} — render ${i + 1}`}
+                        src={proyecto.fotos[i] || '/placeholder.svg'}
+                        alt={`${proyecto.nombre} — foto ${i + 1}`}
                         loading="lazy"
                         decoding="async"
-                        className={`w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${
-                          i === 0 ? 'h-full min-h-[16rem]' : 'h-36 sm:h-40'
-                        }`}
+                        className={`h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${imgHeightClass}`}
                       />
-                      <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-premium-black/0 opacity-0 transition-all duration-300 group-hover:bg-premium-black/30 group-hover:opacity-100">
-                        <Images size={22} className="text-tech-white" />
-                      </span>
+                      {showRestantes && restantes > 0 ? (
+                        <span className="absolute inset-0 flex flex-col items-center justify-center bg-premium-black/60 text-tech-white transition-colors duration-300 group-hover:bg-premium-black/70">
+                          <span className="font-heading text-2xl font-bold">+{restantes}</span>
+                          <span className="mt-1 font-sans text-xs uppercase tracking-widest">
+                            Ver galería
+                          </span>
+                        </span>
+                      ) : (
+                        <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-premium-black/0 opacity-0 transition-all duration-300 group-hover:bg-premium-black/30 group-hover:opacity-100">
+                          <Images size={22} className="text-tech-white" />
+                        </span>
+                      )}
                     </button>
-                  ))}
-                </div>
+                  );
+
+                  return (
+                    <div className="mt-6 space-y-4">
+                      {/* Fila principal: 1 grande + 2 rectangulares apiladas */}
+                      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                        {proyecto.fotos[0] &&
+                          renderFoto(0, 'sm:col-span-2 sm:row-span-2', 'min-h-[16rem] sm:min-h-[22rem]')}
+                        <div className="grid grid-cols-2 gap-4 sm:grid-cols-1">
+                          {proyecto.fotos[1] && renderFoto(1, '', 'h-40 sm:h-[10.5rem]')}
+                          {proyecto.fotos[2] && renderFoto(2, '', 'h-40 sm:h-[10.5rem]')}
+                        </div>
+                      </div>
+                      {/* Dos líneas de 3 fotos comunes */}
+                      <div className="grid grid-cols-3 gap-4">
+                        {[3, 4, 5, 6, 7, 8]
+                          .filter((i) => i < previewCount)
+                          .map((i) =>
+                            renderFoto(i, '', 'h-28 sm:h-40', i === previewCount - 1),
+                          )}
+                      </div>
+                    </div>
+                  );
+                })()}
               </section>
             )}
 
