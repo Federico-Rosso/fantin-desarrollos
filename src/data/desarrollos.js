@@ -9,7 +9,7 @@ export const desarrollos = [
     ubicacion: 'Ibarlucea',
     lifecycle: 'activo',
     badge: 'Pre-venta exclusiva',
-    imagen: '/images/dev-6.png',
+    imagen: '/proyectos/fincas-ros/1.webp',
     logo: '/logos/fincas-ros.webp',
     subtituloHero:
       'Un nuevo loteo residencial en Ibarlucea pensado para una vida tranquila y conectada. Lotes desde 360 m² con infraestructura de primera calidad y servicios exclusivos para tu futuro hogar.',
