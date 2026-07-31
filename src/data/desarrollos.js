@@ -4,6 +4,39 @@
 export const desarrollos = [
   // ── EN COMERCIALIZACIÓN ──────────────────────────────────────────────
   {
+    id: 'fincas-ros',
+    nombre: 'Fincas Ros',
+    ubicacion: 'Ibarlucea',
+    lifecycle: 'activo',
+    badge: 'Pre-venta exclusiva',
+    imagen: '/images/dev-6.png',
+    logo: '/logos/fincas-ros.webp',
+    subtituloHero:
+      'Un nuevo loteo residencial en Ibarlucea pensado para una vida tranquila y conectada. Lotes desde 360 m² con infraestructura de primera calidad y servicios exclusivos para tu futuro hogar.',
+    descripcion:
+      'Nuevo loteo residencial en Ibarlucea, pensado para una vida tranquila y conectada, con infraestructura completa y entorno natural cuidado.',
+    fichaTecnica: [
+      { label: 'Localidad', value: 'Ibarlucea' },
+      { label: 'Etapa comercial', value: 'Pre-venta exclusiva' },
+      { label: 'Dimensiones', value: 'Lotes de 360 a 550 m²' },
+      { label: 'Posesión', value: 'En 18 meses', accent: true },
+    ],
+    avance: 35,
+    avanceDescripcion:
+      'Actualmente nos encontramos en plena etapa de movimientos de suelo, trabajando activamente en el trazado y pavimentación integral de las calles y en el desarrollo de los reservorios de agua del barrio.',
+    servicios: [
+      'Agua potabilizada (Sistema de ósmosis inversa)',
+      'Calles con adoquinado y cordón cuneta',
+      'Internet por fibra óptica',
+      'Red eléctrica y alumbrado público',
+      'Espacios verdes planificados',
+    ],
+    ubicacionDescripcion:
+      'Fincas Ros se emplaza en Ibarlucea, combinando la tranquilidad del entorno natural con un acceso ágil a los principales corredores de la región. El proyecto se encuentra en una zona de alta revalorización, impulsada por la futura pavimentación de la Ruta 59, una obra clave que conectará Funes con Ibarlucea en los próximos años, garantizando una accesibilidad inmejorable.',
+    coords: { lat: -32.8654662, lng: -60.7954954 },
+    masterplan: '/planos/fincas-ros.webp',
+  },
+  {
     id: 'fincas-rosedal',
     nombre: 'Las Fincas del Rosedal',
     ubicacion: 'Ibarlucea',
@@ -71,23 +104,6 @@ export const desarrollos = [
       '/B1.webp',
     ],
     masterplan: '/planos/fincas-rosedal.svg',
-  },
-  {
-    id: 'fincas-ros',
-    nombre: 'Fincas Ros',
-    ubicacion: 'Ibarlucea',
-    lifecycle: 'activo',
-    badge: 'En Comercialización',
-    imagen: '/images/dev-6.png',
-    logo: '/logos/fincas-ros.webp',
-    subtituloHero:
-      'Un nuevo loteo residencial en Ibarlucea, pensado para una vida tranquila y conectada, con infraestructura completa y un entorno natural cuidado',
-    descripcion:
-      'Nuevo loteo residencial en Ibarlucea, pensado para una vida tranquila y conectada, con infraestructura completa y entorno natural cuidado.',
-    avance: 35,
-    servicios: ['Luz', 'Agua', 'Calles', 'Alumbrado público', 'Espacios verdes'],
-    coords: { lat: -32.8654662, lng: -60.7954954 },
-    masterplan: '/planos/fincas-ros.webp',
   },
   {
     id: 'terranova',

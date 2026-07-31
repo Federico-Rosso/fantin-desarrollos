@@ -47,9 +47,10 @@ function getServicioIcon(servicio = '') {
   if (s.includes('agua')) return Droplets;
   if (s.includes('cloaca')) return Droplets;
   if (s.includes('gas')) return Flame;
-  if (s.includes('wifi') || s.includes('red') || s.includes('fibra')) return Wifi;
-  if (s.includes('electric')) return Zap;
+  if (s.includes('electric') || s.includes('eléctric')) return Zap;
   if (s.includes('alumbrado') || s.includes('luz')) return Lightbulb;
+  if (s.includes('wifi') || s.includes('internet') || s.includes('red') || s.includes('fibra'))
+    return Wifi;
   if (s.includes('alambr') || s.includes('cerc') || s.includes('perimetr')) return Fence;
   if (s.includes('cordón') || s.includes('cordon') || s.includes('cuneta')) return Construction;
   if (s.includes('calle') || s.includes('paviment') || s.includes('asfalt')) return Route;
@@ -130,17 +131,23 @@ export default function ProyectoPage({ proyecto }) {
     `Hola! Quiero más información sobre ${proyecto.nombre} (${proyecto.ubicacion}).`,
   );
 
-  const stats = [
-    { label: 'Localidad', value: proyecto.ubicacion, accent: false },
-    {
-      label: 'Etapa comercial',
-      value: isActivo ? 'En comercialización' : 'Barrio consolidado',
-      accent: false,
-    },
-    isActivo && typeof proyecto.avance === 'number'
-      ? { label: 'Avance de obra', value: `${proyecto.avance}%`, accent: true }
-      : { label: 'Estado', value: '100% Vendido', accent: true },
-  ].filter(Boolean);
+  const stats = proyecto.fichaTecnica?.length
+    ? proyecto.fichaTecnica.map((f) => ({
+        label: f.label,
+        value: f.value,
+        accent: Boolean(f.accent),
+      }))
+    : [
+        { label: 'Localidad', value: proyecto.ubicacion, accent: false },
+        {
+          label: 'Etapa comercial',
+          value: isActivo ? 'En comercialización' : 'Barrio consolidado',
+          accent: false,
+        },
+        isActivo && typeof proyecto.avance === 'number'
+          ? { label: 'Avance de obra', value: `${proyecto.avance}%`, accent: true }
+          : { label: 'Estado', value: '100% Vendido', accent: true },
+      ].filter(Boolean);
 
   return (
     <>
@@ -216,7 +223,11 @@ export default function ProyectoPage({ proyecto }) {
 
         {/* STATS */}
         <section className="border-y border-premium-line bg-premium-dark py-7">
-          <div className="mx-auto grid w-full max-w-7xl grid-cols-1 gap-6 px-6 sm:grid-cols-3 sm:px-10">
+          <div
+            className={`mx-auto grid w-full max-w-7xl grid-cols-1 gap-6 px-6 sm:grid-cols-2 sm:px-10 ${
+              stats.length >= 4 ? 'lg:grid-cols-4' : 'sm:grid-cols-3'
+            }`}
+          >
             {stats.map((s) => (
               <div
                 key={s.label}
@@ -319,6 +330,11 @@ export default function ProyectoPage({ proyecto }) {
                     className="h-full rounded-full bg-primary-green"
                   />
                 </div>
+                {proyecto.avanceDescripcion && (
+                  <p className="mt-5 max-w-3xl font-sans text-sm leading-relaxed text-premium-muted">
+                    {proyecto.avanceDescripcion}
+                  </p>
+                )}
               </section>
             )}
 
