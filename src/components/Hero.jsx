@@ -38,7 +38,7 @@ export default function Hero() {
         {/* Green accent gradient on the left */}
         <div className="absolute inset-0 bg-gradient-to-r from-primary-green/30 via-transparent to-transparent" />
         {/* Bottom fade to #1e3310 so the next section blends seamlessly */}
-        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-b from-transparent to-[#1e3310]" />
+        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-b from-transparent via-[#1e3310]/80 to-[#1e3310]" />
       </div>
 
       {/* Soft accent glow */}
