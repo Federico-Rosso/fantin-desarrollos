@@ -16,7 +16,7 @@ export default function Home() {
           name="description"
           content="Loteos, barrios y desarrollos urbanos donde la naturaleza y la arquitectura moderna se encuentran en equilibrio. 27 años entregando lo que prometemos."
         />
-        <meta name="theme-color" content="#0E0E0E" />
+        <meta name="theme-color" content="#1e3310" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Navbar />
@@ -26,7 +26,7 @@ export default function Home() {
         <Stats />
         <Contact />
       </main>
-      <Footer />
+      <Footer bgClass="bg-dark-green" />
     </>
   );
 }

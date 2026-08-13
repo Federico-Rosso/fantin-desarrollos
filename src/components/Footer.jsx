@@ -26,9 +26,9 @@ const navLinks = [
   { label: 'Contacto', href: '/#contacto' },
 ];
 
-export default function Footer() {
+export default function Footer({ bgClass = 'bg-premium-black' }) {
   return (
-    <footer className="bg-premium-dark">
+    <footer className={bgClass}>
       <div className="mx-auto w-full max-w-7xl px-6 py-10 sm:px-10">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">

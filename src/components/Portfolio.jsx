@@ -40,7 +40,7 @@ export default function Portfolio() {
   );
 
   return (
-    <section id="proyectos" className="relative bg-premium-black pt-10 pb-14 sm:pt-12 sm:pb-16">
+    <section id="proyectos" className="relative bg-dark-green pt-10 pb-14 sm:pt-12 sm:pb-16">
       <div className="mx-auto w-full max-w-7xl px-6 sm:px-10">
         {/* En comercialización */}
         <div className="mb-10 max-w-2xl">
