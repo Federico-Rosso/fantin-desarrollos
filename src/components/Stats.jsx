@@ -20,7 +20,7 @@ const wrap = {
 
 export default function Stats() {
   return (
-    <section id="nosotros" className="relative bg-premium-dark py-14 sm:py-16">
+    <section id="nosotros" className="relative bg-dark-green py-14 sm:py-16">
       <div className="mx-auto w-full max-w-7xl px-6 sm:px-10">
         <div className="mb-10 max-w-2xl">
           <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-primary-green">
