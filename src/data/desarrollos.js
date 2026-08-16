@@ -204,12 +204,11 @@ export const desarrollos = [
     masterplan: '/planos/carcaraes.svg',
   },
 
-  // ── BARRIOS CONSOLIDADOS ─────────────────────────────────────────────
   {
     id: 'altos-orono',
     nombre: 'Altos de Oroño',
     ubicacion: 'San Lorenzo',
-    lifecycle: 'consolidado',
+    lifecycle: 'activo',
     badge: '100% Vendido / Consolidado',
     videoId: '685tsMY-P_w',
     imagen: '/images/dev-3.png',
@@ -220,23 +219,10 @@ export const desarrollos = [
       'Barrio consolidado en San Lorenzo, con lotes en altura y vistas privilegiadas del entorno, hoy plenamente habitado.',
   },
   {
-    id: 'solares-carcarana',
-    nombre: 'Solares del Carcarañá',
-    ubicacion: 'Carcarañá',
-    lifecycle: 'consolidado',
-    badge: '100% Vendido / Hito Fundacional',
-    imagen: '/images/dev-4.png',
-    logo: '/logos/solares-carcarana.webp',
-    subtituloHero:
-      'El hito fundacional de Fantín Desarrollos en Carcarañá: un barrio abierto íntegramente vendido y plenamente habitado',
-    descripcion:
-      'Hito fundacional de Fantín Desarrollos: un barrio abierto íntegramente vendido y plenamente habitado.',
-  },
-  {
     id: 'quinta-cairo',
     nombre: 'Quinta Cairo',
     ubicacion: 'Capitán Bermúdez',
-    lifecycle: 'consolidado',
+    lifecycle: 'activo',
     badge: '100% Vendido / Consolidado',
     imagen: '/images/dev-5.png',
     logo: '/logos/quinta-cairo.png',
@@ -249,7 +235,7 @@ export const desarrollos = [
     id: 'delta-bucare',
     nombre: 'Delta del Bucaré',
     ubicacion: 'Monje',
-    lifecycle: 'consolidado',
+    lifecycle: 'activo',
     badge: 'Reserva Natural / Consolidado',
     videoId: 'Y49fZBjHMl0',
     imagen: '/images/dev-6.png',

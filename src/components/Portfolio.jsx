@@ -16,10 +16,6 @@ export default function Portfolio() {
     () => desarrollos.filter((d) => d.lifecycle === 'activo'),
     [],
   );
-  const consolidados = useMemo(
-    () => desarrollos.filter((d) => d.lifecycle === 'consolidado'),
-    [],
-  );
 
   const onSelect = (p) => router.push(`/proyectos/${p.id}`);
 
@@ -52,17 +48,6 @@ export default function Portfolio() {
           </h2>
         </div>
         {renderGrupo(enComercializacion)}
-
-        {/* Consolidados */}
-        <div className="mb-10 mt-16 max-w-2xl">
-          <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-primary-green">
-            Barrios consolidados
-          </span>
-          <h2 className="mt-4 font-heading text-4xl font-black leading-tight tracking-tight text-balance text-tech-white sm:text-5xl">
-            Entregamos +2500 lotes
-          </h2>
-        </div>
-        {renderGrupo(consolidados)}
       </div>
     </section>
   );
