@@ -76,7 +76,7 @@ export default function Hero() {
               href="#proyectos"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary-green px-8 py-4 font-sans text-base font-semibold text-premium-black transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-sage"
             >
-              Ver nuestros proyectos
+              Ver nuestros desarrollos
               <ArrowRight
                 size={18}
                 className="transition-transform duration-300 ease-in-out group-hover:translate-x-1"

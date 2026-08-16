@@ -21,7 +21,7 @@ const socials = [
 ];
 
 const navLinks = [
-  { label: 'Proyectos', href: '/' },
+  { label: 'Desarrollos', href: '/#proyectos' },
   { label: 'Nosotros', href: '/nosotros' },
   { label: 'Contacto', href: '/#contacto' },
 ];
@@ -41,7 +41,7 @@ export default function Footer({ bgClass = 'bg-premium-black' }) {
                 alt="Fantín Desarrollos"
                 loading="lazy"
                 decoding="async"
-                className="h-28 w-auto object-contain sm:h-32"
+                className="h-40 w-auto object-contain sm:h-48"
               />
             </Link>
           </div>
