@@ -118,22 +118,6 @@ export const desarrollos = [
     masterplan: '/planos/fincas-rosedal.svg',
   },
   {
-    id: 'terranova',
-    nombre: 'Terranova',
-    ubicacion: 'Oliveros',
-    lifecycle: 'activo',
-    badge: 'En Obra / Últimos Lotes',
-    videoId: 'VKQ3uVNEg-E',
-    imagen: '/images/dev-1.png',
-    logo: '/logos/terranova.png',
-    subtituloHero:
-      'En Oliveros, un barrio abierto con infraestructura completa y los últimos lotes disponibles, en plena ejecución de obra',
-    descripcion:
-      'Barrio abierto con infraestructura completa y los últimos lotes disponibles en plena ejecución de obra.',
-    avance: 85,
-    servicios: ['Luz', 'Agua', 'Calles asfaltadas', 'Cloacas', 'Espacios verdes'],
-  },
-  {
     id: 'cinco-lagos',
     nombre: 'Cinco Lagos',
     ubicacion: 'Ibarlucea',
@@ -148,6 +132,22 @@ export const desarrollos = [
     avance: 30,
     servicios: ['Luz', 'Agua', 'Lagunas', 'Calles', 'Seguridad perimetral'],
     mapQuery: 'Cinco Lagos, Ibarlucea, Santa Fe',
+  },
+  {
+    id: 'terranova',
+    nombre: 'Terranova',
+    ubicacion: 'Capitán Bermúdez',
+    lifecycle: 'activo',
+    badge: 'En Obra / Últimos Lotes',
+    videoId: 'VKQ3uVNEg-E',
+    imagen: '/images/dev-1.png',
+    logo: '/logos/terranova.png',
+    subtituloHero:
+      'En Capitán Bermúdez, un barrio abierto con infraestructura completa y los últimos lotes disponibles, en plena ejecución de obra',
+    descripcion:
+      'Barrio abierto con infraestructura completa y los últimos lotes disponibles en plena ejecución de obra.',
+    avance: 85,
+    servicios: ['Luz', 'Agua', 'Calles asfaltadas', 'Cloacas', 'Espacios verdes'],
   },
   {
     id: 'fincas-ybarlucea',
