@@ -50,7 +50,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="relative overflow-hidden rounded-3xl border border-premium-line bg-premium-gray p-8 sm:p-12 lg:p-16"
+          className="relative overflow-hidden rounded-3xl border border-tech-white/15 bg-tech-white/10 backdrop-blur-xl p-8 sm:p-12 lg:p-16"
         >
           <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary-green/10 blur-3xl" />
 

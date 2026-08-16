@@ -6,9 +6,8 @@ import { useRouter } from 'next/router';
 
 const links = [
   { label: 'Inicio', href: '/#inicio' },
-  { label: 'Proyectos', href: '/#proyectos' },
+  { label: 'Desarrollos', href: '/#proyectos' },
   { label: 'Nosotros', href: '/nosotros' },
-  { label: 'Contacto', href: '/#contacto' },
 ];
 
 export default function Navbar() {
@@ -47,7 +46,7 @@ export default function Navbar() {
           <img
             src="/images/isologotipo.png"
             alt="Fantín Desarrollos"
-            className="h-12 w-auto object-contain sm:h-14"
+            className="h-16 w-auto object-contain sm:h-20"
           />
         </Link>
 

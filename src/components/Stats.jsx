@@ -41,13 +41,13 @@ export default function Stats() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.3 }}
-          className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-premium-line bg-premium-line lg:grid-cols-4"
+          className="grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-tech-white/15 bg-tech-white/10 backdrop-blur-xl lg:grid-cols-4"
         >
           {stats.map((s) => (
             <motion.div
               key={s.suffix}
               variants={item}
-              className="flex flex-col bg-premium-dark p-8 transition-colors duration-300 hover:bg-premium-gray"
+              className="flex flex-col bg-tech-white/5 p-8 transition-colors duration-300 hover:bg-tech-white/10"
             >
               <span className="font-heading text-5xl font-black tracking-tight text-tech-white sm:text-6xl">
                 {s.value}
