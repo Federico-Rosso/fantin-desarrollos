@@ -25,11 +25,14 @@ export const desarrollos = [
     avanceDescripcion:
       'Actualmente nos encontramos en plena etapa de movimientos de suelo, trabajando activamente en el trazado y pavimentación integral de las calles y en el desarrollo de los reservorios de agua del barrio.',
     servicios: [
-      'Agua potabilizada (Sistema de ósmosis inversa)',
-      'Calles con adoquinado y cordón cuneta',
-      'Internet por fibra óptica',
-      'Red eléctrica y alumbrado público',
-      'Espacios verdes planificados',
+      'Wifi con fibra óptica',
+      'Calles pavimentadas',
+      'Cordón cuneta',
+      'Agua potabilizada',
+      'Alumbrado público',
+      'Anfiteatro natural',
+      'Skate park',
+      'Bicisenda',
     ],
     ubicacionDescripcion:
       'Fincas Ros se emplaza en Ibarlucea, combinando la tranquilidad del entorno natural con un acceso ágil a los principales corredores de la región. El proyecto se encuentra en una zona de alta revalorización, impulsada por la futura pavimentación de la Ruta 59, una obra clave que conectará Funes con Ibarlucea en los próximos años, garantizando una accesibilidad inmejorable.',
@@ -68,14 +71,14 @@ export const desarrollos = [
       disponibles: 'Segunda Etapa',
     },
     servicios: [
+      'Red Wifi',
       'Calles pavimentadas',
       'Cordón cuneta',
-      'Alambrado público',
+      'Agua potabilizada',
+      'Alumbrado público',
       'Electricidad',
-      'Agua potable',
       'Espacios verdes intervenidos',
       'Juegos infantiles',
-      'Red Wifi',
     ],
     beneficioClub: {
       titulo: 'Club Bancario Rosario Bonificado',
@@ -130,7 +133,17 @@ export const desarrollos = [
     descripcion:
       'Desarrollo premium organizado en torno a cinco lagunas, con lotes amplios y paisajismo integral.',
     avance: 30,
-    servicios: ['Luz', 'Agua', 'Lagunas', 'Calles', 'Seguridad perimetral'],
+    servicios: [
+      'Red de agua potable',
+      'Red eléctrica subterránea',
+      'Sistema de seguridad',
+      'Alumbrado público LED',
+      'Red de desagües cloacales',
+      'Fibra óptica subterránea',
+      'Bv de ingreso',
+      'Calles pavimentadas',
+      'Wifi en espacios comunes',
+    ],
     mapQuery: 'Cinco Lagos, Ibarlucea, Santa Fe',
   },
   {
@@ -147,7 +160,17 @@ export const desarrollos = [
     descripcion:
       'Barrio abierto con infraestructura completa y los últimos lotes disponibles en plena ejecución de obra.',
     avance: 85,
-    servicios: ['Luz', 'Agua', 'Calles asfaltadas', 'Cloacas', 'Espacios verdes'],
+    servicios: [
+      'Calles pavimentadas',
+      'Cordón cuneta',
+      'Alumbrado público',
+      'Internet por fibra óptica',
+      'Electricidad',
+      'Agua potable',
+      'Gas natural',
+      'Espacio verde intervenido',
+      'Juegos infantiles',
+    ],
   },
   {
     id: 'fincas-ybarlucea',
@@ -162,7 +185,12 @@ export const desarrollos = [
     descripcion:
       'Lotes residenciales de gran superficie en un entorno consolidado, con comercialización en etapa avanzada.',
     avance: 65,
-    servicios: ['Luz', 'Agua', 'Calles', 'Gas', 'Áreas recreativas'],
+    servicios: [
+      'Wifi con fibra óptica',
+      'Planta de agua potabilizada',
+      'Acceso asfaltado',
+      'Áreas recreativas',
+    ],
     coords: { lat: -32.8610788, lng: -60.7861378 },
   },
   {
@@ -179,7 +207,15 @@ export const desarrollos = [
     descripcion:
       'Pueblo Carcaraes es una propuesta de naturaleza y aventura en Oliveros, que integra distintos barrios y sectores dentro de un mismo entorno productivo y paisajístico.',
     avance: 50,
-    servicios: ['Luz', 'Agua', 'Calles', 'Áreas comunes', 'Forestación'],
+    servicios: [
+      '2 ingresos controlados',
+      '+15 has de lagos para uso recreativo',
+      '6km costa sobre Río Carcarañá',
+      'Vegetación autóctona bordeando el río',
+      'Internet por fibra óptica',
+      'Ingresos pavimentados',
+      'Guardería náutica y bajada de lancha',
+    ],
     sectores: [
       {
         nombre: 'Chacras del Rincón',
@@ -217,6 +253,15 @@ export const desarrollos = [
       'Un barrio consolidado en San Lorenzo, con lotes en altura y vistas privilegiadas del entorno, hoy plenamente habitado',
     descripcion:
       'Barrio consolidado en San Lorenzo, con lotes en altura y vistas privilegiadas del entorno, hoy plenamente habitado.',
+    servicios: [
+      'Agua potabilizada',
+      'Wifi',
+      'Electricidad',
+      'Gas natural',
+      'Alumbrado público',
+      'Sistema cloacal',
+      'Reforestación pública',
+    ],
   },
   {
     id: 'quinta-cairo',
@@ -230,6 +275,14 @@ export const desarrollos = [
       'Una comunidad consolidada y completamente vendida en Capitán Bermúdez, hoy un barrio maduro de referencia en la zona',
     descripcion:
       'Comunidad consolidada y completamente vendida, hoy un barrio maduro de referencia en la zona.',
+    servicios: [
+      'Red de gas natural',
+      'Red de cloacas',
+      'Agua potabilizada',
+      'Energía eléctrica',
+      'Iluminación pública',
+      '5000 m² de espacios verdes',
+    ],
   },
   {
     id: 'delta-bucare',
@@ -244,6 +297,13 @@ export const desarrollos = [
       'Un barrio consolidado en Monje, en torno a una reserva natural, con humedales y biodiversidad protegida',
     descripcion:
       'Barrio consolidado en torno a una reserva natural, con humedales y biodiversidad protegida.',
+    servicios: [
+      'A orillas del río Coronda',
+      'Bosque nativo protegido',
+      'Amarra propia',
+      'Alumbrado público',
+      'Calles consolidadas',
+    ],
     coords: { lat: -32.3239121, lng: -60.8845568 },
   },
 ];

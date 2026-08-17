@@ -26,6 +26,8 @@ import {
   Lightbulb,
   Trophy,
   ShoppingBag,
+  Anchor,
+  Bike,
   CheckCircle2,
   X,
   ChevronLeft,
@@ -45,21 +47,57 @@ const WHATSAPP = '5490000000000';
 function getServicioIcon(servicio = '') {
   const s = servicio.toLowerCase();
   if (s.includes('agua')) return Droplets;
-  if (s.includes('cloaca')) return Droplets;
+  if (s.includes('cloaca') || s.includes('desagüe') || s.includes('desague')) return Droplets;
   if (s.includes('gas')) return Flame;
-  if (s.includes('electric') || s.includes('eléctric')) return Zap;
-  if (s.includes('alumbrado') || s.includes('luz')) return Lightbulb;
-  if (s.includes('wifi') || s.includes('internet') || s.includes('red') || s.includes('fibra'))
+  if (s.includes('electric') || s.includes('eléctric') || s.includes('energía') || s.includes('energia'))
+    return Zap;
+  if (s.includes('alumbrado') || s.includes('iluminaci') || s.includes('luz')) return Lightbulb;
+  if (s.includes('amarra') || s.includes('náutic') || s.includes('nautic') || s.includes('lancha'))
+    return Anchor;
+  if (s.includes('skate') || s.includes('bici')) return Bike;
+  if (s.includes('wifi') || s.includes('internet') || s.includes('fibra') || s.includes('red'))
     return Wifi;
   if (s.includes('alambr') || s.includes('cerc') || s.includes('perimetr')) return Fence;
   if (s.includes('cordón') || s.includes('cordon') || s.includes('cuneta')) return Construction;
-  if (s.includes('calle') || s.includes('paviment') || s.includes('asfalt')) return Route;
+  if (
+    s.includes('calle') ||
+    s.includes('paviment') ||
+    s.includes('asfalt') ||
+    s.includes('acceso') ||
+    s.includes('ingreso') ||
+    s.includes('bv ') ||
+    s.includes('bulevar')
+  )
+    return Route;
+  if (s.includes('control') || s.includes('segur')) return ShieldCheck;
   if (s.includes('juego')) return Baby;
-  if (s.includes('laguna') || s.includes('lago')) return Waves;
-  if (s.includes('forest') || s.includes('verde') || s.includes('arbol') || s.includes('árbol'))
+  if (
+    s.includes('forest') ||
+    s.includes('verde') ||
+    s.includes('arbol') ||
+    s.includes('árbol') ||
+    s.includes('bosque') ||
+    s.includes('nativo') ||
+    s.includes('vegetaci') ||
+    s.includes('autócton') ||
+    s.includes('autocton')
+  )
     return Trees;
-  if (s.includes('segur')) return ShieldCheck;
-  if (s.includes('recreat') || s.includes('común') || s.includes('comun') || s.includes('club'))
+  if (
+    s.includes('laguna') ||
+    s.includes('lago') ||
+    s.includes('río') ||
+    s.includes('rio') ||
+    s.includes('costa')
+  )
+    return Waves;
+  if (
+    s.includes('recreat') ||
+    s.includes('anfiteatro') ||
+    s.includes('común') ||
+    s.includes('comun') ||
+    s.includes('club')
+  )
     return Trophy;
   if (s.includes('comercial') || s.includes('local') || s.includes('gastro')) return ShoppingBag;
   return CheckCircle2;
