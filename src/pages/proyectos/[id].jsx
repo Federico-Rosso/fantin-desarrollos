@@ -168,23 +168,23 @@ export default function ProyectoPage({ proyecto }) {
     `Hola! Quiero más información sobre ${proyecto.nombre} (${proyecto.ubicacion}).`,
   );
 
-  const stats = proyecto.fichaTecnica?.length
-    ? proyecto.fichaTecnica.map((f) => ({
-        label: f.label,
-        value: f.value,
-        accent: Boolean(f.accent),
-      }))
-    : [
-        { label: 'Localidad', value: proyecto.ubicacion, accent: false },
-        {
-          label: 'Etapa comercial',
-          value: isActivo ? 'En comercialización' : 'Barrio consolidado',
-          accent: false,
-        },
-        isActivo && typeof proyecto.avance === 'number'
-          ? { label: 'Avance de obra', value: `${proyecto.avance}%`, accent: true }
-          : { label: 'Estado', value: '100% Vendido', accent: true },
-      ].filter(Boolean);
+  // Ficha técnica unificada: todos los desarrollos muestran
+  // Localidad | Etapa comercial | Dimensiones
+  const dimensionesValue =
+    proyecto.dimensiones ??
+    proyecto.fichaTecnica?.find((f) => f.label === 'Dimensiones')?.value ??
+    'Consultar dimensiones';
+  const etapaComercialValue =
+    proyecto.etapaComercial ??
+    proyecto.fichaTecnica?.find((f) => f.label === 'Etapa comercial')?.value ??
+    proyecto.badge ??
+    (isActivo ? 'En comercialización' : 'Barrio consolidado');
+
+  const stats = [
+    { label: 'Localidad', value: proyecto.ubicacion, accent: false },
+    { label: 'Etapa comercial', value: etapaComercialValue, accent: false },
+    { label: 'Dimensiones', value: dimensionesValue, accent: true },
+  ];
 
   return (
     <>
