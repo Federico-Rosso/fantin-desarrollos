@@ -5,7 +5,7 @@ import { Sprout, Waves, TreePine } from 'lucide-react';
 const milestones = [
   {
     period: 'Década del 90',
-    title: 'El origen',
+    title: 'Nuestros comienzos',
     Icon: Sprout,
     text: 'Fundada por el Dr. Julio Humberto Fantín, quien al jubilarse se dedicó al paisajismo. Limpiaba manualmente de hormigas y rosetas las tierras junto al Río Carcarañá en un tanque de 500 litros, con el único deseo de que los niños pudieran caminar descalzos.',
   },
