@@ -355,7 +355,8 @@ export const desarrollos = [
     ubicacion: 'Capitán Bermúdez',
     lifecycle: 'activo',
     badge: '100% Vendido / Consolidado',
-    imagen: '/images/dev-5.png',
+    imagen:
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/d54c4a191c1a2c5c6121d35a4490ff54-RFRs29sufkiTRSGLDIF1QGyOqi9G3J.jpg',
     logo: '/logos/quinta-cairo.png',
     subtituloHero:
       'Una comunidad consolidada y completamente vendida en Capitán Bermúdez, hoy un barrio maduro de referencia en la zona',
@@ -369,6 +370,11 @@ export const desarrollos = [
       'Iluminación pública',
       '5000 m² de espacios verdes',
     ],
+    fotos: [
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/d54c4a191c1a2c5c6121d35a4490ff54-RFRs29sufkiTRSGLDIF1QGyOqi9G3J.jpg',
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/793b8f8fee124617db40f08eb34eacab-MS14wbmRdq0EMIdVUcevkNRAcUgjYO.jpg',
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/5fa21cd9e0d2531a2f1dfdffbab46f70_L-bgPdrj4cacyyLhYON2IIMpyk6DOCv8.jpg',
+    ],
   },
   {
     id: 'delta-bucare',
@@ -377,7 +383,8 @@ export const desarrollos = [
     lifecycle: 'activo',
     badge: 'Reserva Natural / Consolidado',
     videoId: 'Y49fZBjHMl0',
-    imagen: '/images/dev-6.png',
+    imagen:
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1946352596-L7z2LsVJgf3dQVLPP1roH25Mm5XfA5.jpg',
     logo: '/logos/delta-bucare.webp',
     subtituloHero:
       'Un barrio consolidado en Monje, en torno a una reserva natural, con humedales y biodiversidad protegida',
@@ -391,6 +398,13 @@ export const desarrollos = [
       'Calles consolidadas',
     ],
     coords: { lat: -32.3239121, lng: -60.8845568 },
+    fotos: [
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1946352596-L7z2LsVJgf3dQVLPP1roH25Mm5XfA5.jpg',
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1946352554-b5DwN9IvIppXu3O3FWvGECG1XAJ4kb.jpg',
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1946352658-63Hu068zf23k4Gv3G56Mw91YKM9G5S.webp',
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1946352561-jjXkw5iNav4MHLm1BJAaXHtT1EPxpa.jpg',
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1946352584-hdLP7mPhMyWMn9xXGKhlPGPxNlJl98.webp',
+    ],
   },
 ];
 
