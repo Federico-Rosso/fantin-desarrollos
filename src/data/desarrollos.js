@@ -49,6 +49,13 @@ export const desarrollos = [
       '/proyectos/fincas-ros/obra-terreno-1.jpg',
       '/proyectos/fincas-ros/obra-terreno-3.jpg',
     ],
+    beneficioClub: {
+      titulo: 'Rosario Rowing Club Bonificado',
+      descripcion:
+        'Rowing Club es nuestro aliado: con la compra del lote tenés bonificada la cuota de ingreso al Rosario Rowing Club.',
+      logo: '/logos/rowing-club.png',
+      aliado: true,
+    },
     coords: { lat: -32.8654662, lng: -60.7954954 },
     masterplan: '/planos/fincas-ros.webp',
   },
@@ -166,6 +173,13 @@ export const desarrollos = [
       '/proyectos/cinco-lagos/cancha-deportes.jpg',
       '/proyectos/cinco-lagos/cancha-ruta.jpg',
     ],
+    beneficioClub: {
+      titulo: 'Club Bancario Rosario Bonificado',
+      descripcion:
+        'Con la compra del lote tenés bonificada la cuota de ingreso al Club Bancario en el predio y en sede zona norte.',
+      logo: '/logos/club-bancario.webp',
+      aliado: true,
+    },
     mapQuery: 'Cinco Lagos, Ibarlucea, Santa Fe',
   },
   {
