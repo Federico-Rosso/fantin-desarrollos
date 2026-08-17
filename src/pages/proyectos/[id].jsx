@@ -7,7 +7,6 @@ import {
   MapPin,
   ArrowLeft,
   Layers,
-  Hammer,
   ShieldCheck,
   MessageCircle,
   Images,
@@ -169,23 +168,23 @@ export default function ProyectoPage({ proyecto }) {
     `Hola! Quiero más información sobre ${proyecto.nombre} (${proyecto.ubicacion}).`,
   );
 
-  const stats = proyecto.fichaTecnica?.length
-    ? proyecto.fichaTecnica.map((f) => ({
-        label: f.label,
-        value: f.value,
-        accent: Boolean(f.accent),
-      }))
-    : [
-        { label: 'Localidad', value: proyecto.ubicacion, accent: false },
-        {
-          label: 'Etapa comercial',
-          value: isActivo ? 'En comercialización' : 'Barrio consolidado',
-          accent: false,
-        },
-        isActivo && typeof proyecto.avance === 'number'
-          ? { label: 'Avance de obra', value: `${proyecto.avance}%`, accent: true }
-          : { label: 'Estado', value: '100% Vendido', accent: true },
-      ].filter(Boolean);
+  // Ficha técnica unificada: todos los desarrollos muestran
+  // Localidad | Etapa comercial | Dimensiones
+  const dimensionesValue =
+    proyecto.dimensiones ??
+    proyecto.fichaTecnica?.find((f) => f.label === 'Dimensiones')?.value ??
+    'Consultar dimensiones';
+  const etapaComercialValue =
+    proyecto.etapaComercial ??
+    proyecto.fichaTecnica?.find((f) => f.label === 'Etapa comercial')?.value ??
+    proyecto.badge ??
+    (isActivo ? 'En comercialización' : 'Barrio consolidado');
+
+  const stats = [
+    { label: 'Localidad', value: proyecto.ubicacion, accent: false },
+    { label: 'Etapa comercial', value: etapaComercialValue, accent: false },
+    { label: 'Dimensiones', value: dimensionesValue, accent: true },
+  ];
 
   return (
     <>
@@ -344,38 +343,6 @@ export default function ProyectoPage({ proyecto }) {
         {/* BODY */}
         <div className="mx-auto mt-20 w-full max-w-7xl px-6 sm:px-10">
           <div className="space-y-16">
-            {/* Avance de obra */}
-            {isActivo && typeof proyecto.avance === 'number' && (
-              <section>
-                <h2 className="flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-widest text-primary-green">
-                  <Hammer size={14} />
-                  Avance de obra
-                </h2>
-                <div className="mt-5 flex items-center justify-between">
-                  <span className="font-sans text-sm text-premium-muted">
-                    Ejecución de infraestructura
-                  </span>
-                  <span className="font-heading text-xl font-bold text-tech-white">
-                    {proyecto.avance}%
-                  </span>
-                </div>
-                <div className="mt-3 h-2.5 w-full overflow-hidden rounded-full bg-premium-gray">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${proyecto.avance}%` }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                    className="h-full rounded-full bg-primary-green"
-                  />
-                </div>
-                {proyecto.avanceDescripcion && (
-                  <p className="mt-5 max-w-3xl font-sans text-sm leading-relaxed text-premium-muted">
-                    {proyecto.avanceDescripcion}
-                  </p>
-                )}
-              </section>
-            )}
-
             {/* Servicios / Amenities */}
             {proyecto.servicios?.length > 0 && (
               <section>
