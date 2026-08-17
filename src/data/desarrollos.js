@@ -219,7 +219,7 @@ export const desarrollos = [
     lifecycle: 'activo',
     badge: 'Turismo Rural / En Comercialización',
     videoId: 'GDCYXIKXxZs',
-    imagen: '/images/dev-1.png',
+    imagen: '/proyectos/carcaraes/vistas.webp',
     logo: '/logos/carcaraes.png',
     subtituloHero:
       'Una propuesta de naturaleza y aventura en Oliveros, que integra distintos barrios y sectores dentro de un mismo entorno productivo y paisajístico',
@@ -254,6 +254,19 @@ export const desarrollos = [
         descripcion:
           'Sector integrado a un corredor de biodiversidad, con lotes en venta y fuerte impronta ambiental.',
       },
+    ],
+    fotos: [
+      '/proyectos/carcaraes/vistas.webp',
+      '/proyectos/carcaraes/ingresos.webp',
+      '/proyectos/carcaraes/lagos.webp',
+      '/proyectos/carcaraes/costa.webp',
+      '/proyectos/carcaraes/moto-agua.webp',
+      '/proyectos/carcaraes/muelle.webp',
+      '/proyectos/carcaraes/tranquilidad.webp',
+      '/proyectos/carcaraes/espacios-verdes.webp',
+      '/proyectos/carcaraes/paseos.webp',
+      '/proyectos/carcaraes/vegetacion.webp',
+      '/proyectos/carcaraes/internet.webp',
     ],
     coords: { lat: -32.4785731, lng: -60.8557778 },
     masterplan: '/planos/carcaraes.svg',
