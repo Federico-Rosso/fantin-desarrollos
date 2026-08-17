@@ -316,6 +316,7 @@ export const desarrollos = [
       'Iluminación pública',
       '5000 m² de espacios verdes',
     ],
+    coords: { lat: -32.8189267, lng: -60.7257375 },
   },
   {
     id: 'delta-bucare',
