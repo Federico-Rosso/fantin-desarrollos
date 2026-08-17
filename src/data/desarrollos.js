@@ -294,6 +294,7 @@ export const desarrollos = [
       'Sistema cloacal',
       'Reforestación pública',
     ],
+    coords: { lat: -32.732848, lng: -60.7484577 },
   },
   {
     id: 'quinta-cairo',
