@@ -220,7 +220,8 @@ export const desarrollos = [
     ubicacion: 'Ibarlucea',
     lifecycle: 'activo',
     badge: 'Comercialización Avanzada',
-    imagen: '/images/dev-2.png',
+    imagen:
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carrousel_fincas_9-zz5uMH6d8KAK7X7wSVq9RU6wJZNSyG.webp',
     logo: '/logos/fincas-ybarlucea.png',
     subtituloHero:
       'Lotes residenciales de gran superficie en un entorno consolidado de Ibarlucea, con comercialización en etapa avanzada',
@@ -234,6 +235,16 @@ export const desarrollos = [
       'Áreas recreativas',
     ],
     coords: { lat: -32.8610788, lng: -60.7861378 },
+    fotos: [
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carrousel_fincas_9-zz5uMH6d8KAK7X7wSVq9RU6wJZNSyG.webp',
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carrousel_fincas_8-xRjuYxS1GVyHGiR5sBcQSVGVUjLYrH.webp',
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carrousel_fincas_6-7mrQvHeircyzbooS4OZUewo8b19jF4.webp',
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carrousel_fincas_1-7kcBAIt3AdqROhtUGRRLrKXLobmcPa.webp',
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carrousel_fincas_7-MZIGZ5pEWvLZUHEIYawQ45zunmiLQL.webp',
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carrousel_fincas_5-9lrmbrTHCmlVqO13ovaOKk5NE7RhQO.webp',
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carrousel_fincas_3-Zl6wz7e0oqVP4WvEUEDpdVLhI3ipnB.webp',
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carrousel_fincas_4-sj1S69MAaAitSJpTo9lPMNpgeU9gUc.webp',
+    ],
   },
   {
     id: 'carcaraes',
