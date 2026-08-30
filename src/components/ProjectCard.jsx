@@ -11,6 +11,7 @@ export default function ProjectCard({ proyecto, onSelect }) {
   if (!proyecto) return null;
 
   const isActivo = proyecto.lifecycle === 'activo';
+  const cardLogo = proyecto.logoCard || proyecto.logo;
 
   return (
     <motion.button
@@ -48,11 +49,11 @@ export default function ProjectCard({ proyecto, onSelect }) {
 
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col justify-end p-6">
-        {proyecto.logo ? (
+        {cardLogo ? (
           <h3 className="mt-2 flex h-20 items-end">
             <span className="sr-only">{proyecto.nombre}</span>
             <img
-              src={proyecto.logo || '/placeholder.svg'}
+              src={cardLogo || '/placeholder.svg'}
               alt={`Logo de ${proyecto.nombre}`}
               loading="lazy"
               decoding="async"
