@@ -27,12 +27,12 @@ function parseValue(value) {
 
 function AnimatedNumber({ value }) {
   const { prefix, number, suffix } = parseValue(value);
-  const [display, setDisplay] = useState(number);
+  const [display, setDisplay] = useState(0);
   const rafRef = useRef(null);
 
   const run = useCallback(() => {
     if (rafRef.current) cancelAnimationFrame(rafRef.current);
-    const duration = 900;
+    const duration = 1400;
     const start = performance.now();
     const tick = (now) => {
       const progress = Math.min((now - start) / duration, 1);
@@ -46,10 +46,12 @@ function AnimatedNumber({ value }) {
   }, [number]);
 
   return (
-    <span
+    <motion.span
       className="cursor-default font-heading text-5xl font-black tracking-tight text-tech-white sm:text-6xl"
+      onViewportEnter={run}
       onMouseEnter={run}
       onFocus={run}
+      viewport={{ once: true, amount: 0.6 }}
       tabIndex={0}
       role="text"
       aria-label={`${prefix}${number}${suffix}`}
@@ -57,7 +59,7 @@ function AnimatedNumber({ value }) {
       {prefix}
       {display.toLocaleString('es-AR')}
       {suffix}
-    </span>
+    </motion.span>
   );
 }
 
