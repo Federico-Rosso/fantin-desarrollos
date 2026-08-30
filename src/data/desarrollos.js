@@ -62,7 +62,7 @@ export const desarrollos = [
   },
   {
     id: 'fincas-rosedal',
-    nombre: 'Las Fincas del Rosedal',
+    nombre: 'Fincas del Rosedal',
     ubicacion: 'Ibarlucea',
     dimensiones: 'Consultar dimensiones',
     lifecycle: 'activo',
@@ -240,7 +240,7 @@ export const desarrollos = [
   },
   {
     id: 'fincas-ybarlucea',
-    nombre: 'Las Fincas de Ybarlucea',
+    nombre: 'Fincas de Ybarlucea',
     ubicacion: 'Ibarlucea',
     dimensiones: 'Lotes de gran superficie',
     lifecycle: 'activo',

@@ -59,7 +59,7 @@ export default function ProjectCard({ proyecto, onSelect }) {
               decoding="async"
               className="h-12 w-12 shrink-0 object-contain object-center drop-shadow-[0_2px_10px_rgba(255,255,255,0.18)]"
             />
-            <span className="whitespace-nowrap font-heading text-lg font-semibold leading-tight text-tech-white sm:text-xl">
+            <span className="whitespace-nowrap font-heading text-xl font-semibold leading-tight text-tech-white sm:text-2xl">
               {proyecto.nombre}
             </span>
           </h3>
