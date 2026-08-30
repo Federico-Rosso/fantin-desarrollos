@@ -141,7 +141,7 @@ export default function ProyectoPage({ proyecto }) {
     return (
       <>
         <Navbar />
-        <main className="flex min-h-screen items-center justify-center bg-premium-black px-6 text-center">
+        <main className="flex min-h-screen items-center justify-center bg-dark-green px-6 text-center">
           <div>
             <h1 className="font-heading text-3xl font-black text-tech-white">
               Proyecto no encontrado
@@ -158,7 +158,7 @@ export default function ProyectoPage({ proyecto }) {
             </Link>
           </div>
         </main>
-        <Footer />
+        <Footer bgClass="bg-dark-green" />
       </>
     );
   }
@@ -197,7 +197,7 @@ export default function ProyectoPage({ proyecto }) {
 
       <Navbar />
 
-      <main className="bg-premium-black pb-28 font-sans text-tech-white">
+      <main className="bg-dark-green pb-28 font-sans text-tech-white">
         {/* HERO — minimalista: solo el logo dinámico centrado sobre la imagen */}
         <section className="relative flex h-[80vh] min-h-[520px] w-full items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
@@ -211,7 +211,7 @@ export default function ProyectoPage({ proyecto }) {
                 isActivo ? 'brightness-[0.5]' : 'brightness-[0.45] grayscale-[0.4]'
               }`}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-premium-black via-premium-black/30 to-premium-black/30" />
+            <div className="absolute inset-0 bg-gradient-to-t from-dark-green via-dark-green/30 to-dark-green/30" />
           </div>
 
           {/* Volver — debajo del navbar fijo */}
@@ -624,7 +624,7 @@ export default function ProyectoPage({ proyecto }) {
       </main>
 
       {/* FLOATING WHATSAPP CTA (mobile) */}
-      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-premium-line bg-premium-black/90 px-6 py-3.5 backdrop-blur-lg lg:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-premium-line bg-dark-green/90 px-6 py-3.5 backdrop-blur-lg lg:hidden">
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4">
           <p className="hidden font-sans text-sm font-medium text-tech-white sm:block">
             {proyecto.nombre} — {proyecto.ubicacion}
@@ -711,7 +711,7 @@ export default function ProyectoPage({ proyecto }) {
         )}
       </AnimatePresence>
 
-      <Footer />
+      <Footer bgClass="bg-dark-green" />
     </>
   );
 }

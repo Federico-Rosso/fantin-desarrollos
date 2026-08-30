@@ -18,7 +18,7 @@ export default function NosotrosHero() {
         {/* Darkening overlay for text legibility */}
         <div className="absolute inset-0 bg-premium-black/55" />
         {/* Bottom gradient merging into the next section (#0E0E0E) */}
-        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-b from-transparent via-premium-black/70 to-premium-black" />
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-b from-transparent via-dark-green/70 to-dark-green" />
       </div>
 
       <div className="relative mx-auto w-full max-w-5xl px-6 sm:px-10">
