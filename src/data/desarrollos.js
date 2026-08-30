@@ -12,6 +12,7 @@ export const desarrollos = [
     badge: 'Pre-venta exclusiva',
     imagen: '/proyectos/fincas-ros/1.webp',
     logo: '/logos/fincas-ros.webp',
+    logoCard: '/logos/fincas-ros-iso.png',
     subtituloHero:
       'Un nuevo loteo residencial en Ibarlucea pensado para una vida tranquila y conectada. Lotes desde 360 m² con infraestructura de primera calidad y servicios exclusivos para tu futuro hogar.',
     descripcion:
@@ -61,13 +62,14 @@ export const desarrollos = [
   },
   {
     id: 'fincas-rosedal',
-    nombre: 'Las Fincas del Rosedal',
+    nombre: 'Fincas del Rosedal',
     ubicacion: 'Ibarlucea',
     dimensiones: 'Consultar dimensiones',
     lifecycle: 'activo',
     badge: 'Lanzamiento Segunda Etapa',
     imagen: '/F4.webp',
     logo: '/logos/fincas-rosedal.png',
+    logoCard: '/logos/fincas-rosedal-iso.png',
     tagline: 'Vida de pueblo, a 5 minutos de la gran ciudad.',
     subtituloHero:
       'A solo 5 minutos de Rosario, y cerca de Funes también. Las Fincas del Rosedal combina la tranquilidad absoluta del entorno natural con la comodidad urbana de primer nivel',
@@ -138,6 +140,7 @@ export const desarrollos = [
     badge: 'Desarrollo Premium / Lanzamiento',
     imagen: '/proyectos/cinco-lagos/portada.jpg',
     logo: '/logos/cinco-lagos.png',
+    logoCard: '/logos/cinco-lagos-iso.png',
     subtituloHero:
       'Un desarrollo premium organizado en torno a cinco lagunas, con lotes amplios y paisajismo integral en Ibarlucea',
     descripcion:
@@ -194,6 +197,7 @@ export const desarrollos = [
     imagen:
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DJI_0515-s0Igo2ORzQSRU7dGF0qO0RNnu6RNky.jpg',
     logo: '/logos/terranova.png',
+    logoCard: '/logos/terranova-iso.png',
     subtituloHero:
       'En Capitán Bermúdez, un barrio abierto con infraestructura completa y los últimos lotes disponibles, en plena ejecución de obra',
     descripcion:
@@ -236,7 +240,7 @@ export const desarrollos = [
   },
   {
     id: 'fincas-ybarlucea',
-    nombre: 'Las Fincas de Ybarlucea',
+    nombre: 'Fincas de Ybarlucea',
     ubicacion: 'Ibarlucea',
     dimensiones: 'Lotes de gran superficie',
     lifecycle: 'activo',
@@ -244,6 +248,7 @@ export const desarrollos = [
     imagen:
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carrousel_fincas_9-zz5uMH6d8KAK7X7wSVq9RU6wJZNSyG.webp',
     logo: '/logos/fincas-ybarlucea.png',
+    logoCard: '/logos/fincas-ybarlucea-iso.png',
     subtituloHero:
       'Lotes residenciales de gran superficie en un entorno consolidado de Ibarlucea, con comercialización en etapa avanzada',
     descripcion:
@@ -277,6 +282,7 @@ export const desarrollos = [
     videoId: 'GDCYXIKXxZs',
     imagen: '/proyectos/carcaraes/vistas.webp',
     logo: '/logos/carcaraes.png',
+    logoCard: '/logos/carcaraes-iso.png',
     subtituloHero:
       'Una propuesta de naturaleza y aventura en Oliveros, que integra distintos barrios y sectores dentro de un mismo entorno productivo y paisajístico',
     descripcion:
@@ -386,6 +392,7 @@ export const desarrollos = [
     badge: '100% Vendido / Consolidado',
     imagen: '/proyectos/quinta-cairo/acceso-cartel.jpg',
     logo: '/logos/quinta-cairo.png',
+    logoCard: '/logos/quinta-cairo-iso.png',
     subtituloHero:
       'Una comunidad consolidada y completamente vendida en Capitán Bermúdez, hoy un barrio maduro de referencia en la zona',
     descripcion:
