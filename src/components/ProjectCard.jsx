@@ -59,7 +59,7 @@ export default function ProjectCard({ proyecto, onSelect }) {
               decoding="async"
               className="h-16 w-16 shrink-0 object-contain object-center drop-shadow-[0_2px_10px_rgba(255,255,255,0.18)]"
             />
-            <span className="font-sans text-2xl font-light leading-tight text-tech-white text-balance sm:text-3xl">
+            <span className="font-heading text-2xl font-light leading-tight text-tech-white text-balance sm:text-3xl">
               {proyecto.nombre}
             </span>
           </h3>
