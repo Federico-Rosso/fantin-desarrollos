@@ -40,10 +40,7 @@ export default function Portfolio() {
       <div className="mx-auto w-full max-w-7xl px-6 sm:px-10">
         {/* En comercialización */}
         <div className="mb-10 max-w-2xl">
-          <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-primary-green">
-            En comercialización
-          </span>
-          <h2 className="mt-4 font-heading text-4xl font-black leading-tight tracking-tight text-balance text-tech-white sm:text-5xl">
+          <h2 className="font-heading text-4xl font-black leading-tight tracking-tight text-balance text-tech-white sm:text-5xl">
             Mirá nuestros desarrollos
           </h2>
         </div>

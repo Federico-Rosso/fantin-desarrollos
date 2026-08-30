@@ -53,7 +53,7 @@ const milestones = [
 
 export default function LegacyTimeline() {
   return (
-    <section className="bg-premium-black py-20 sm:py-28">
+    <section className="bg-dark-green py-20 sm:py-28">
       <div className="mx-auto w-full max-w-4xl px-6 sm:px-10">
         <div className="mb-14 text-center">
           <span className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-primary-green">

@@ -24,7 +24,7 @@ export default function Nosotros() {
         <LegacyTimeline />
         <OperationalCapacity />
       </main>
-      <Footer />
+      <Footer bgClass="bg-dark-green" />
     </>
   );
 }

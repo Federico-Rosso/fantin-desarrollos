@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
 
 const stats = [
@@ -18,15 +18,55 @@ const wrap = {
   show: { transition: { staggerChildren: 0.15 } },
 };
 
+// Separa un valor como "+3200" en prefijo ("+") y número (3200).
+function parseValue(value) {
+  const match = String(value).match(/^(\D*)(\d+)(.*)$/);
+  if (!match) return { prefix: '', number: 0, suffix: '' };
+  return { prefix: match[1], number: Number(match[2]), suffix: match[3] };
+}
+
+function AnimatedNumber({ value }) {
+  const { prefix, number, suffix } = parseValue(value);
+  const [display, setDisplay] = useState(number);
+  const rafRef = useRef(null);
+
+  const run = useCallback(() => {
+    if (rafRef.current) cancelAnimationFrame(rafRef.current);
+    const duration = 900;
+    const start = performance.now();
+    const tick = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      // easeOutExpo para un conteo con desaceleración marcada
+      const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+      setDisplay(Math.round(eased * number));
+      if (progress < 1) rafRef.current = requestAnimationFrame(tick);
+    };
+    setDisplay(0);
+    rafRef.current = requestAnimationFrame(tick);
+  }, [number]);
+
+  return (
+    <span
+      className="cursor-default font-heading text-5xl font-black tracking-tight text-tech-white sm:text-6xl"
+      onMouseEnter={run}
+      onFocus={run}
+      tabIndex={0}
+      role="text"
+      aria-label={`${prefix}${number}${suffix}`}
+    >
+      {prefix}
+      {display.toLocaleString('es-AR')}
+      {suffix}
+    </span>
+  );
+}
+
 export default function Stats() {
   return (
     <section id="nosotros" className="relative bg-dark-green py-14 sm:py-16">
       <div className="mx-auto w-full max-w-7xl px-6 sm:px-10">
         <div className="mb-10 max-w-2xl">
-          <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-primary-green">
-            Nosotros
-          </span>
-          <h2 className="mt-4 font-heading text-4xl font-black leading-tight tracking-tight text-balance text-tech-white sm:text-5xl">
+          <h2 className="font-heading text-4xl font-black leading-tight tracking-tight text-balance text-tech-white sm:text-5xl">
             Naturaleza y arquitectura en equilibrio
           </h2>
           <p className="mt-5 font-sans text-base leading-relaxed text-premium-muted">
@@ -49,9 +89,7 @@ export default function Stats() {
               variants={item}
               className="flex flex-col bg-tech-white/5 p-8 transition-colors duration-300 hover:bg-tech-white/10"
             >
-              <span className="font-heading text-5xl font-black tracking-tight text-tech-white sm:text-6xl">
-                {s.value}
-              </span>
+              <AnimatedNumber value={s.value} />
               <span className="mt-2 font-heading text-base font-bold uppercase tracking-wide text-primary-green">
                 {s.suffix}
               </span>

@@ -33,10 +33,10 @@ export default function OperationalCapacity() {
         />
         {/* Darkening overlay for legibility */}
         <div className="absolute inset-0 bg-premium-black/70" />
-        {/* Top gradient merging with the previous section (#0E0E0E) */}
-        <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-premium-black via-premium-black/70 to-transparent" />
-        {/* Bottom gradient merging with the footer (#151515) */}
-        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-premium-dark via-premium-dark/70 to-transparent" />
+        {/* Top gradient merging with the previous section (dark-green) */}
+        <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-dark-green via-dark-green/70 to-transparent" />
+        {/* Bottom gradient merging with the footer (dark-green) */}
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-dark-green via-dark-green/70 to-transparent" />
       </div>
 
       <div className="relative mx-auto w-full max-w-6xl px-6 sm:px-10">
