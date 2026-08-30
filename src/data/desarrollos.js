@@ -180,6 +180,7 @@ export const desarrollos = [
       logo: '/logos/club-bancario.webp',
       aliado: true,
     },
+    masterplan: '/planos/cinco-lagos.png',
     mapQuery: 'Cinco Lagos, Ibarlucea, Santa Fe',
   },
   {
@@ -231,6 +232,7 @@ export const desarrollos = [
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DJI_0493-aJu0Ry8TdiBGANVDgsIy1joB4y10da.jpg',
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DJI_0500-KFPtZ2o5wGHknUVzhplefeowMbCPUF.jpg',
     ],
+    masterplan: '/planos/terranova.png',
   },
   {
     id: 'fincas-ybarlucea',
