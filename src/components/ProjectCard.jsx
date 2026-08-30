@@ -50,15 +50,18 @@ export default function ProjectCard({ proyecto, onSelect }) {
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col justify-end p-6">
         {cardLogo ? (
-          <h3 className="mt-2 flex h-20 items-end">
-            <span className="sr-only">{proyecto.nombre}</span>
+          <h3 className="mt-2 flex items-center gap-4">
             <img
               src={cardLogo || '/placeholder.svg'}
-              alt={`Logo de ${proyecto.nombre}`}
+              alt=""
+              aria-hidden="true"
               loading="lazy"
               decoding="async"
-              className="max-h-20 w-auto max-w-[15rem] object-contain object-left drop-shadow-[0_2px_10px_rgba(255,255,255,0.18)]"
+              className="h-16 w-16 shrink-0 object-contain object-center drop-shadow-[0_2px_10px_rgba(255,255,255,0.18)]"
             />
+            <span className="font-heading text-2xl font-bold leading-tight text-tech-white text-balance sm:text-3xl">
+              {proyecto.nombre}
+            </span>
           </h3>
         ) : (
           <h3 className="mt-2 font-heading text-2xl font-bold text-tech-white sm:text-3xl">
