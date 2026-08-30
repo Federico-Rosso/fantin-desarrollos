@@ -69,6 +69,7 @@ export const desarrollos = [
     badge: 'Lanzamiento Segunda Etapa',
     imagen: '/F4.webp',
     logo: '/logos/fincas-rosedal.png',
+    logoCard: '/logos/fincas-rosedal-iso.png',
     tagline: 'Vida de pueblo, a 5 minutos de la gran ciudad.',
     subtituloHero:
       'A solo 5 minutos de Rosario, y cerca de Funes también. Las Fincas del Rosedal combina la tranquilidad absoluta del entorno natural con la comodidad urbana de primer nivel',

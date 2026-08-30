@@ -50,16 +50,16 @@ export default function ProjectCard({ proyecto, onSelect }) {
       {/* Content */}
       <div className="relative z-10 flex h-full flex-col justify-end p-6">
         {cardLogo ? (
-          <h3 className="mt-2 flex items-center gap-4">
+          <h3 className="mt-2 flex items-center gap-3">
             <img
               src={cardLogo || '/placeholder.svg'}
               alt=""
               aria-hidden="true"
               loading="lazy"
               decoding="async"
-              className="h-16 w-16 shrink-0 object-contain object-center drop-shadow-[0_2px_10px_rgba(255,255,255,0.18)]"
+              className="h-12 w-12 shrink-0 object-contain object-center drop-shadow-[0_2px_10px_rgba(255,255,255,0.18)]"
             />
-            <span className="font-heading text-2xl font-light leading-tight text-tech-white text-balance sm:text-3xl">
+            <span className="whitespace-nowrap font-heading text-lg font-semibold leading-tight text-tech-white sm:text-xl">
               {proyecto.nombre}
             </span>
           </h3>
