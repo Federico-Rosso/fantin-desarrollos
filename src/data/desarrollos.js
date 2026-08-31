@@ -363,6 +363,7 @@ export const desarrollos = [
     videoId: '685tsMY-P_w',
     imagen: '/proyectos/altos-orono/panoramica.jpg',
     logo: '/logos/altos-orono.webp',
+    logoCard: '/logos/altos-orono-iso.png',
     subtituloHero:
       'Un barrio consolidado en San Lorenzo, con lotes en altura y vistas privilegiadas del entorno, hoy plenamente habitado',
     descripcion:
@@ -421,6 +422,7 @@ export const desarrollos = [
     videoId: 'Y49fZBjHMl0',
     imagen: '/proyectos/delta-bucare/aerea-rio-1.jpg',
     logo: '/logos/delta-bucare.webp',
+    logoCard: '/logos/delta-bucare-iso.png',
     subtituloHero:
       'Un barrio consolidado en Monje, en torno a una reserva natural, con humedales y biodiversidad protegida',
     descripcion:
