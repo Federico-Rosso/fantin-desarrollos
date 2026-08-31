@@ -1,4 +1,5 @@
 // Fantín Desarrollos — Barrios Abiertos / Loteos Residenciales
+// isotipos actualizados
 // Two commercial lifecycles: activo (En Comercialización) y consolidado (Barrios Consolidados)
 
 export const desarrollos = [
