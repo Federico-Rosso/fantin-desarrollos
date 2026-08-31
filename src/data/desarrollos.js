@@ -1,4 +1,5 @@
 // Fantín Desarrollos — Barrios Abiertos / Loteos Residenciales
+// isotipos actualizados
 // Two commercial lifecycles: activo (En Comercialización) y consolidado (Barrios Consolidados)
 
 export const desarrollos = [
@@ -67,7 +68,7 @@ export const desarrollos = [
     dimensiones: 'Consultar dimensiones',
     lifecycle: 'activo',
     badge: 'Lanzamiento Segunda Etapa',
-    imagen: '/F4.webp',
+    imagen: '/fincas-rosedal/DJI_0996.jpg',
     logo: '/logos/fincas-rosedal.png',
     logoCard: '/logos/fincas-rosedal-iso.png',
     tagline: 'Vida de pueblo, a 5 minutos de la gran ciudad.',
@@ -121,6 +122,14 @@ export const desarrollos = [
     ],
     coords: { lat: -32.8507468, lng: -60.7643169 },
     fotos: [
+      '/fincas-rosedal/DJI_0996.jpg',
+      '/fincas-rosedal/DJI_0954-Pano-2.jpg',
+      '/fincas-rosedal/DJI_0991.jpg',
+      '/fincas-rosedal/DJI_0946.jpg',
+      '/fincas-rosedal/DJI_0970-Pano.jpg',
+      '/fincas-rosedal/DJI_0948.jpg',
+      '/fincas-rosedal/DJI_0955.jpg',
+      '/fincas-rosedal/DJI_0972.jpg',
       '/F4.webp',
       '/estacion3_rosedal.webp',
       '/D4.webp',
@@ -363,6 +372,7 @@ export const desarrollos = [
     videoId: '685tsMY-P_w',
     imagen: '/proyectos/altos-orono/panoramica.jpg',
     logo: '/logos/altos-orono.webp',
+    logoCard: '/logos/altos-orono-iso.png',
     subtituloHero:
       'Un barrio consolidado en San Lorenzo, con lotes en altura y vistas privilegiadas del entorno, hoy plenamente habitado',
     descripcion:
@@ -421,6 +431,7 @@ export const desarrollos = [
     videoId: 'Y49fZBjHMl0',
     imagen: '/proyectos/delta-bucare/aerea-rio-1.jpg',
     logo: '/logos/delta-bucare.webp',
+    logoCard: '/logos/delta-bucare-iso.png',
     subtituloHero:
       'Un barrio consolidado en Monje, en torno a una reserva natural, con humedales y biodiversidad protegida',
     descripcion:
