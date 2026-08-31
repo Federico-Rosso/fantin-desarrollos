@@ -556,7 +556,7 @@ export default function ProyectoPage({ proyecto }) {
             {/* Columna izquierda: título + entorno */}
             <div>
               <h2 className="font-heading text-3xl font-black tracking-tight text-balance text-tech-white sm:text-4xl">
-                Ubicación privilegiada
+                {proyecto.ubicacionTitulo || 'Ubicación privilegiada'}
               </h2>
               <p className="mt-5 max-w-xl font-sans text-base leading-relaxed text-premium-muted">
                 {proyecto.ubicacionDescripcion ||
