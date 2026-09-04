@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import ProjectCard from './ProjectCard';
 import { desarrollos } from '../data/desarrollos';
