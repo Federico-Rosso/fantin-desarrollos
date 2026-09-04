@@ -13,6 +13,7 @@ export default function NosotrosHero() {
           fill
           priority
           sizes="100vw"
+          unoptimized // <-- PROPIEDAD AGREGADA AQUÍ
           className="object-cover"
         />
         {/* Darkening overlay for text legibility */}
