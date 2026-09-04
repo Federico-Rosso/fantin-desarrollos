@@ -54,21 +54,43 @@ export default function Hero() {
   }, []);
 
   return (
-    <section
+<section
       id="inicio"
       className="relative flex min-h-screen items-center overflow-hidden bg-dark-green"
     >
       {/* Background image carousel */}
       <div className="absolute inset-0">
-        <AnimatePresence>
+        
+        {/* NUEVO CÓDIGO DEL CARRUSEL (Reemplaza a AnimatePresence) */}
+        {heroSlides.map((slide, index) => (
           <motion.div
-            key={current}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            key={slide.src}
+            animate={{ opacity: index === current ? 1 : 0 }}
             transition={{ duration: 2, ease: 'easeInOut' }}
             className="absolute inset-0"
+            style={{ zIndex: index === current ? 10 : 0 }}
           >
+            <Image
+              src={slide.src}
+              alt={slide.alt}
+              fill
+              priority={index === 0}
+              sizes="100vw"
+              unoptimized
+              className="object-cover object-[center_65%]"
+            />
+          </motion.div>
+        ))}
+        {/* FIN DEL NUEVO CÓDIGO */}
+
+        {/* Dark overlays for premium contrast */}
+        <div className="absolute inset-0 bg-premium-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-premium-black/90 via-transparent to-transparent" />
+        {/* Green accent gradient on the left */}
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-green/30 via-transparent to-transparent" />
+        {/* Bottom fade to #1e3310 so the next section blends seamlessly */}
+        <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-b from-transparent via-[#1e3310]/80 to-[#1e3310]" />
+      </div>
             <Image
               src={heroSlides[current].src}
               alt={heroSlides[current].alt}
