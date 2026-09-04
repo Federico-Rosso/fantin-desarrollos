@@ -1,7 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+
+const heroSlides = [
+  {
+    src: '/images/hero-fondo-fantin.png',
+    alt: 'Vista aérea de un loteo residencial al atardecer, rodeado de naturaleza',
+  },
+  {
+    src: '/images/hero-pueblo-carcaraes.webp',
+    alt: 'Vista aérea de un pueblo a orillas del río rodeado de campos verdes y casas modernas',
+  },
+  {
+    src: '/images/hero-terranova.jpg',
+    alt: 'Acceso al barrio abierto Terranova con avenida arbolada de palmeras',
+  },
+];
 
 const container = {
   hidden: { opacity: 0 },
@@ -17,21 +32,41 @@ const item = {
 };
 
 export default function Hero() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % heroSlides.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       id="inicio"
       className="relative flex min-h-screen items-center overflow-hidden bg-dark-green"
     >
-      {/* Background image */}
+      {/* Background image carousel */}
       <div className="absolute inset-0">
-        <Image
-          src="/images/hero-fondo-fantin.png"
-          alt="Vista aérea de un loteo residencial al atardecer, rodeado de naturaleza"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-[center_65%]"
-        />
+        <AnimatePresence>
+          <motion.div
+            key={current}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.2, ease: 'easeInOut' }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={heroSlides[current].src}
+              alt={heroSlides[current].alt}
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-[center_65%]"
+            />
+          </motion.div>
+        </AnimatePresence>
         {/* Dark overlays for premium contrast */}
         <div className="absolute inset-0 bg-premium-black/60" />
         <div className="absolute inset-0 bg-gradient-to-r from-premium-black/90 via-transparent to-transparent" />
