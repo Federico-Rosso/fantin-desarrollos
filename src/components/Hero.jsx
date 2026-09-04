@@ -75,6 +75,7 @@ export default function Hero() {
               fill
               priority
               sizes="100vw"
+              unoptimized
               className="object-cover object-[center_65%]"
             />
           </motion.div>
