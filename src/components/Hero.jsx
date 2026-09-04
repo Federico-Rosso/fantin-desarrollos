@@ -16,6 +16,18 @@ const heroSlides = [
     src: '/images/hero-terranova.jpg',
     alt: 'Acceso al barrio abierto Terranova con avenida arbolada de palmeras',
   },
+  {
+    src: '/images/hero-portico-detalle.jpg',
+    alt: 'Pórtico de acceso al desarrollo Cinco Lagos con techo ondulado de madera',
+  },
+  {
+    src: '/images/hero-obra-calle.jpg',
+    alt: 'Calle en obra dentro de un nuevo loteo en desarrollo',
+  },
+  {
+    src: '/images/hero-fincas.webp',
+    alt: 'Parque con esculturas verdes en forma de árbol y bancos entre viñedos',
+  },
 ];
 
 const container = {
@@ -37,7 +49,7 @@ export default function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % heroSlides.length);
-    }, 4000);
+    }, 3000);
     return () => clearInterval(interval);
   }, []);
 
@@ -54,7 +66,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1.2, ease: 'easeInOut' }}
+            transition={{ duration: 2, ease: 'easeInOut' }}
             className="absolute inset-0"
           >
             <Image
