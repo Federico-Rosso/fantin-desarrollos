@@ -1,5 +1,6 @@
 import React from 'react';
 import { Inter, Montserrat } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 import '../styles/globals.css';
 
 
@@ -20,6 +21,7 @@ export default function App({ Component, pageProps }) {
   return (
     <main className={`${inter.variable} ${montserrat.variable} font-sans`}>
       <Component {...pageProps} />
+      <Analytics />
     </main>
   );
 }
