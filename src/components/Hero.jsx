@@ -5,28 +5,28 @@ import { ArrowRight } from 'lucide-react';
 
 const heroSlides = [
   {
-    src: '/images/hero-fondo-fantin.png',
-    alt: 'Vista aérea de un loteo residencial al atardecer, rodeado de naturaleza',
+    src: '/images/hero-parque-esculturas.jpg',
+    alt: 'Parque con esculturas verdes en forma de árbol y bancos de hormigón entre campos',
   },
   {
-    src: '/images/hero-pueblo-carcaraes.webp',
-    alt: 'Vista aérea de un pueblo a orillas del río rodeado de campos verdes y casas modernas',
-  },
-  {
-    src: '/images/hero-terranova.jpg',
-    alt: 'Acceso al barrio abierto Terranova con avenida arbolada de palmeras',
-  },
-  {
-    src: '/images/hero-portico-detalle.jpg',
+    src: '/images/hero-cinco-lagos.jpg',
     alt: 'Pórtico de acceso al desarrollo Cinco Lagos con techo ondulado de madera',
   },
   {
-    src: '/images/hero-obra-calle.jpg',
-    alt: 'Calle en obra dentro de un nuevo loteo en desarrollo',
+    src: '/images/hero-loteo-atardecer.jpg',
+    alt: 'Vista aérea de un loteo residencial al atardecer rodeado de campos verdes',
   },
   {
-    src: '/images/hero-fincas.webp',
-    alt: 'Parque con esculturas verdes en forma de árbol y bancos entre viñedos',
+    src: '/images/hero-parque-render.jpg',
+    alt: 'Render aéreo de un parque arbolado con senderos y áreas verdes',
+  },
+  {
+    src: '/images/hero-camino-obra.jpg',
+    alt: 'Camino de tierra dentro de un nuevo loteo en desarrollo bajo un cielo nublado',
+  },
+  {
+    src: '/images/hero-terranova.webp',
+    alt: 'Acceso al barrio abierto Terranova con avenida arbolada de palmeras',
   },
 ];
 
