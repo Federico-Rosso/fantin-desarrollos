@@ -264,6 +264,7 @@ export const desarrollos = [
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carrousel_fincas_3-Zl6wz7e0oqVP4WvEUEDpdVLhI3ipnB.webp',
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carrousel_fincas_4-sj1S69MAaAitSJpTo9lPMNpgeU9gUc.webp',
     ],
+    masterplan: '/planos/fincas-ybarlucea.png',
   },
   {
     id: 'carcaraes',
