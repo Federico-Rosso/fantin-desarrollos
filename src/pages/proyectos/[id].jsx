@@ -296,14 +296,16 @@ export default function ProyectoPage({ proyecto }) {
               type="button"
               onClick={() => setLightboxIndex(fotos.length)}
               aria-label={`Ampliar plano de ${proyecto.nombre}`}
-              className="group relative mt-6 block w-full cursor-pointer overflow-hidden rounded-2xl border border-premium-line bg-premium-gray shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-green"
+              className={`group relative mt-6 block w-full cursor-pointer overflow-hidden rounded-2xl border border-premium-line shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-primary-green ${
+                proyecto.masterplanLight ? 'bg-white' : 'bg-premium-gray'
+              }`}
             >
               <img
                 src={proyecto.masterplan || '/placeholder.svg'}
                 alt={`Plano del desarrollo ${proyecto.nombre}`}
                 loading="lazy"
                 decoding="async"
-                className="w-full object-contain"
+                className={`w-full object-contain ${proyecto.masterplanLight ? 'p-3 sm:p-5' : ''}`}
               />
               <span className="pointer-events-none absolute inset-0 flex items-center justify-center bg-premium-black/0 opacity-0 transition-all duration-300 group-hover:bg-premium-black/20 group-hover:opacity-100">
                 <span className="flex items-center gap-2 rounded-full bg-premium-black/70 px-4 py-2 font-sans text-sm font-medium text-tech-white">
@@ -686,7 +688,11 @@ export default function ProyectoPage({ proyecto }) {
               transition={{ duration: 0.25 }}
               src={galeria[lightboxIndex] || '/placeholder.svg'}
               alt={`${proyecto.nombre} — imagen ${lightboxIndex + 1} de ${galeria.length}`}
-              className="max-h-[82vh] max-w-[88vw] rounded-lg object-contain shadow-2xl"
+              className={`max-h-[82vh] max-w-[88vw] rounded-lg object-contain shadow-2xl ${
+                proyecto.masterplanLight && lightboxIndex === fotos.length
+                  ? 'bg-white p-3 sm:p-5'
+                  : ''
+              }`}
               onClick={(e) => e.stopPropagation()}
             />
 
