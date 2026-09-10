@@ -1,8 +1,22 @@
 import { neon } from '@neondatabase/serverless';
+import { Resend } from 'resend';
 
 const sql = neon(process.env.DATABASE_URL);
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+const FROM_EMAIL = 'Fantín Desarrollos <no-reply@fantindesarrollos.com>';
+const TO_EMAIL = 'fantin.desarrollos@gmail.com';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -37,11 +51,34 @@ export default async function handler(req, res) {
       INSERT INTO public.contact_submissions (name, email, phone, message)
       VALUES (${cleanName}, ${cleanEmail}, ${cleanPhone || null}, ${cleanMessage})
     `;
-    return res.status(201).json({ ok: true });
   } catch (error) {
     console.log('[v0] contact submission error:', error.message);
     return res
       .status(500)
       .json({ error: 'No pudimos enviar tu consulta. Intentá nuevamente.' });
   }
+
+  const { error: emailError } = await resend.emails.send({
+    from: FROM_EMAIL,
+    to: [TO_EMAIL],
+    replyTo: cleanEmail,
+    subject: `Nueva consulta de ${cleanName}`,
+    html: `
+      <h2>Nueva consulta desde el sitio web</h2>
+      <p><strong>Nombre:</strong> ${escapeHtml(cleanName)}</p>
+      <p><strong>Email:</strong> ${escapeHtml(cleanEmail)}</p>
+      <p><strong>Teléfono:</strong> ${escapeHtml(cleanPhone || 'No especificado')}</p>
+      <p><strong>Mensaje:</strong></p>
+      <p>${escapeHtml(cleanMessage).replace(/\n/g, '<br>')}</p>
+    `,
+  });
+
+  if (emailError) {
+    console.log('[v0] resend email error:', emailError.message);
+    return res
+      .status(500)
+      .json({ error: 'No pudimos enviar tu consulta. Intentá nuevamente.' });
+  }
+
+  return res.status(201).json({ ok: true });
 }
