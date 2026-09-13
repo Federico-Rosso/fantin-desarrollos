@@ -80,5 +80,28 @@ export default async function handler(req, res) {
       .json({ error: 'No pudimos enviar tu consulta. Intentá nuevamente.' });
   }
 
+  try {
+    const webhookResponse = await fetch(
+      'https://hook.us2.make.com/y3r78nhica37max6q8tber6jfzlauhwn',
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          nombre: cleanName,
+          email: cleanEmail,
+          telefono: cleanPhone,
+          mensaje: cleanMessage,
+          fuente: 'web',
+        }),
+      },
+    );
+
+    if (!webhookResponse.ok) {
+      throw new Error(`Make webhook respondió con estado ${webhookResponse.status}`);
+    }
+  } catch (error) {
+    console.log('[v0] Make webhook error:', error.message);
+  }
+
   return res.status(201).json({ ok: true });
 }
