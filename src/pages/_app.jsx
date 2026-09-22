@@ -2,6 +2,7 @@ import React from 'react';
 import { Inter, Montserrat } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import '../styles/globals.css';
+import PromoPopup from '../components/PromoPopup';
 
 
 const inter = Inter({
@@ -21,6 +22,7 @@ export default function App({ Component, pageProps }) {
   return (
     <main className={`${inter.variable} ${montserrat.variable} font-sans`}>
       <Component {...pageProps} />
+      <PromoPopup />
       <Analytics />
     </main>
   );

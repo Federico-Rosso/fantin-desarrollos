@@ -43,11 +43,17 @@ export default function PromoPopup() {
         role="dialog"
         onMouseDown={(event) => event.stopPropagation()}
       >
-        <img
-          src={PROMO_IMAGE}
-          alt="Viví en Ibarlucea: tu lote en 100 cuotas"
-          className="block h-auto w-full"
-        />
+        <a
+          href="https://fantindesarrollos.com/#contacto"
+          aria-label="Ir al formulario de contacto de Fantin Desarrollos"
+          className="block focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+        >
+          <img
+            src={PROMO_IMAGE}
+            alt="Viví en Ibarlucea: tu lote en 100 cuotas"
+            className="block h-auto w-full"
+          />
+        </a>
         <button
           type="button"
           aria-label="Cerrar promoción"
