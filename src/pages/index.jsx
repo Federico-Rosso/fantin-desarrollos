@@ -6,6 +6,7 @@ import Portfolio from '../components/Portfolio';
 import Stats from '../components/Stats';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
+import PromoPopup from '../components/PromoPopup';
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer bgClass="bg-dark-green" />
+      <PromoPopup />
     </>
   );
 }
