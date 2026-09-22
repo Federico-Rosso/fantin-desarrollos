@@ -32,10 +32,15 @@ module.exports = {
           "0%": { opacity: "0", transform: "translateY(24px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
+        slideUp: {
+          "0%": { opacity: "0", transform: "translateY(100%)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         "float-slow": "floatSlow 7s ease-in-out infinite",
         "fade-up": "fadeUp 0.8s ease forwards",
+        "slide-up": "slideUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards",
       },
     },
   },

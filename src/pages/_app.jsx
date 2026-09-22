@@ -3,7 +3,6 @@ import { Inter, Montserrat } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
 import '../styles/globals.css';
 
-
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
