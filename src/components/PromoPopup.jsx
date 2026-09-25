@@ -30,7 +30,7 @@ export default function PromoPopup() {
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-end justify-center bg-black/65 p-4 sm:p-6"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/65 p-4 sm:p-6"
       role="presentation"
       onMouseDown={(event) => {
         if (event.target === event.currentTarget) setIsOpen(false);
