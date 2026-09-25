@@ -4,12 +4,12 @@ import { motion } from 'framer-motion';
 const comercializadoras = [
   {
     nombre: 'Drovetta',
-    logo: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo-01-eLwrSi385Su30f3QkRdrcAqV6gnzB8.png',
+    logo: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo-04-NoadZyFeAkiJ65jpxAf0k2nI4MlHkp.png',
     instagram: 'https://instagram.com/drovetta.prop',
   },
   {
     nombre: 'Criscenti',
-    logo: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo-02-XB6mFyaNfIWpQ8Xks2y4ZPk3BxN8WW.png',
+    logo: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo-01-eLwrSi385Su30f3QkRdrcAqV6gnzB8.png',
     instagram: 'https://instagram.com/inmobiliariacriscenti',
   },
   {
@@ -19,7 +19,7 @@ const comercializadoras = [
   },
   {
     nombre: 'Almirón',
-    logo: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo-04-NoadZyFeAkiJ65jpxAf0k2nI4MlHkp.png',
+    logo: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Logo-02-XB6mFyaNfIWpQ8Xks2y4ZPk3BxN8WW.png',
     instagram: 'https://instagram.com/almiron_propiedades',
   },
 ];
