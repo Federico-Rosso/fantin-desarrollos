@@ -1,10 +1,11 @@
 import React from 'react';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Portfolio from '../components/Portfolio';
 import Comercializadoras from '../components/Comercializadoras';
-import Stats from '../components/Stats';
+const Stats = dynamic(() => import('../components/Stats'), { ssr: false });
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import PromoPopup from '../components/PromoPopup';
