@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 const PROMO_IMAGE =
-  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FD%20-%20POPUP%20100%20cuotas-mz6JgzLpJ7kGBlk5ijxmHf2WuxXSDk.png';
+  'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/FD%20-%20POPUP-yh5XJIS7aOvGfn8pnCxeUFphrFZ3ko.png';
 
 export default function PromoPopup() {
   const [isOpen, setIsOpen] = useState(false);
