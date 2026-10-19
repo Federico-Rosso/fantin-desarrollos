@@ -38,8 +38,7 @@ import EtapasDesarrollo from '../../components/EtapasDesarrollo';
 
 import { desarrollos } from '../../data/desarrollos';
 
-// Número de WhatsApp comercial (reemplazar por el real)
-const WHATSAPP = '5490000000000';
+const WHATSAPP = '5493412553096';
 
 // Mapea cada servicio a un ícono outline (estética Fantín, verde) según
 // palabras clave, adaptándose dinámicamente a los servicios de cada desarrollo.
@@ -623,8 +622,8 @@ export default function ProyectoPage({ proyecto }) {
         </section>
       </main>
 
-      {/* FLOATING WHATSAPP CTA (mobile) */}
-      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-premium-line bg-dark-green/90 px-6 py-3.5 backdrop-blur-lg lg:hidden">
+      {/* FLOATING WHATSAPP CTA */}
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-premium-line bg-dark-green/90 px-6 py-3.5 backdrop-blur-lg">
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4">
           <p className="hidden font-sans text-sm font-medium text-tech-white sm:block">
             {proyecto.nombre} — {proyecto.ubicacion}
