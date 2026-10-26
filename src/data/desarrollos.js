@@ -379,6 +379,8 @@ export const desarrollos = [
       '/proyectos/altos-orono/calle-lotes.webp',
       '/proyectos/altos-orono/construccion.webp',
     ],
+    masterplan: '/planos/altos-orono.webp',
+    masterplanLight: true,
   },
   {
     id: 'quinta-cairo',
