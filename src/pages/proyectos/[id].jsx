@@ -468,7 +468,7 @@ export default function ProyectoPage({ proyecto }) {
                       {/* Fila principal: 1 grande + 2 rectangulares apiladas */}
                       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                         {proyecto.fotos[0] &&
-                          renderFoto(0, 'sm:col-span-2', 'h-full min-h-[16rem] sm:min-h-[22rem]')}
+                          renderFoto(0, 'sm:col-span-2', 'h-64 sm:h-[36rem]')}
                         <div className="grid grid-cols-2 gap-4 sm:grid-cols-1 sm:grid-rows-2">
                           {proyecto.fotos[1] && renderFoto(1, '', 'h-40 sm:absolute sm:inset-0 sm:h-full')}
                           {proyecto.fotos[2] && renderFoto(2, '', 'h-40 sm:absolute sm:inset-0 sm:h-full')}
