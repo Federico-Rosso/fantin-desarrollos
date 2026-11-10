@@ -469,7 +469,7 @@ export default function ProyectoPage({ proyecto }) {
                         alt={`${proyecto.nombre} — foto ${i + 1}`}
                         loading="lazy"
                         decoding="async"
-                        className={`h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${imgHeightClass}`}
+                        className={`w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 ${imgHeightClass}`}
                       />
                       {showRestantes && restantes > 0 ? (
                         <span className="absolute inset-0 flex flex-col items-center justify-center bg-premium-black/60 text-tech-white transition-colors duration-300 group-hover:bg-premium-black/70">
@@ -491,10 +491,10 @@ export default function ProyectoPage({ proyecto }) {
                       {/* Fila principal: 1 grande + 2 rectangulares apiladas */}
                       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                         {proyecto.fotos[0] &&
-                          renderFoto(0, 'sm:col-span-2 sm:row-span-2', 'min-h-[16rem] sm:min-h-[22rem]')}
-                        <div className="grid grid-cols-2 gap-4 sm:grid-cols-1">
-                          {proyecto.fotos[1] && renderFoto(1, '', 'h-40 sm:h-[10.5rem]')}
-                          {proyecto.fotos[2] && renderFoto(2, '', 'h-40 sm:h-[10.5rem]')}
+                          renderFoto(0, 'sm:col-span-2', 'h-full min-h-[16rem] sm:min-h-[22rem]')}
+                        <div className="grid grid-cols-2 gap-4 sm:grid-cols-1 sm:grid-rows-2">
+                          {proyecto.fotos[1] && renderFoto(1, '', 'h-40 sm:absolute sm:inset-0 sm:h-full')}
+                          {proyecto.fotos[2] && renderFoto(2, '', 'h-40 sm:absolute sm:inset-0 sm:h-full')}
                         </div>
                       </div>
                       {/* Dos líneas de 3 fotos comunes */}
