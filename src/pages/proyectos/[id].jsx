@@ -284,13 +284,13 @@ export default function ProyectoPage({ proyecto }) {
           </div>
         </section>
 
-        {/* PLANO DEL DESARROLLO — placeholder universal */}
-        <section className="mx-auto w-full max-w-7xl px-6 pt-20 sm:px-10">
-          <h2 className="flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-widest text-primary-green">
-            <MapIcon size={14} />
-            Plano del desarrollo
-          </h2>
-          {proyecto.masterplan ? (
+        {/* PLANO DEL DESARROLLO — solo si el proyecto tiene masterplan */}
+        {proyecto.masterplan && (
+          <section className="mx-auto w-full max-w-7xl px-6 pt-20 sm:px-10">
+            <h2 className="flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-widest text-primary-green">
+              <MapIcon size={14} />
+              Plano del desarrollo
+            </h2>
             <button
               type="button"
               onClick={() => setLightboxIndex(fotos.length)}
@@ -311,33 +311,8 @@ export default function ProyectoPage({ proyecto }) {
                 </span>
               </span>
             </button>
-          ) : (
-            <div className="group relative mt-6 flex min-h-[18rem] w-full items-center justify-center overflow-hidden rounded-2xl border border-premium-line bg-premium-gray shadow-lg sm:min-h-[22rem]">
-              {/* Patrón sutil tipo grilla / mapa */}
-              <div
-                aria-hidden="true"
-                className="absolute inset-0 opacity-[0.35]"
-                style={{
-                  backgroundImage:
-                    'linear-gradient(to right, rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.04) 1px, transparent 1px)',
-                  backgroundSize: '48px 48px',
-                }}
-              />
-              <div className="relative z-10 flex flex-col items-center px-6 text-center">
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-premium-line bg-premium-dark text-primary-green">
-                  <MapIcon size={28} strokeWidth={1.5} />
-                </div>
-                <p className="mt-5 font-heading text-lg font-bold text-tech-white">
-                  Masterplan en preparación
-                </p>
-                <p className="mt-2 max-w-md font-sans text-sm leading-relaxed text-premium-muted">
-                  Estamos integrando el plano interactivo de {proyecto.nombre}. Solicitá la
-                  planimetría completa con disponibilidad y dimensiones de lotes.
-                </p>
-              </div>
-            </div>
-          )}
-        </section>
+          </section>
+        )}
 
         {/* BODY */}
         <div className="mx-auto mt-20 w-full max-w-7xl px-6 sm:px-10">

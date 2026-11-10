@@ -6,6 +6,7 @@ export const desarrollos = [
   // ── EN COMERCIALIZACIÓN ──────────────────────────────────────────────
   {
     id: 'fincas-ros',
+    videoId: 'pcpiAyX2E5A',
     nombre: 'Fincas Ros',
     ubicacion: 'Ibarlucea',
     dimensiones: 'Lotes de 360 a 550 m²',
@@ -64,6 +65,7 @@ export const desarrollos = [
   },
   {
     id: 'fincas-rosedal',
+    videoId: '2rDtF2DeORo',
     nombre: 'Fincas del Rosedal',
     ubicacion: 'Ibarlucea',
     dimensiones: 'Consultar dimensiones',
@@ -123,6 +125,7 @@ export const desarrollos = [
   },
   {
     id: 'cinco-lagos',
+    videoId: '8SnUBzX-CfI',
     nombre: 'Cinco Lagos',
     ubicacion: 'Ibarlucea',
     dimensiones: 'Lotes amplios',
@@ -232,7 +235,7 @@ export const desarrollos = [
     mapQuery: 'Barrio abierto Terranova, Capitán Bermúdez, Santa Fe',
   },
   {
-    id: 'fincas-ybarlucea',
+    id: 'fincas-ibarlucea',
     nombre: 'Fincas de Ibarlucea',
     ubicacion: 'Ibarlucea',
     dimensiones: 'Lotes de gran superficie',
@@ -241,8 +244,8 @@ export const desarrollos = [
     ubicacionTitulo: 'Rodeado de verde y tranquilidad',
     imagen:
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carrousel_fincas_9-zz5uMH6d8KAK7X7wSVq9RU6wJZNSyG.webp',
-    logo: '/logos/fincas-ybarlucea.png',
-    logoCard: '/logos/fincas-ybarlucea-iso.png',
+    logo: '/logos/fincas-ibarlucea.png',
+    logoCard: '/logos/fincas-ibarlucea-iso.png',
     subtituloHero:
       'Lotes residenciales de gran superficie en un entorno consolidado de Ibarlucea, con comercialización en etapa avanzada',
     descripcion:
@@ -265,7 +268,7 @@ export const desarrollos = [
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carrousel_fincas_3-Zl6wz7e0oqVP4WvEUEDpdVLhI3ipnB.webp',
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/carrousel_fincas_4-sj1S69MAaAitSJpTo9lPMNpgeU9gUc.webp',
     ],
-    masterplan: '/planos/fincas-ybarlucea.png',
+    masterplan: '/planos/fincas-ibarlucea.png',
   },
   {
     id: 'carcaraes',
