@@ -1,6 +1,7 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
+import socialMeta from '../components/SocialMeta';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Portfolio from '../components/Portfolio';
@@ -19,6 +20,12 @@ export default function Home() {
           name="description"
           content="Loteos, barrios y desarrollos urbanos donde la naturaleza y la arquitectura moderna se encuentran en equilibrio. 27 años entregando lo que prometemos."
         />
+        {socialMeta({
+          title: "Fantín Desarrollos | 27 años entregando lo que prometemos",
+          description: "Loteos, barrios y desarrollos urbanos donde la naturaleza y la arquitectura moderna se encuentran en equilibrio. 27 años entregando lo que prometemos.",
+          image: "/og/home.jpg",
+          path: "/",
+        })}
         <meta name="theme-color" content="#1e3310" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>

@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Head from 'next/head';
+import fs from 'fs';
+import path from 'path';
+import socialMeta from '../../components/SocialMeta';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -101,7 +104,7 @@ function getServicioIcon(servicio = '') {
   return CheckCircle2;
 }
 
-export default function ProyectoPage({ proyecto }) {
+export default function ProyectoPage({ proyecto, ogImage }) {
   const router = useRouter();
 
   // Galería / lightbox — las fotos más el plano (si existe) como última imagen
@@ -190,6 +193,12 @@ export default function ProyectoPage({ proyecto }) {
       <Head>
         <title>{`${proyecto.nombre} | Fantín Desarrollos`}</title>
         <meta name="description" content={proyecto.descripcion} />
+        {socialMeta({
+          title: `${proyecto.nombre} | Fantín Desarrollos`,
+          description: proyecto.descripcion,
+          image: ogImage || proyecto.imagen,
+          path: `/proyectos/${proyecto.id}`,
+        })}
         <meta name="theme-color" content="#0E0E0E" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
@@ -234,7 +243,7 @@ export default function ProyectoPage({ proyecto }) {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="relative z-10 mt-16 flex flex-col items-center px-6 text-center"
           >
-            <span className="sr-only">{proyecto.nombre}</span>
+            <h1 className="sr-only">{proyecto.nombre}</h1>
             {proyecto.logo ? (
               <img
                 src={proyecto.logo || '/placeholder.svg'}
@@ -242,12 +251,12 @@ export default function ProyectoPage({ proyecto }) {
                 className="w-72 max-w-[85vw] object-contain drop-shadow-[0_4px_24px_rgba(0,0,0,0.45)] sm:w-96"
               />
             ) : (
-              <h1
+              <p
                 aria-hidden="true"
                 className="font-heading text-4xl font-black tracking-tight text-tech-white sm:text-6xl"
               >
                 {proyecto.nombre}
-              </h1>
+              </p>
             )}
 
             {proyecto.subtituloHero && (
@@ -704,5 +713,8 @@ export function getStaticProps({ params }) {
   if (!proyecto) {
     return { notFound: true };
   }
-  return { props: { proyecto } };
+  // Imagen para la vista previa de links: /public/og/<id>.jpg si existe
+  const ogPath = `/og/${proyecto.id}.jpg`;
+  const ogImage = fs.existsSync(path.join(process.cwd(), 'public', ogPath)) ? ogPath : null;
+  return { props: { proyecto, ogImage } };
 }
