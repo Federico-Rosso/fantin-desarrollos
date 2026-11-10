@@ -229,6 +229,7 @@ export const desarrollos = [
       'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/DJI_0500-KFPtZ2o5wGHknUVzhplefeowMbCPUF.jpg',
     ],
     masterplan: '/planos/terranova.png',
+    mapQuery: 'Barrio abierto Terranova, Capitán Bermúdez, Santa Fe',
   },
   {
     id: 'fincas-ybarlucea',
@@ -408,6 +409,7 @@ export const desarrollos = [
       '/proyectos/quinta-cairo/ingreso.jpg',
       '/proyectos/quinta-cairo/vereda.jpg',
     ],
+    mapQuery: 'Quinta Cairo, Capitán Bermúdez, Santa Fe',
   },
   {
     id: 'delta-bucare',
