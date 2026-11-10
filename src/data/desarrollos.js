@@ -132,7 +132,12 @@ export const desarrollos = [
     lifecycle: 'activo',
     badge: 'Entrega de lotes Lago Sereno',
     ubicacionTitulo: 'Emplazamiento exclusivo',
-    imagen: '/proyectos/cinco-lagos/portada.jpg',
+    imagen: '/proyectos/cinco-lagos/avenida-palmeras.jpg',
+    // Encuadre de fotos verticales cuando se recortan en formatos apaisados
+    focos: {
+      '/proyectos/cinco-lagos/avenida-palmeras.jpg': 'center 85%',
+      '/proyectos/cinco-lagos/rotonda-palmera.jpg': 'center 60%',
+    },
     logo: '/logos/cinco-lagos.png',
     logoCard: '/logos/cinco-lagos-iso.png',
     subtituloHero:
@@ -159,6 +164,8 @@ export const desarrollos = [
       'Zona de deportes',
     ],
     fotos: [
+      '/proyectos/cinco-lagos/avenida-palmeras.jpg',
+      '/proyectos/cinco-lagos/rotonda-palmera.jpg',
       '/proyectos/cinco-lagos/portada.jpg',
       '/proyectos/cinco-lagos/ingreso-portico.jpg',
       '/proyectos/cinco-lagos/portico-detalle.jpg',

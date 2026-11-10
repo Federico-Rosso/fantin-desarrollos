@@ -25,6 +25,7 @@ export default function ProjectCard({ proyecto, onSelect }) {
       <div className="absolute inset-0">
         <img
           src={proyecto.imagen || '/placeholder.svg'}
+          style={{ objectPosition: proyecto.focos?.[proyecto.imagen] }}
           alt={`Desarrollo ${proyecto.nombre} en ${proyecto.ubicacion}`}
           loading="lazy"
           decoding="async"

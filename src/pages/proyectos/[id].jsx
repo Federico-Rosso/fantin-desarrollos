@@ -203,6 +203,7 @@ export default function ProyectoPage({ proyecto }) {
             <img
               src={proyecto.imagen || '/placeholder.svg'}
               alt={`Desarrollo ${proyecto.nombre} en ${proyecto.ubicacion}`}
+              style={{ objectPosition: proyecto.focos?.[proyecto.imagen] }}
               loading="eager"
               fetchPriority="high"
               decoding="async"
@@ -441,6 +442,7 @@ export default function ProyectoPage({ proyecto }) {
                     >
                       <img
                         src={proyecto.fotos[i] || '/placeholder.svg'}
+                        style={{ objectPosition: proyecto.focos?.[proyecto.fotos[i]] }}
                         alt={`${proyecto.nombre} — foto ${i + 1}`}
                         loading="lazy"
                         decoding="async"
